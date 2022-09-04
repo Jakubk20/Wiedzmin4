@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="774.0" prefWidth="1302.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.StartLocation">
+   <children>
+      <ImageView fitHeight="820.0" fitWidth="1459.0" layoutX="-96.0" layoutY="-10.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Zdjęcia/pierwsza%20lokacja.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="61.0" layoutY="52.0" text="Jestes w barze !" textFill="WHITE">
+         <font>
+            <Font name="BellGothicStd-Black" size="33.0" />
+         </font></Label>
+      <Label layoutX="61.0" layoutY="102.0" text="Wybierz co chcesz robić" textFill="WHITE">
+         <font>
+            <Font name="BellGothicStd-Black" size="33.0" />
+         </font>
+      </Label>
+      <Button layoutX="61.0" layoutY="158.0" mnemonicParsing="false" onAction="#onZleceniodawcaClick" prefHeight="65.0" prefWidth="135.0" text="Zleceniodawca">
+         <font>
+            <Font name="BellGothicStd-Black" size="16.0" />
+         </font></Button>
+      <Button layoutX="229.0" layoutY="158.0" mnemonicParsing="false" onAction="#onSamotnaPodrozClick" prefHeight="65.0" prefWidth="135.0" text="Samotna podróż">
+         <font>
+            <Font name="BellGothicStd-Black" size="14.0" />
+         </font></Button>
+   </children>
+</AnchorPane>

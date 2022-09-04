@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.instrukcjaGraj">
+   <children>
+      <ImageView fitHeight="835.0" fitWidth="1334.0" layoutX="-118.0" layoutY="-27.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Zdjęcia/--Wiedzmin-3-.jpg" />
+         </image></ImageView>
+      <Button layoutX="221.0" layoutY="519.0" mnemonicParsing="false" onAction="#onHelloButtonClick" prefHeight="110.0" prefWidth="229.0" text="Graj !">
+         <font>
+            <Font name="BellGothicStd-Black" size="48.0" />
+         </font>
+      </Button>
+      <Button layoutX="751.0" layoutY="519.0" mnemonicParsing="false" onAction="#onInstructionButton" prefHeight="110.0" prefWidth="229.0" text="Instrukcja" wrapText="true">
+         <font>
+            <Font name="BellGothicStd-Black" size="38.0" />
+         </font>
+      </Button>
+      <Label layoutX="450.0" layoutY="14.0" prefHeight="59.0" prefWidth="301.0" text="Witaj w grze !" textFill="#070606">
+         <font>
+            <Font name="BellGothicStd-Black" size="48.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
