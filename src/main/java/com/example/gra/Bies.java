@@ -37,7 +37,6 @@ public class Bies extends Balans{
             stage.setScene(scene);
             stage.centerOnScreen();
             stage.show();}
-//        return getBalans();
     }
     public int balanss(){
         return this.getBalans();
