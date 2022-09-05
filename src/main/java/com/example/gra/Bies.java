@@ -15,7 +15,7 @@ public class Bies {
     static int power = 100;
     static int HP = 1000;
 
-    protected int onAttack(ActionEvent actionEvent) throws IOException {
+   public static int onAttack(ActionEvent actionEvent) throws IOException {
         Random random = new Random();
         int attack = random.nextInt(1, 2) * power / 100;
         return attack;
