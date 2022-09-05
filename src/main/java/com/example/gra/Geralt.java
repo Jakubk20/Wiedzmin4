@@ -9,14 +9,14 @@ public class Geralt {
     static int power = 100;
     static int money;
     static int HP = 100;
-    int chuj;
-    protected int  onNormalAttack(ActionEvent actionEvent) throws IOException {
+
+    public static int onNormalAttack(ActionEvent actionEvent) throws IOException {
         Random random = new Random();
-        int attack = random.nextInt(10, 20) * Geralt.power / 100;
+        int attack = random.nextInt(10, 20) * power / 100;
         return attack;
     }
 
-    protected int onStrongAttack(ActionEvent actionEvent) {
+    public static int onStrongAttack(ActionEvent actionEvent) {
         Random random = new Random();
         int attack = random.nextInt(0, 40) * Geralt.power / 100;
         return attack;
