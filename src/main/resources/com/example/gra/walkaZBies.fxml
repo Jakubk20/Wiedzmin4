@@ -59,5 +59,58 @@
             <Font size="20.0" />
          </font>
       </Label>
+      <Button layoutX="-3.0" layoutY="700.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="208.0" text="Button" />
+      <Button layoutX="992.0" layoutY="700.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="208.0" text="Button" />
+      <Button layoutX="517.0" layoutY="700.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="166.0" text="Button" />
+      <Label layoutX="481.0" layoutY="209.0" prefHeight="41.0" prefWidth="239.0" text="Wybierz swój atak !">
+         <font>
+            <Font name="BellGothicStd-Black" size="27.0" />
+         </font>
+      </Label>
+      <Button layoutX="992.0" layoutY="14.0" mnemonicParsing="false" onAction="#onPokazzz" prefHeight="48.0" prefWidth="181.0" text="Pokaż statystyki">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </Button>
+      <Label layoutX="992.0" layoutY="62.0" prefHeight="31.0" prefWidth="47.0" text="Siła :">
+         <font>
+            <Font name="BellGothicStd-Black" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="992.0" layoutY="93.0" prefHeight="31.0" prefWidth="41.0" text="HP :">
+         <font>
+            <Font name="BellGothicStd-Black" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="hapekiBiesa" layoutX="1033.0" layoutY="93.0" prefHeight="31.0" prefWidth="54.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="silaBiesa" layoutX="1039.0" layoutY="62.0" prefHeight="31.0" prefWidth="54.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="57.0" layoutY="209.0" prefHeight="41.0" prefWidth="187.0" text="Pozostałe zdrowie :">
+         <font>
+            <Font name="BellGothicStd-Black" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="826.0" layoutY="209.0" prefHeight="41.0" prefWidth="187.0" text="Pozostałe zdrowie :">
+         <font>
+            <Font name="BellGothicStd-Black" size="21.0" />
+         </font>
+      </Label>
+      <Label fx:id="pozoHPGeralt" layoutX="244.0" layoutY="204.0" prefHeight="41.0" prefWidth="123.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Label>
+      <Label fx:id="pozoHPBies" layoutX="1013.0" layoutY="206.0" prefHeight="41.0" prefWidth="123.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
