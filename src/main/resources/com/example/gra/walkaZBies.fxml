@@ -59,9 +59,18 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <Button layoutX="-3.0" layoutY="700.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="208.0" text="Button" />
-      <Button layoutX="992.0" layoutY="700.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="208.0" text="Button" />
-      <Button layoutX="517.0" layoutY="700.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="166.0" text="Button" />
+      <Button layoutX="-3.0" layoutY="700.0" mnemonicParsing="false" onAction="#onNormal" prefHeight="100.0" prefWidth="208.0" text=" Atak zwykły(Szybki)">
+         <font>
+            <Font size="19.0" />
+         </font></Button>
+      <Button layoutX="992.0" layoutY="700.0" mnemonicParsing="false" onAction="#onHard" prefHeight="100.0" prefWidth="208.0" text="Atak mocny(Wolny)">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
+      <Button layoutX="517.0" layoutY="700.0" mnemonicParsing="false" onAction="#onRun" prefHeight="80.0" prefWidth="166.0" text="Ucieczka !">
+         <font>
+            <Font size="29.0" />
+         </font></Button>
       <Label layoutX="481.0" layoutY="209.0" prefHeight="41.0" prefWidth="239.0" text="Wybierz swój atak !">
          <font>
             <Font name="BellGothicStd-Black" size="27.0" />

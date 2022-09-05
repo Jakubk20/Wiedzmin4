@@ -1,7 +1,14 @@
 package com.example.gra;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class WalkaZBiesem {
     @FXML
@@ -30,5 +37,45 @@ public class WalkaZBiesem {
         hapekiBiesa.setText(String.valueOf(Bies.HPB));
         silaBiesa.setText(String.valueOf(Bies.power));
         pozoHPBies.setText(String.valueOf(Bies.HPB));
+    }
+    public void system(ActionEvent actionEvent) throws IOException {
+        if (Geralt.HP <= 0){
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Śmierć.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+            stage.setTitle("Giniesz!");
+            stage.setScene(scene);
+            stage.centerOnScreen();
+            stage.show();
+        }
+    }
+    @FXML
+    protected void onNormal(ActionEvent actionEvent) throws IOException {
+        if (Geralt.HP <= 0){
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Śmierć.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+            stage.setTitle("Giniesz!");
+            stage.setScene(scene);
+            stage.centerOnScreen();
+            stage.show();
+        }if (Bies.HPB <= 0){
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("wygranaZBies.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+            stage.setTitle("Zabijasz Biesa !");
+            stage.setScene(scene);
+            stage.centerOnScreen();
+            stage.show();
+        } else Bies.HPB -= Geralt.onNormalAttack(actionEvent);
+
+    }
+    @FXML
+    protected void onHard(){
+
+    }
+    @FXML
+    protected void onRun(){
+
     }
 }
