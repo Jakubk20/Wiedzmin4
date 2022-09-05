@@ -9,6 +9,7 @@ public class Geralt {
     static int power = 100;
     static int money;
     static int HP = 100;
+    int chuj;
     protected int  onNormalAttack(ActionEvent actionEvent) throws IOException {
         Random random = new Random();
         int attack = random.nextInt(10, 20) * Geralt.power / 100;
