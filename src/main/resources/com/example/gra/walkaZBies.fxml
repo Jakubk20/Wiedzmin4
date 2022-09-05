@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.WalkaZBiesem">
    <children>
       <ImageView fitHeight="550.0" fitWidth="600.0" layoutY="250.0" pickOnBounds="true" smooth="false">
@@ -25,19 +24,39 @@
             <Font name="BellGothicStd-Black" size="38.0" />
          </font>
       </Label>
-      <Label layoutX="33.0" layoutY="62.0" prefHeight="31.0" prefWidth="105.0" text="Twoja siła :">
-         <font>
-            <Font name="BellGothicStd-Black" size="20.0" />
-         </font>
-      </Label>
-      <Button layoutX="33.0" layoutY="14.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="181.0" text="Pokaż statystyki">
+      <Button layoutX="33.0" layoutY="14.0" mnemonicParsing="false" onAction="#onPokazz" prefHeight="48.0" prefWidth="181.0" text="Pokaż statystyki">
          <font>
             <Font name="Arial" size="12.0" />
          </font>
       </Button>
-      <Label layoutX="33.0" layoutY="93.0" prefHeight="31.0" prefWidth="120.0" text=" :">
+      <Label layoutX="33.0" layoutY="62.0" prefHeight="31.0" prefWidth="47.0" text="Siła :">
          <font>
             <Font name="BellGothicStd-Black" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="33.0" layoutY="93.0" prefHeight="31.0" prefWidth="82.0" text="Monety :">
+         <font>
+            <Font name="BellGothicStd-Black" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="33.0" layoutY="124.0" prefHeight="31.0" prefWidth="41.0" text="HP :">
+         <font>
+            <Font name="BellGothicStd-Black" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="sila" layoutX="80.0" layoutY="62.0" prefHeight="31.0" prefWidth="54.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="balans" layoutX="115.0" layoutY="93.0" prefHeight="31.0" prefWidth="54.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="hapeki" layoutX="74.0" layoutY="124.0" prefHeight="31.0" prefWidth="54.0">
+         <font>
+            <Font size="20.0" />
          </font>
       </Label>
    </children>
