@@ -25,74 +25,57 @@ public class WalkaZBiesem {
     private Label pozoHPGeralt;
     @FXML
     private Label pozoHPBies;
+
     @FXML
-    protected  void onPokazz(){
+    protected void onPokazz() {
         balans.setText(String.valueOf(Geralt.money));
         sila.setText(String.valueOf(Geralt.power));
         hapeki.setText(String.valueOf(Geralt.HP));
         pozoHPGeralt.setText(String.valueOf(Geralt.HP));
     }
+
     @FXML
-    protected  void onPokazzz(){
+    protected void onPokazzz() {
         hapekiBiesa.setText(String.valueOf(Bies.HPB));
         silaBiesa.setText(String.valueOf(Bies.power));
         pozoHPBies.setText(String.valueOf(Bies.HPB));
     }
-    public void system(ActionEvent actionEvent) throws IOException {
-        if (Geralt.HP <= 0){
+
+    @FXML
+    protected void onNormal(ActionEvent actionEvent) throws IOException {
+        if (Geralt.HP <= 0) {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Śmierć.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setTitle("Giniesz!");
             stage.setScene(scene);
             stage.centerOnScreen();
             stage.show();
         }
-    }
-    @FXML
-    protected void onNormal(ActionEvent actionEvent) throws IOException {
-        if (Geralt.HP <= 0){
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Śmierć.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Giniesz!");
-            stage.setScene(scene);
-            stage.centerOnScreen();
-            stage.show();
-        }if (Bies.HPB <= 0){
+        if (Bies.HPB <= 0) {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("wygranaZBies.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setTitle("Zabijasz Biesa !");
             stage.setScene(scene);
             stage.centerOnScreen();
             stage.show();
-        } else Bies.HPB -= Geralt.onNormalAttack(actionEvent);
+        }
+        while (Geralt.HP > 0 && Bies.HPB > 0) {
+            Bies.HPB -= Geralt.onNormalAttack(actionEvent);
+            Geralt.HP -= Bies.onAttack(actionEvent);
+        }
+
 
     }
+
     @FXML
-    protected void onHard(ActionEvent actionEvent) throws IOException {
-        if (Geralt.HP <= 0){
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Śmierć.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Giniesz!");
-            stage.setScene(scene);
-            stage.centerOnScreen();
-            stage.show();
-        }if (Bies.HPB <= 0){
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("wygranaZBies.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Zabijasz Biesa !");
-            stage.setScene(scene);
-            stage.centerOnScreen();
-            stage.show();
-        } else Bies.HPB -= Geralt.onStrongAttack(actionEvent);
+    protected void onHard() {
 
     }
+
     @FXML
-    protected void onRun(){
+    protected void onRun() {
 
     }
 }
