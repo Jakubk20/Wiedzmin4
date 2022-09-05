@@ -17,27 +17,15 @@ public class Bies extends Balans{
 
     @FXML
     protected void onFight(ActionEvent actionEvent) throws IOException {
-        int chance = random.nextInt(0, 100);
-        if (chance>=40){
-            setSila(20);
-            setBalans(500);
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Wygrana.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("walkaZBies.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Zabijasz Bies'a!");
+            stage.setTitle("Walka z Bies");
             stage.setScene(scene);
             stage.centerOnScreen();
             stage.show();
-            System.out.println(getBalans());
-            System.out.println(getSila());
-        }else{FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Śmierć.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Giniesz!");
-            stage.setScene(scene);
-            stage.centerOnScreen();
-            stage.show();}
     }
+
     public int balanss(){
         return this.getBalans();
     }
