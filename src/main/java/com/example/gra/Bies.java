@@ -17,7 +17,8 @@ public class Bies {
 
    public static int onAttack(ActionEvent actionEvent) throws IOException {
         Random random = new Random();
-        int attack = random.nextInt(1, 2);
+        int attack = random.nextInt(1, 3);
+       System.out.println(attack);
         return attack;
     }
 

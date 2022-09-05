@@ -12,13 +12,15 @@ public class Geralt {
 
     public static int onNormalAttack(ActionEvent actionEvent) throws IOException {
         Random random = new Random();
-        int attack = random.nextInt(10, 20);
+        int attack = random.nextInt(10, 21);
+        System.out.println(attack);
         return attack;
     }
 
     public static int onStrongAttack(ActionEvent actionEvent) {
         Random random = new Random();
-        int attack = random.nextInt(0, 40);
+        int attack = random.nextInt(0, 71);
+        System.out.println(attack);
         return attack;
     }
 }

@@ -24,11 +24,6 @@
             <Font name="BellGothicStd-Black" size="38.0" />
          </font>
       </Label>
-      <Button layoutX="33.0" layoutY="14.0" mnemonicParsing="false" onAction="#onPokazz" prefHeight="48.0" prefWidth="181.0" text="Pokaż statystyki">
-         <font>
-            <Font name="Arial" size="12.0" />
-         </font>
-      </Button>
       <Label layoutX="33.0" layoutY="62.0" prefHeight="31.0" prefWidth="47.0" text="Siła :">
          <font>
             <Font name="BellGothicStd-Black" size="20.0" />
@@ -59,7 +54,7 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <Button layoutX="-3.0" layoutY="700.0" mnemonicParsing="false" onAction="#onNormal" prefHeight="100.0" prefWidth="208.0" text=" Atak zwykły(Szybki)">
+      <Button layoutX="-3.0" layoutY="700.0" mnemonicParsing="false" onAction="#onNormal" prefHeight="100.0" prefWidth="208.0" text="Atak zwykły(Szybki)">
          <font>
             <Font size="19.0" />
          </font></Button>
@@ -76,27 +71,22 @@
             <Font name="BellGothicStd-Black" size="27.0" />
          </font>
       </Label>
-      <Button layoutX="992.0" layoutY="14.0" mnemonicParsing="false" onAction="#onPokazzz" prefHeight="48.0" prefWidth="181.0" text="Pokaż statystyki">
-         <font>
-            <Font name="Arial" size="12.0" />
-         </font>
-      </Button>
-      <Label layoutX="992.0" layoutY="62.0" prefHeight="31.0" prefWidth="47.0" text="Siła :">
+      <Label layoutX="920.0" layoutY="62.0" prefHeight="31.0" prefWidth="47.0" text="Siła :">
          <font>
             <Font name="BellGothicStd-Black" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="992.0" layoutY="93.0" prefHeight="31.0" prefWidth="41.0" text="HP :">
+      <Label layoutX="920.0" layoutY="93.0" prefHeight="31.0" prefWidth="41.0" text="HP :">
          <font>
             <Font name="BellGothicStd-Black" size="20.0" />
          </font>
       </Label>
-      <Label fx:id="hapekiBiesa" layoutX="1033.0" layoutY="93.0" prefHeight="31.0" prefWidth="54.0">
+      <Label fx:id="hapekiBiesa" layoutX="961.0" layoutY="93.0" prefHeight="31.0" prefWidth="54.0">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label fx:id="silaBiesa" layoutX="1039.0" layoutY="62.0" prefHeight="31.0" prefWidth="54.0">
+      <Label fx:id="silaBiesa" layoutX="965.0" layoutY="62.0" prefHeight="31.0" prefWidth="54.0">
          <font>
             <Font size="20.0" />
          </font>
@@ -119,6 +109,16 @@
       <Label fx:id="pozoHPBies" layoutX="1013.0" layoutY="206.0" prefHeight="41.0" prefWidth="123.0">
          <font>
             <Font size="32.0" />
+         </font>
+      </Label>
+      <Label layoutX="33.0" layoutY="18.0" prefHeight="41.0" prefWidth="262.0" text="Twoje statystyki :">
+         <font>
+            <Font name="BellGothicStd-Black" size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="920.0" layoutY="18.0" prefHeight="41.0" prefWidth="275.0" text="Statystyki biesa :">
+         <font>
+            <Font name="BellGothicStd-Black" size="30.0" />
          </font>
       </Label>
    </children>
