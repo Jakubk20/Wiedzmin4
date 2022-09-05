@@ -12,14 +12,15 @@ import java.util.Random;
 
 public class Bies {
     Random random = new Random();
-    static int power = 100;
+    static double power = 1.5;
     static int HP = 1000;
 
    public static int onAttack(ActionEvent actionEvent) throws IOException {
         Random random = new Random();
-        int attack = random.nextInt(1, 2) * power / 100;
+        int attack = random.nextInt(1, 2);
         return attack;
     }
+
 
     @FXML
     protected void onFight(ActionEvent actionEvent) throws IOException {
