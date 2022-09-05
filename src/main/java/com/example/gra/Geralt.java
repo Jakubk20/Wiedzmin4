@@ -6,21 +6,21 @@ import java.io.IOException;
 import java.util.Random;
 
 public class Geralt {
-    static double power = 15;
+    static double power = 120;
     static int money;
-    static int HP = 100;
+    static double HP = 100;
 
-    public static int onNormalAttack(ActionEvent actionEvent) throws IOException {
+    public static double onNormalAttack(ActionEvent actionEvent) throws IOException {
         Random random = new Random();
         int attack = random.nextInt(10, 21);
         System.out.println(attack);
-        return attack;
+        return attack * power / 100;
     }
 
-    public static int onStrongAttack(ActionEvent actionEvent) {
+    public static double onStrongAttack(ActionEvent actionEvent) {
         Random random = new Random();
         int attack = random.nextInt(0, 71);
         System.out.println(attack);
-        return attack;
+        return attack * power / 100;
     }
 }

@@ -12,14 +12,14 @@ import java.util.Random;
 
 public class Bies {
     Random random = new Random();
-    static double power = 1.5;
-    static int HPB = 1000;
+    static double power = 100;
+    static double HPB = 1000;
 
-   public static int onAttack(ActionEvent actionEvent) throws IOException {
+   public static double onAttack(ActionEvent actionEvent) throws IOException {
         Random random = new Random();
         int attack = random.nextInt(1, 3);
        System.out.println(attack);
-        return attack;
+        return attack * power / 100;
     }
 
 
