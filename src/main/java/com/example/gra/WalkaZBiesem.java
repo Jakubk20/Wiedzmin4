@@ -71,7 +71,24 @@ public class WalkaZBiesem {
 
     }
     @FXML
-    protected void onHard(){
+    protected void onHard(ActionEvent actionEvent) throws IOException {
+        if (Geralt.HP <= 0){
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Śmierć.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+            stage.setTitle("Giniesz!");
+            stage.setScene(scene);
+            stage.centerOnScreen();
+            stage.show();
+        }if (Bies.HPB <= 0){
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("wygranaZBies.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+            stage.setTitle("Zabijasz Biesa !");
+            stage.setScene(scene);
+            stage.centerOnScreen();
+            stage.show();
+        } else Bies.HPB -= Geralt.onStrongAttack(actionEvent);
 
     }
     @FXML
