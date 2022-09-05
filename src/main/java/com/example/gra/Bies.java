@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Random;
 
-public class Bies extends Balans{
+public class Bies{
     Random random = new Random();
 
 
@@ -25,14 +25,6 @@ public class Bies extends Balans{
             stage.centerOnScreen();
             stage.show();
     }
-
-    public int balanss(){
-        return this.getBalans();
-    }
-    public int silaa(){
-        return this.getSila();
-    }
-
     @FXML
     protected void onRun(ActionEvent actionEvent) throws IOException {
         int chance = random.nextInt(0, 100);

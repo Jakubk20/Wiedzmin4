@@ -4,7 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class Pierwszy extends Bies{
+public class Pierwszy extends Geralt{
 
     @FXML
     private Label silla;
@@ -15,12 +15,9 @@ public class Pierwszy extends Bies{
 
     @FXML
     protected  void onPokaz(){
-        ballans.setText(String.valueOf(getBalans()));
-        silla.setText(String.valueOf(getSila()));
-        System.out.println(getBalans());
-        System.out.println(getSila());
-        System.out.println(balanss());
-        System.out.println(silaa());
+        ballans.setText(String.valueOf(money));
+        silla.setText(String.valueOf(power));
+
     }
 
 }
