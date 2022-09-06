@@ -13,7 +13,7 @@ import java.util.Random;
 public class Bies {
     Random random = new Random();
     static double power = 10;
-    static double HPB = 1000;
+    static double HP = 1000;
 
    public static double onAttack(ActionEvent actionEvent) throws IOException {
         Random random = new Random();

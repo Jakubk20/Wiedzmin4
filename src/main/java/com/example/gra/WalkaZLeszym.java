@@ -18,7 +18,7 @@ public class WalkaZLeszym {
     protected  void onPokaz(){
         ballans.setText(String.valueOf(Geralt.money));
         silla.setText(String.valueOf(Geralt.power));
-        zdrowie.setText(String.valueOf(Geralt.HP));
+        zdrowie.setText(String.valueOf(Geralt.CurrentHP));
 
 
     }

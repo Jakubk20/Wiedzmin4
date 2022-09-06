@@ -8,7 +8,8 @@ import java.util.Random;
 public class Geralt {
     static double power = 10;
     static int money;
-    static double HP = 100;
+    static double CurrentHP = 100;
+    static double MaxHP = 100;
 
     public static double onNormalAttack(ActionEvent actionEvent) throws IOException {
         Random random = new Random();

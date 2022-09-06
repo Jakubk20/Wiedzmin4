@@ -5,7 +5,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
@@ -44,7 +43,7 @@ public class WalkaZBiesem {
 
     @FXML
     protected void onNormal(ActionEvent actionEvent) throws IOException {
-        if (Geralt.HP <= 0) {
+        if (Geralt.CurrentHP <= 0) {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Śmierć.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -53,8 +52,8 @@ public class WalkaZBiesem {
             stage.centerOnScreen();
             stage.show();
         }
-        if (Bies.HPB <= 0) {
-            Geralt.money+=500;
+        if (Bies.HP <= 0) {
+            Geralt.money += 500;
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("wygranaZBies.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -63,22 +62,22 @@ public class WalkaZBiesem {
             stage.centerOnScreen();
             stage.show();
         }
-        if (Geralt.HP>0 && Bies.HPB >0){
-            Bies.HPB -= Geralt.onNormalAttack(actionEvent);
-            Geralt.HP -= Bies.onAttack(actionEvent);
+        if (Geralt.CurrentHP > 0 && Bies.HP > 0) {
+            Bies.HP -= Geralt.onNormalAttack(actionEvent);
+            Geralt.CurrentHP -= Bies.onAttack(actionEvent);
         }
-        hapekiBiesa.setText(String.valueOf(Bies.HPB));
+        hapekiBiesa.setText(String.valueOf(Bies.HP));
         silaBiesa.setText(String.valueOf(Bies.power));
-        pozoHPBies.setText(String.valueOf(Bies.HPB));
+        pozoHPBies.setText(String.valueOf(Bies.HP));
         balans.setText(String.valueOf(Geralt.money));
         sila.setText(String.valueOf(Geralt.power));
-        hapeki.setText(String.valueOf(Geralt.HP));
-        pozoHPGeralt.setText(String.valueOf(Geralt.HP));
+        hapeki.setText(String.valueOf(Geralt.CurrentHP));
+        pozoHPGeralt.setText(String.valueOf(Geralt.CurrentHP));
     }
 
     @FXML
     protected void onHard(ActionEvent actionEvent) throws IOException {
-        if (Geralt.HP <= 0) {
+        if (Geralt.CurrentHP <= 0) {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Śmierć.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -87,8 +86,8 @@ public class WalkaZBiesem {
             stage.centerOnScreen();
             stage.show();
         }
-        if (Bies.HPB <= 0) {
-            Geralt.money+=500;
+        if (Bies.HP <= 0) {
+            Geralt.money += 500;
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("wygranaZBies.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -97,18 +96,18 @@ public class WalkaZBiesem {
             stage.centerOnScreen();
             stage.show();
         }
-        if (Geralt.HP>0 && Bies.HPB >0){
-            Bies.HPB -= Geralt.onStrongAttack(actionEvent);
-            Geralt.HP -= Bies.onAttack(actionEvent);
-            Geralt.HP -= Bies.onAttack(actionEvent);
+        if (Geralt.CurrentHP > 0 && Bies.HP > 0) {
+            Bies.HP -= Geralt.onStrongAttack(actionEvent);
+            Geralt.CurrentHP -= Bies.onAttack(actionEvent);
+            Geralt.CurrentHP -= Bies.onAttack(actionEvent);
         }
-        hapekiBiesa.setText(String.valueOf(Bies.HPB));
+        hapekiBiesa.setText(String.valueOf(Bies.HP));
         silaBiesa.setText(String.valueOf(Bies.power));
-        pozoHPBies.setText(String.valueOf(Bies.HPB));
+        pozoHPBies.setText(String.valueOf(Bies.HP));
         balans.setText(String.valueOf(Geralt.money));
         sila.setText(String.valueOf(Geralt.power));
-        hapeki.setText(String.valueOf(Geralt.HP));
-        pozoHPGeralt.setText(String.valueOf(Geralt.HP));
+        hapeki.setText(String.valueOf(Geralt.CurrentHP));
+        pozoHPGeralt.setText(String.valueOf(Geralt.CurrentHP));
     }
 
     @FXML
