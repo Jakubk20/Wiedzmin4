@@ -34,7 +34,7 @@
             <Font name="BellGothicStd-Black" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="33.0" layoutY="124.0" prefHeight="31.0" prefWidth="41.0" text="HP :">
+      <Label layoutX="33.0" layoutY="124.0" prefHeight="31.0" prefWidth="82.0" text="MaxHP :">
          <font>
             <Font name="BellGothicStd-Black" size="20.0" />
          </font>
@@ -49,7 +49,7 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <Label fx:id="hapeki" layoutX="74.0" layoutY="124.0" prefHeight="31.0" prefWidth="54.0">
+      <Label fx:id="hapeki" layoutX="107.0" layoutY="124.0" prefHeight="31.0" prefWidth="54.0">
          <font>
             <Font size="20.0" />
          </font>
@@ -76,12 +76,12 @@
             <Font name="BellGothicStd-Black" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="920.0" layoutY="93.0" prefHeight="31.0" prefWidth="41.0" text="HP :">
+      <Label layoutX="920.0" layoutY="93.0" prefHeight="31.0" prefWidth="82.0" text="MaxHP :">
          <font>
             <Font name="BellGothicStd-Black" size="20.0" />
          </font>
       </Label>
-      <Label fx:id="hapekiBiesa" layoutX="961.0" layoutY="93.0" prefHeight="31.0" prefWidth="54.0">
+      <Label fx:id="hapekiBiesa" layoutX="1002.0" layoutY="93.0" prefHeight="31.0" prefWidth="166.0">
          <font>
             <Font size="20.0" />
          </font>

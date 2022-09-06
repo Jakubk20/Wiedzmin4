@@ -33,10 +33,6 @@
          <Font name="BellGothicStd-Black" size="52.0" />
       </font>
    </Label>
-   <Button layoutX="853.0" layoutY="469.0" mnemonicParsing="false" onAction="#onClick" prefHeight="64.0" prefWidth="135.0" text="Pokaż saldo">
-      <font>
-         <Font size="20.0" />
-      </font>
-   </Button>
+
 
 </AnchorPane>

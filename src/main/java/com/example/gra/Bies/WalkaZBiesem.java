@@ -42,6 +42,16 @@ public class WalkaZBiesem {
 //        silaBiesa.setText(String.valueOf(Bies.power));
 //        pozoHPBies.setText(String.valueOf(Bies.HPB));
 //    }
+    @FXML
+    protected void initialize(){
+        hapekiBiesa.setText(String.valueOf(Bies.maxHP));
+        silaBiesa.setText(String.valueOf(Bies.power));
+        balans.setText(String.valueOf(Geralt.money));
+        sila.setText(String.valueOf(Geralt.power));
+        hapeki.setText(String.valueOf(Geralt.MaxHP));
+        pozoHPBies.setText(String.valueOf(Bies.currentHP));
+        pozoHPGeralt.setText(String.valueOf(Geralt.CurrentHP));
+    }
 
     @FXML
     protected void onNormal(ActionEvent actionEvent) throws IOException {
@@ -56,6 +66,8 @@ public class WalkaZBiesem {
         }
         if (Bies.currentHP <= 0) {
             Geralt.money += 500;
+            Geralt.power +=1;
+            Geralt.MaxHP +=10;
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("wygranaZBies.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -68,12 +80,12 @@ public class WalkaZBiesem {
             Bies.currentHP -= Geralt.onNormalAttack(actionEvent);
             Geralt.CurrentHP -= Bies.onAttack(actionEvent);
         }
-        hapekiBiesa.setText(String.valueOf(Bies.currentHP));
+        hapekiBiesa.setText(String.valueOf(Bies.maxHP));
         silaBiesa.setText(String.valueOf(Bies.power));
         pozoHPBies.setText(String.valueOf(Bies.currentHP));
         balans.setText(String.valueOf(Geralt.money));
         sila.setText(String.valueOf(Geralt.power));
-        hapeki.setText(String.valueOf(Geralt.CurrentHP));
+        hapeki.setText(String.valueOf(Geralt.MaxHP));
         pozoHPGeralt.setText(String.valueOf(Geralt.CurrentHP));
     }
 
@@ -90,6 +102,8 @@ public class WalkaZBiesem {
         }
         if (Bies.currentHP <= 0) {
             Geralt.money += 500;
+            Geralt.power +=1;
+            Geralt.MaxHP +=10;
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("wygranaZBies.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -103,12 +117,12 @@ public class WalkaZBiesem {
             Geralt.CurrentHP -= Bies.onAttack(actionEvent);
             Geralt.CurrentHP -= Bies.onAttack(actionEvent);
         }
-        hapekiBiesa.setText(String.valueOf(Bies.currentHP));
+        hapekiBiesa.setText(String.valueOf(Bies.maxHP));
         silaBiesa.setText(String.valueOf(Bies.power));
         pozoHPBies.setText(String.valueOf(Bies.currentHP));
         balans.setText(String.valueOf(Geralt.money));
         sila.setText(String.valueOf(Geralt.power));
-        hapeki.setText(String.valueOf(Geralt.CurrentHP));
+        hapeki.setText(String.valueOf(Geralt.MaxHP));
         pozoHPGeralt.setText(String.valueOf(Geralt.CurrentHP));
     }
 
