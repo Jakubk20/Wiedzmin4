@@ -14,7 +14,8 @@ import java.util.Random;
 public class Bies {
     Random random = new Random();
    public static double power = 10;
-   public static double HP = 1000;
+   public static double currentHP = 1000;
+   public static double maxHP = 1000;
 
    public static double onAttack(ActionEvent actionEvent) throws IOException {
         Random random = new Random();

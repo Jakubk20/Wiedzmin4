@@ -54,7 +54,7 @@ public class WalkaZLeszym {
             stage.centerOnScreen();
             stage.show();
         }
-        if (Lesz.HP <= 0) {
+        if (Lesz.currentHP <= 0) {
             Geralt.money += 700;
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("wygranaZLesz.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
@@ -64,13 +64,13 @@ public class WalkaZLeszym {
             stage.centerOnScreen();
             stage.show();
         }
-        if (Geralt.CurrentHP > 0 && Lesz.HP > 0) {
-            Lesz.HP -= Geralt.onNormalAttack(actionEvent);
+        if (Geralt.CurrentHP > 0 && Lesz.currentHP > 0) {
+            Lesz.currentHP -= Geralt.onNormalAttack(actionEvent);
             Geralt.CurrentHP -= Lesz.onAttack(actionEvent);
         }
-        hapekiLeszego.setText(String.valueOf(Lesz.HP));
+        hapekiLeszego.setText(String.valueOf(Lesz.currentHP));
         silaLesza.setText(String.valueOf(Lesz.power));
-        pozoHPLesz.setText(String.valueOf(Lesz.HP));
+        pozoHPLesz.setText(String.valueOf(Lesz.currentHP));
         balans.setText(String.valueOf(Geralt.money));
         sila.setText(String.valueOf(Geralt.power));
         hapeki.setText(String.valueOf(Geralt.CurrentHP));
@@ -88,7 +88,7 @@ public class WalkaZLeszym {
             stage.centerOnScreen();
             stage.show();
         }
-        if (Lesz.HP <= 0) {
+        if (Lesz.currentHP <= 0) {
             Geralt.money += 700;
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("wygranaZLesz.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
@@ -98,14 +98,14 @@ public class WalkaZLeszym {
             stage.centerOnScreen();
             stage.show();
         }
-        if (Geralt.CurrentHP > 0 && Lesz.HP > 0) {
-            Lesz.HP -= Geralt.onStrongAttack(actionEvent);
+        if (Geralt.CurrentHP > 0 && Lesz.currentHP > 0) {
+            Lesz.currentHP -= Geralt.onStrongAttack(actionEvent);
             Geralt.CurrentHP -= Lesz.onAttack(actionEvent);
             Geralt.CurrentHP -= Lesz.onAttack(actionEvent);
         }
-        hapekiLeszego.setText(String.valueOf(Lesz.HP));
+        hapekiLeszego.setText(String.valueOf(Lesz.currentHP));
         silaLesza.setText(String.valueOf(Lesz.power));
-        pozoHPLesz.setText(String.valueOf(Lesz.HP));
+        pozoHPLesz.setText(String.valueOf(Lesz.currentHP));
         balans.setText(String.valueOf(Geralt.money));
         sila.setText(String.valueOf(Geralt.power));
         hapeki.setText(String.valueOf(Geralt.CurrentHP));

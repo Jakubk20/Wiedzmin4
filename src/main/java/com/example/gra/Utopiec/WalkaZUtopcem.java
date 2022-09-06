@@ -54,7 +54,7 @@ public class WalkaZUtopcem {
             stage.centerOnScreen();
             stage.show();
         }
-        if (Utopiec.HP <= 0) {
+        if (Utopiec.currentHP <= 0) {
             Geralt.money += 700;
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("wygranaZUtopiec.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
@@ -64,13 +64,13 @@ public class WalkaZUtopcem {
             stage.centerOnScreen();
             stage.show();
         }
-        if (Geralt.CurrentHP > 0 && Utopiec.HP > 0) {
-            Utopiec.HP -= Geralt.onNormalAttack(actionEvent);
+        if (Geralt.CurrentHP > 0 && Utopiec.currentHP > 0) {
+            Utopiec.currentHP -= Geralt.onNormalAttack(actionEvent);
             Geralt.CurrentHP -= Utopiec.onAttack(actionEvent);
         }
-        hapekiUtopca.setText(String.valueOf(Utopiec.HP));
+        hapekiUtopca.setText(String.valueOf(Utopiec.currentHP));
         silaUtopca.setText(String.valueOf(Utopiec.power));
-        pozoHPUtopiec.setText(String.valueOf(Utopiec.HP));
+        pozoHPUtopiec.setText(String.valueOf(Utopiec.currentHP));
         balans.setText(String.valueOf(Geralt.money));
         sila.setText(String.valueOf(Geralt.power));
         hapeki.setText(String.valueOf(Geralt.CurrentHP));
@@ -88,7 +88,7 @@ public class WalkaZUtopcem {
             stage.centerOnScreen();
             stage.show();
         }
-        if (Utopiec.HP <= 0) {
+        if (Utopiec.currentHP <= 0) {
             Geralt.money += 700;
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("wygranaZLesz.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
@@ -98,14 +98,14 @@ public class WalkaZUtopcem {
             stage.centerOnScreen();
             stage.show();
         }
-        if (Geralt.CurrentHP > 0 && Utopiec.HP > 0) {
-            Utopiec.HP -= Geralt.onStrongAttack(actionEvent);
+        if (Geralt.CurrentHP > 0 && Utopiec.currentHP > 0) {
+            Utopiec.currentHP -= Geralt.onStrongAttack(actionEvent);
             Geralt.CurrentHP -= Utopiec.onAttack(actionEvent);
             Geralt.CurrentHP -= Utopiec.onAttack(actionEvent);
         }
-        hapekiUtopca.setText(String.valueOf(Utopiec.HP));
+        hapekiUtopca.setText(String.valueOf(Utopiec.currentHP));
         silaUtopca.setText(String.valueOf(Utopiec.power));
-        pozoHPUtopiec.setText(String.valueOf(Utopiec.HP));
+        pozoHPUtopiec.setText(String.valueOf(Utopiec.currentHP));
         balans.setText(String.valueOf(Geralt.money));
         sila.setText(String.valueOf(Geralt.power));
         hapeki.setText(String.valueOf(Geralt.CurrentHP));

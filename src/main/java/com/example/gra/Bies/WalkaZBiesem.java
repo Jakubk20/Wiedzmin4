@@ -54,7 +54,7 @@ public class WalkaZBiesem {
             stage.centerOnScreen();
             stage.show();
         }
-        if (Bies.HP <= 0) {
+        if (Bies.currentHP <= 0) {
             Geralt.money += 500;
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("wygranaZBies.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
@@ -64,13 +64,13 @@ public class WalkaZBiesem {
             stage.centerOnScreen();
             stage.show();
         }
-        if (Geralt.CurrentHP > 0 && Bies.HP > 0) {
-            Bies.HP -= Geralt.onNormalAttack(actionEvent);
+        if (Geralt.CurrentHP > 0 && Bies.currentHP > 0) {
+            Bies.currentHP -= Geralt.onNormalAttack(actionEvent);
             Geralt.CurrentHP -= Bies.onAttack(actionEvent);
         }
-        hapekiBiesa.setText(String.valueOf(Bies.HP));
+        hapekiBiesa.setText(String.valueOf(Bies.currentHP));
         silaBiesa.setText(String.valueOf(Bies.power));
-        pozoHPBies.setText(String.valueOf(Bies.HP));
+        pozoHPBies.setText(String.valueOf(Bies.currentHP));
         balans.setText(String.valueOf(Geralt.money));
         sila.setText(String.valueOf(Geralt.power));
         hapeki.setText(String.valueOf(Geralt.CurrentHP));
@@ -88,7 +88,7 @@ public class WalkaZBiesem {
             stage.centerOnScreen();
             stage.show();
         }
-        if (Bies.HP <= 0) {
+        if (Bies.currentHP <= 0) {
             Geralt.money += 500;
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("wygranaZBies.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
@@ -98,14 +98,14 @@ public class WalkaZBiesem {
             stage.centerOnScreen();
             stage.show();
         }
-        if (Geralt.CurrentHP > 0 && Bies.HP > 0) {
-            Bies.HP -= Geralt.onStrongAttack(actionEvent);
+        if (Geralt.CurrentHP > 0 && Bies.currentHP > 0) {
+            Bies.currentHP -= Geralt.onStrongAttack(actionEvent);
             Geralt.CurrentHP -= Bies.onAttack(actionEvent);
             Geralt.CurrentHP -= Bies.onAttack(actionEvent);
         }
-        hapekiBiesa.setText(String.valueOf(Bies.HP));
+        hapekiBiesa.setText(String.valueOf(Bies.currentHP));
         silaBiesa.setText(String.valueOf(Bies.power));
-        pozoHPBies.setText(String.valueOf(Bies.HP));
+        pozoHPBies.setText(String.valueOf(Bies.currentHP));
         balans.setText(String.valueOf(Geralt.money));
         sila.setText(String.valueOf(Geralt.power));
         hapeki.setText(String.valueOf(Geralt.CurrentHP));

@@ -14,7 +14,8 @@ import java.util.Random;
 public class Lesz {
     Random random = new Random();
     public static double power = 10;
-    public static double HP = 500;
+    public static double currentHP = 500;
+    public static double maxHP = 500;
 
     public static double onAttack(ActionEvent actionEvent) throws IOException {
         Random random = new Random();
