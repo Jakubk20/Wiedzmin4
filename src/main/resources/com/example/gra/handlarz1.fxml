@@ -91,7 +91,7 @@
             <Font size="20.0" />
          </font>
       </Button>
-      <Button layoutX="535.0" layoutY="165.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="125.0" text="175 Monet">
+      <Button layoutX="535.0" layoutY="165.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="125.0" text="180 Monet">
          <font>
             <Font size="20.0" />
          </font>
