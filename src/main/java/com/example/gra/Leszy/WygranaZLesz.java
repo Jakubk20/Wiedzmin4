@@ -1,5 +1,7 @@
-package com.example.gra;
+package com.example.gra.Leszy;
 
+import com.example.gra.Geralt;
+import com.example.gra.HelloApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,7 +12,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class WygranaZBies {
+public class WygranaZLesz {
     @FXML
     private Label brylki;
     @FXML

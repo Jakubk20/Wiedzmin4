@@ -1,5 +1,6 @@
-package com.example.gra;
+package com.example.gra.Leszy;
 
+import com.example.gra.HelloApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,25 +11,25 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Random;
 
-public class Bies {
+public class Lesz {
     Random random = new Random();
-    static double power = 10;
-    static double HP = 1000;
+    public static double power = 10;
+    public static double HP = 500;
 
-   public static double onAttack(ActionEvent actionEvent) throws IOException {
+    public static double onAttack(ActionEvent actionEvent) throws IOException {
         Random random = new Random();
-        int attack = random.nextInt(1, 3);
-       System.out.println(attack*power/10);
+        int attack = random.nextInt(4, 8);
+        System.out.println(attack*power/10);
         return attack * power / 10;
     }
 
 
     @FXML
     protected void onFight(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("walkaZBies.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("walkaZLeszem.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setTitle("Walka z Bies");
+        stage.setTitle("Walka z Lesz");
         stage.setScene(scene);
         stage.centerOnScreen();
         stage.show();

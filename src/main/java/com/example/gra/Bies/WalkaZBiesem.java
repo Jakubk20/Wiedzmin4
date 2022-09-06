@@ -1,5 +1,7 @@
-package com.example.gra;
+package com.example.gra.Bies;
 
+import com.example.gra.Geralt;
+import com.example.gra.HelloApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
