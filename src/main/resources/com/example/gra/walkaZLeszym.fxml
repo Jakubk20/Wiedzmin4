@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="744.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.Pierwszy">
+<AnchorPane prefHeight="744.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.WalkaZLeszym">
    <children>
       <ImageView fitHeight="568.0" fitWidth="600.0" layoutY="232.0" pickOnBounds="true" smooth="false">
          <image>

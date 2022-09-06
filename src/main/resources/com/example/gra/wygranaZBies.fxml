@@ -13,32 +13,27 @@
             <Image url="@../../../Zdjęcia/Like.jpg" />
         </image>
     </ImageView>
-    <Label layoutX="450.0" layoutY="341.0" text="Udało ci się !" textFill="#e4ffe6">
-        <font>
-            <Font name="BellGothicStd-Black" size="52.0" />
-        </font>
-    </Label>
     <Button layoutX="454.0" layoutY="540.0" mnemonicParsing="false" onAction="#onDalejjClick" prefHeight="143.0" prefWidth="297.0" text="Dalej">
         <font>
             <Font name="BellGothicStd-Black" size="64.0" />
         </font>
     </Button>
-   <Label layoutX="90.0" layoutY="405.0" text="Zabijasz biesa! Zdobywasz 500 bryłek rudy !" textFill="#e4ffe6">
+   <Label layoutX="148.0" layoutY="405.0" text="Zabijasz biesa! Zdobywasz 500 monet !" textFill="#e4ffe6">
       <font>
          <Font name="BellGothicStd-Black" size="52.0" />
       </font>
    </Label>
-   <Label layoutX="348.0" layoutY="469.0" text="Twoje bryłki :" textFill="#e4ffe6">
+   <Label layoutX="348.0" layoutY="469.0" text="Twoje monety :" textFill="#e4ffe6">
       <font>
          <Font name="BellGothicStd-Black" size="52.0" />
       </font>
    </Label>
-   <Label fx:id="brylki" layoutX="669.0" layoutY="469.0" textFill="#e4ffe6">
+   <Label fx:id="brylki" layoutX="709.0" layoutY="469.0" prefHeight="64.0" prefWidth="160.0" textFill="#e4ffe6">
       <font>
          <Font name="BellGothicStd-Black" size="52.0" />
       </font>
    </Label>
-   <Button layoutX="850.0" layoutY="469.0" mnemonicParsing="false" onAction="#onClick" prefHeight="64.0" prefWidth="135.0" text="Pokaż saldo">
+   <Button layoutX="853.0" layoutY="469.0" mnemonicParsing="false" onAction="#onClick" prefHeight="64.0" prefWidth="135.0" text="Pokaż saldo">
       <font>
          <Font size="20.0" />
       </font>

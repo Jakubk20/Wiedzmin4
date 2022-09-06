@@ -12,6 +12,9 @@ import java.io.IOException;
 public class Śmierć {
     @FXML
     protected void onZagrajPonownieClick(ActionEvent actionEvent) throws IOException {
+        Geralt.power=10;
+        Geralt.HP=100;
+        Geralt.money=0;
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
