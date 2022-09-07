@@ -11,6 +11,7 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Random;
 
 public class WalkaZLeszym {
     @FXML
@@ -122,7 +123,41 @@ protected void onPotion(ActionEvent actionEvent) throws IOException{
     }
 
     @FXML
-    protected void onRun() {
-
+    protected void onRun(ActionEvent actionEvent) throws IOException {
+        Random random = new Random();
+        int chances = random.nextInt(0,10);
+        if (Geralt.CurrentHP > 50 && chances <8){
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ucieczkaLeszy.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setTitle("Udaje ci się uciec !");
+            stage.setScene(scene);
+            stage.centerOnScreen();
+            stage.show();
+        } else if (Geralt.CurrentHP > 20 && chances<4) {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ucieczkaLeszy.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setTitle("Udaje ci się uciec !");
+            stage.setScene(scene);
+            stage.centerOnScreen();
+            stage.show();
+        } else if (Geralt.CurrentHP <= 20 && chances<2) {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ucieczkaLeszy.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setTitle("Udaje ci się uciec !");
+            stage.setScene(scene);
+            stage.centerOnScreen();
+            stage.show();
+        }else {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Śmierć.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setTitle("Giniesz!");
+            stage.setScene(scene);
+            stage.centerOnScreen();
+            stage.show();
+        }
     }
 }
