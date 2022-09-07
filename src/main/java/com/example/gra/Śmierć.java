@@ -14,7 +14,9 @@ public class Śmierć {
     protected void onZagrajPonownieClick(ActionEvent actionEvent) throws IOException {
         Geralt.power=10;
         Geralt.CurrentHP =100;
+        Geralt.MaxHP=100;
         Geralt.money=0;
+        Geralt.amountOfPotions = 0;
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
