@@ -53,5 +53,20 @@
             <Font size="24.0" />
          </font>
       </Label>
+      <Label layoutX="33.0" layoutY="155.0" prefHeight="31.0" prefWidth="129.0" text="Mikstury HP :">
+         <font>
+            <Font name="BellGothicStd-Black" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="potki" layoutX="161.0" layoutY="155.0" prefHeight="31.0" prefWidth="82.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button layoutX="518.0" layoutY="604.0" mnemonicParsing="false" onAction="#onPotion" prefHeight="64.0" prefWidth="166.0" text="Użyj Mikstury HP">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

@@ -34,9 +34,30 @@
             <Font name="BellGothicStd-Black" size="24.0" />
          </font>
       </Button>
-      <Label layoutX="927.0" layoutY="580.0" text="Nagroda 500szt złota" textFill="#c99d9d">
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="1248.0" layoutY="464.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Zdjęcia/bies.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="1254.0" layoutY="237.0" text="Label" />
+      <Label layoutX="1360.0" layoutY="430.0" text="Nagrody : " textFill="#ff2323">
          <font>
             <Font name="BellGothicStd-Black" size="27.0" />
+         </font>
+      </Label>
+      <Label layoutX="1360.0" layoutY="464.0" text="500 monet" textFill="#e48989">
+         <font>
+            <Font name="BellGothicStd-Black" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="1360.0" layoutY="494.0" text="1 siła" textFill="#e48989">
+         <font>
+            <Font name="BellGothicStd-Black" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="1360.0" layoutY="524.0" text="Max HP +10" textFill="#e48989">
+         <font>
+            <Font name="BellGothicStd-Black" size="24.0" />
          </font>
       </Label>
    </children>

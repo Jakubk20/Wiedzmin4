@@ -7,8 +7,8 @@ import java.util.Random;
 
 public class Ghul {
     public static double power = 2;
-    public static int currentHP = 550;
-    public static int maxHP = 550;
+    public static int currentHP = 420;
+    public static int maxHP = 420;
 
     public static double onAttack(ActionEvent actionEvent) throws IOException {
         Random random = new Random();

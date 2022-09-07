@@ -16,6 +16,8 @@ public class Handlarz1 {
     @FXML
     private Label maxhp;
     @FXML
+    private Label potki;
+    @FXML
     protected void initialize(){
         hp.setText(String.valueOf(Geralt.CurrentHP));
         maxhp.setText(String.valueOf(Geralt.MaxHP));
@@ -75,6 +77,7 @@ public class Handlarz1 {
             maxhp.setText(String.valueOf(Geralt.MaxHP));
             sila.setText(String.valueOf(Geralt.power));
             money.setText(String.valueOf(Geralt.money));
+            potki.setText(String.valueOf(Geralt.amountOfPotions));
         }
     }
 

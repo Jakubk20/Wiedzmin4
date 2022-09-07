@@ -28,6 +28,8 @@ public class WalkaZGhul {
     private Label pozoHPGeralt;
     @FXML
     private Label pozoHPGhul;
+    @FXML
+    private Label potki;
     //    @FXML
 //    protected void onPokazz() {
 //        balans.setText(String.valueOf(Geralt.money));
@@ -51,6 +53,7 @@ public class WalkaZGhul {
         sila.setText(String.valueOf(Geralt.power));
         hapeki.setText(String.valueOf(Geralt.CurrentHP));
         pozoHPGeralt.setText(String.valueOf(Geralt.CurrentHP));
+        potki.setText(String.valueOf(Geralt.amountOfPotions));
     }
     @FXML
     protected void onNormal(ActionEvent actionEvent) throws IOException {
@@ -87,7 +90,10 @@ public class WalkaZGhul {
                 Geralt.CurrentHP = Geralt.MaxHP;
             } else Geralt.CurrentHP += 30;
             Geralt.amountOfPotions--;
+            potki.setText(String.valueOf(Geralt.amountOfPotions));
+            pozoHPGeralt.setText(String.valueOf(Geralt.CurrentHP));
         }
+
 
     }
     @FXML
