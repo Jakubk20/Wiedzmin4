@@ -52,6 +52,16 @@ public class WalkaZBiesem {
         pozoHPBies.setText(String.valueOf(Bies.currentHP));
         pozoHPGeralt.setText(String.valueOf(Geralt.CurrentHP));
     }
+    @FXML
+    protected void onPotion(ActionEvent actionEvent) throws IOException{
+        if (Geralt.amountOfPotions > 0){
+            if (Geralt.CurrentHP + 30 > Geralt.MaxHP){
+                Geralt.CurrentHP = Geralt.MaxHP;
+            } else Geralt.CurrentHP += 30;
+            Geralt.amountOfPotions--;
+        }
+
+    }
 
     @FXML
     protected void onNormal(ActionEvent actionEvent) throws IOException {

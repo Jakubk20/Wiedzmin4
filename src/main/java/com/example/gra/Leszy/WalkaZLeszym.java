@@ -42,7 +42,16 @@ public class WalkaZLeszym {
 //        silaBiesa.setText(String.valueOf(Bies.power));
 //        pozoHPBies.setText(String.valueOf(Bies.HPB));
 //    }
+@FXML
+protected void onPotion(ActionEvent actionEvent) throws IOException{
+    if (Geralt.amountOfPotions > 0){
+        if (Geralt.CurrentHP + 30 > Geralt.MaxHP){
+            Geralt.CurrentHP = Geralt.MaxHP;
+        } else Geralt.CurrentHP += 30;
+        Geralt.amountOfPotions--;
+    }
 
+}
     @FXML
     protected void onNormal(ActionEvent actionEvent) throws IOException {
         if (Geralt.CurrentHP <= 0) {
