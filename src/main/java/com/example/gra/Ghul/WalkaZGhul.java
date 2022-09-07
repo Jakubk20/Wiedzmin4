@@ -1,4 +1,4 @@
-package com.example.gra.Utopiec;
+package com.example.gra.Ghul;
 
 import com.example.gra.Geralt;
 import com.example.gra.HelloApplication;
@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class WalkaZUtopcem {
+public class WalkaZGhul {
     @FXML
     private Label sila;
     @FXML
@@ -20,15 +20,14 @@ public class WalkaZUtopcem {
     @FXML
     private Label hapeki;
     @FXML
-    private Label hapekiUtopca;
+    private Label hapekiGhul;
     @FXML
-    private Label silaUtopca;
+    private Label silaGhul;
     @FXML
     private Label pozoHPGeralt;
     @FXML
-    private Label pozoHPUtopiec;
-
-//    @FXML
+    private Label pozoHPGhul;
+    //    @FXML
 //    protected void onPokazz() {
 //        balans.setText(String.valueOf(Geralt.money));
 //        sila.setText(String.valueOf(Geralt.power));
@@ -42,16 +41,16 @@ public class WalkaZUtopcem {
 //        silaBiesa.setText(String.valueOf(Bies.power));
 //        pozoHPBies.setText(String.valueOf(Bies.HPB));
 //    }
-@FXML
-protected void initialize(){
-    hapekiUtopca.setText(String.valueOf(Utopiec.currentHP));
-    silaUtopca.setText(String.valueOf(Utopiec.power));
-    pozoHPUtopiec.setText(String.valueOf(Utopiec.currentHP));
-    balans.setText(String.valueOf(Geralt.money));
-    sila.setText(String.valueOf(Geralt.power));
-    hapeki.setText(String.valueOf(Geralt.CurrentHP));
-    pozoHPGeralt.setText(String.valueOf(Geralt.CurrentHP));
-}
+    @FXML
+    protected void initialize(){
+        hapekiGhul.setText(String.valueOf(Ghul.currentHP));
+        silaGhul.setText(String.valueOf(Ghul.power));
+        pozoHPGhul.setText(String.valueOf(Ghul.currentHP));
+        balans.setText(String.valueOf(Geralt.money));
+        sila.setText(String.valueOf(Geralt.power));
+        hapeki.setText(String.valueOf(Geralt.CurrentHP));
+        pozoHPGeralt.setText(String.valueOf(Geralt.CurrentHP));
+    }
     @FXML
     protected void onNormal(ActionEvent actionEvent) throws IOException {
         if (Geralt.CurrentHP <= 0) {
@@ -63,22 +62,21 @@ protected void initialize(){
             stage.centerOnScreen();
             stage.show();
         }
-        if (Utopiec.currentHP <= 0) {
+        if (Ghul.currentHP <= 0) {
             Geralt.money += 200;
-            Geralt.power+=1;
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("wygranaUtopiec.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("wygranaZGhul.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Zabijasz Utopca!");
+            stage.setTitle("Zabijasz Ghula");
             stage.setScene(scene);
             stage.centerOnScreen();
             stage.show();
         }
-        if (Geralt.CurrentHP > 0 && Utopiec.currentHP > 0) {
-            Utopiec.currentHP -= Geralt.onNormalAttack(actionEvent);
-            Geralt.CurrentHP -= Utopiec.onAttack(actionEvent);
+        if (Geralt.CurrentHP > 0 && Ghul.currentHP > 0) {
+            Ghul.currentHP -= Geralt.onNormalAttack(actionEvent);
+            Geralt.CurrentHP -= Ghul.onAttack(actionEvent);
         }
-        pozoHPUtopiec.setText(String.valueOf(Utopiec.currentHP));
+        pozoHPGhul.setText(String.valueOf(Ghul.currentHP));
         pozoHPGeralt.setText(String.valueOf(Geralt.CurrentHP));
     }
 
@@ -93,23 +91,22 @@ protected void initialize(){
             stage.centerOnScreen();
             stage.show();
         }
-        if (Utopiec.currentHP <= 0) {
+        if (Ghul.currentHP <= 0) {
             Geralt.money += 200;
-            Geralt.power+=1;
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("wygranaUtopiec.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("wygranaZGhul.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Zabijasz Utopca !");
+            stage.setTitle("Zabijasz Ghula !");
             stage.setScene(scene);
             stage.centerOnScreen();
             stage.show();
         }
-        if (Geralt.CurrentHP > 0 && Utopiec.currentHP > 0) {
-            Utopiec.currentHP -= Geralt.onStrongAttack(actionEvent);
-            Geralt.CurrentHP -= Utopiec.onAttack(actionEvent);
-            Geralt.CurrentHP -= Utopiec.onAttack(actionEvent);
+        if (Geralt.CurrentHP > 0 && Ghul.currentHP > 0) {
+            Ghul.currentHP -= Geralt.onStrongAttack(actionEvent);
+            Geralt.CurrentHP -= Ghul.onAttack(actionEvent);
+            Geralt.CurrentHP -= Ghul.onAttack(actionEvent);
         }
-        pozoHPUtopiec.setText(String.valueOf(Utopiec.currentHP));
+        pozoHPGhul.setText(String.valueOf(Ghul.currentHP));
         pozoHPGeralt.setText(String.valueOf(Geralt.CurrentHP));
     }
 

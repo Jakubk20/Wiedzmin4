@@ -1,4 +1,4 @@
-package com.example.gra.Utopiec;
+package com.example.gra.Ghul;
 
 import com.example.gra.Geralt;
 import com.example.gra.HelloApplication;
@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class WygranaUtopiec {
+public class WygranaZGhul {
     @FXML
     private Label brylki;
     @FXML
@@ -20,8 +20,8 @@ public class WygranaUtopiec {
         brylki.setText(String.valueOf(Geralt.money));
     }
     @FXML
-    protected void onDalejjClick(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("spotykaszGhul.fxml"));
+    protected void onDalejClick(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("scenaWyboruRuchu.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         stage.setTitle("Gra");

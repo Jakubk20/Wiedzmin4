@@ -1,4 +1,4 @@
-package com.example.gra.Bies;
+package com.example.gra.Ghul;
 
 import com.example.gra.HelloApplication;
 import javafx.event.ActionEvent;
@@ -11,36 +11,23 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Random;
 
-public class Bies {
-    Random random = new Random();
-   public static double power = 2;
-   public static double currentHP = 1000;
-   public static double maxHP = 1000;
-
-   public static double onAttack(ActionEvent actionEvent) throws IOException {
-        Random random = new Random();
-        int attack = random.nextInt(1, 11);
-       System.out.println(attack*power/10);
-        return attack * power / 10;
-    }
-
-
+public class SpotykaszGhul {
     @FXML
-    protected void onFight(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("walkaZBies.fxml"));
+    protected void onWalcz(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("walkaZGhul.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setTitle("Walka z Bies");
+        Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+        stage.setTitle("Walka z Ghul !");
         stage.setScene(scene);
         stage.centerOnScreen();
         stage.show();
     }
-
     @FXML
-    protected void onRun(ActionEvent actionEvent) throws IOException {
+    protected void onUciekaj(ActionEvent actionEvent) throws IOException {
+        Random random = new Random();
         int chance = random.nextInt(0, 100);
         if (chance >= 20) {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Wygrana.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ucieczkaGhul.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setTitle("Udaje ci się uciec !");
@@ -57,5 +44,4 @@ public class Bies {
             stage.show();
         }
     }
-
 }
