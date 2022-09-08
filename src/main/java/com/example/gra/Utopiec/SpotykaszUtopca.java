@@ -20,7 +20,6 @@ public class SpotykaszUtopca {
         stage.setTitle("Walka z Utopcem");
         stage.setScene(scene);
         stage.centerOnScreen();
-        stage.setFullScreen(true);
         stage.show();
     }
     @FXML
@@ -34,7 +33,6 @@ public class SpotykaszUtopca {
             stage.setTitle("Udaje ci się uciec !");
             stage.setScene(scene);
             stage.centerOnScreen();
-            stage.setFullScreen(true);
             stage.show();
         } else {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Śmierć.fxml"));
@@ -43,7 +41,6 @@ public class SpotykaszUtopca {
             stage.setTitle("Giniesz!");
             stage.setScene(scene);
             stage.centerOnScreen();
-            stage.setFullScreen(true);
             stage.show();
         }
     }

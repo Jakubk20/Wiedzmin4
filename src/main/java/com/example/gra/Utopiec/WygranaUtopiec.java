@@ -27,7 +27,6 @@ public class WygranaUtopiec {
         stage.setTitle("Gra");
         stage.setScene(scene);
         stage.centerOnScreen();
-        stage.setFullScreen(true);
         stage.show();
     }
 }

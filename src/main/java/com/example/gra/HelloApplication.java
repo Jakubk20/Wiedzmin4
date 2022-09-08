@@ -15,7 +15,6 @@ public class HelloApplication extends Application {
         stage.setTitle("Zaczynamy!");
         stage.setScene(scene);
         stage.centerOnScreen();
-        stage.setFullScreen(true);
         stage.show();
     }
 

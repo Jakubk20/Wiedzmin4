@@ -65,7 +65,6 @@ protected void initialize(){
             stage.setTitle("Giniesz!");
             stage.setScene(scene);
             stage.centerOnScreen();
-            stage.setFullScreen(true);
             stage.show();
         }
         if (Utopiec.currentHP <= 0) {
@@ -77,7 +76,6 @@ protected void initialize(){
             stage.setTitle("Zabijasz Utopca!");
             stage.setScene(scene);
             stage.centerOnScreen();
-            stage.setFullScreen(true);
             stage.show();
         }
         if (Geralt.CurrentHP > 0 && Utopiec.currentHP > 0) {
