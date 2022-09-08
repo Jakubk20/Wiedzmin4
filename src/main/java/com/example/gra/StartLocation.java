@@ -18,6 +18,7 @@ public class StartLocation {
         stage.setTitle("Gra");
         stage.setScene(scene);
         stage.centerOnScreen();
+        stage.setFullScreen(true);
         stage.show();
     }
     @FXML
@@ -28,6 +29,7 @@ public class StartLocation {
         stage.setTitle("Gra");
         stage.setScene(scene);
         stage.centerOnScreen();
+        stage.setFullScreen(true);
         stage.show();
     }
     @FXML
@@ -38,6 +40,7 @@ public class StartLocation {
         stage.setTitle("Gra");
         stage.setScene(scene);
         stage.centerOnScreen();
+        stage.setFullScreen(true);
         stage.show();
     }
     @FXML
@@ -48,6 +51,7 @@ public class StartLocation {
         stage.setTitle("Gra");
         stage.setScene(scene);
         stage.centerOnScreen();
+        stage.setFullScreen(true);
         stage.show();
     }
 

@@ -33,6 +33,7 @@ public class Lesz {
         stage.setTitle("Walka z Lesz");
         stage.setScene(scene);
         stage.centerOnScreen();
+        stage.setFullScreen(true);
         stage.show();
     }
 
@@ -46,6 +47,7 @@ public class Lesz {
             stage.setTitle("Udaje ci się uciec !");
             stage.setScene(scene);
             stage.centerOnScreen();
+            stage.setFullScreen(true);
             stage.show();
         } else {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Śmierć.fxml"));
@@ -54,6 +56,7 @@ public class Lesz {
             stage.setTitle("Giniesz!");
             stage.setScene(scene);
             stage.centerOnScreen();
+            stage.setFullScreen(true);
             stage.show();
         }
     }

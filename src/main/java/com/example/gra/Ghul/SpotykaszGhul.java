@@ -20,6 +20,7 @@ public class SpotykaszGhul {
         stage.setTitle("Walka z Ghul !");
         stage.setScene(scene);
         stage.centerOnScreen();
+        stage.setFullScreen(true);
         stage.show();
     }
     @FXML
@@ -33,6 +34,7 @@ public class SpotykaszGhul {
             stage.setTitle("Udaje ci się uciec !");
             stage.setScene(scene);
             stage.centerOnScreen();
+            stage.setFullScreen(true);
             stage.show();
         } else {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Śmierć.fxml"));
@@ -41,6 +43,7 @@ public class SpotykaszGhul {
             stage.setTitle("Giniesz!");
             stage.setScene(scene);
             stage.centerOnScreen();
+            stage.setFullScreen(true);
             stage.show();
         }
     }

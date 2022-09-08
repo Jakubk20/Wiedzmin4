@@ -79,6 +79,7 @@ public class WalkaZBiesem {
             stage.setTitle("Giniesz!");
             stage.setScene(scene);
             stage.centerOnScreen();
+            stage.setFullScreen(true);
             stage.show();
         }
         if (Bies.currentHP <= 0) {
@@ -91,6 +92,7 @@ public class WalkaZBiesem {
             stage.setTitle("Zabijasz Biesa !");
             stage.setScene(scene);
             stage.centerOnScreen();
+            stage.setFullScreen(true);
             stage.show();
         }
         if (Geralt.CurrentHP > 0 && Bies.currentHP > 0) {
@@ -115,6 +117,7 @@ public class WalkaZBiesem {
             stage.setTitle("Giniesz!");
             stage.setScene(scene);
             stage.centerOnScreen();
+            stage.setFullScreen(true);
             stage.show();
         }
         if (Bies.currentHP <= 0) {
@@ -127,6 +130,7 @@ public class WalkaZBiesem {
             stage.setTitle("Zabijasz Biesa !");
             stage.setScene(scene);
             stage.centerOnScreen();
+            stage.setFullScreen(true);
             stage.show();
         }
         if (Geralt.CurrentHP > 0 && Bies.currentHP > 0) {
@@ -154,6 +158,7 @@ public class WalkaZBiesem {
             stage.setTitle("Udaje ci się uciec !");
             stage.setScene(scene);
             stage.centerOnScreen();
+            stage.setFullScreen(true);
             stage.show();
         } else if (Geralt.CurrentHP > 20 && chances<4) {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Wygrana.fxml"));
@@ -162,6 +167,7 @@ public class WalkaZBiesem {
             stage.setTitle("Udaje ci się uciec !");
             stage.setScene(scene);
             stage.centerOnScreen();
+            stage.setFullScreen(true);
             stage.show();
         } else if (Geralt.CurrentHP <= 20 && chances<2) {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Wygrana.fxml"));
@@ -170,6 +176,7 @@ public class WalkaZBiesem {
             stage.setTitle("Udaje ci się uciec !");
             stage.setScene(scene);
             stage.centerOnScreen();
+            stage.setFullScreen(true);
             stage.show();
         }else {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Śmierć.fxml"));
@@ -178,6 +185,7 @@ public class WalkaZBiesem {
             stage.setTitle("Giniesz!");
             stage.setScene(scene);
             stage.centerOnScreen();
+            stage.setFullScreen(true);
             stage.show();
         }
     }

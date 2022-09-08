@@ -65,6 +65,7 @@ protected void initialize(){
             stage.setTitle("Giniesz!");
             stage.setScene(scene);
             stage.centerOnScreen();
+            stage.setFullScreen(true);
             stage.show();
         }
         if (Utopiec.currentHP <= 0) {
@@ -76,6 +77,7 @@ protected void initialize(){
             stage.setTitle("Zabijasz Utopca!");
             stage.setScene(scene);
             stage.centerOnScreen();
+            stage.setFullScreen(true);
             stage.show();
         }
         if (Geralt.CurrentHP > 0 && Utopiec.currentHP > 0) {
@@ -108,6 +110,7 @@ protected void initialize(){
             stage.setTitle("Giniesz!");
             stage.setScene(scene);
             stage.centerOnScreen();
+            stage.setFullScreen(true);
             stage.show();
         }
         if (Utopiec.currentHP <= 0) {
@@ -119,6 +122,7 @@ protected void initialize(){
             stage.setTitle("Zabijasz Utopca !");
             stage.setScene(scene);
             stage.centerOnScreen();
+            stage.setFullScreen(true);
             stage.show();
         }
         if (Geralt.CurrentHP > 0 && Utopiec.currentHP > 0) {
@@ -141,6 +145,7 @@ protected void initialize(){
             stage.setTitle("Udaje ci się uciec !");
             stage.setScene(scene);
             stage.centerOnScreen();
+            stage.setFullScreen(true);
             stage.show();
         } else if (Geralt.CurrentHP > 20 && chances<4) {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ucieczkaUtopiec.fxml"));
@@ -149,6 +154,7 @@ protected void initialize(){
             stage.setTitle("Udaje ci się uciec !");
             stage.setScene(scene);
             stage.centerOnScreen();
+            stage.setFullScreen(true);
             stage.show();
         } else if (Geralt.CurrentHP <= 20 && chances<2) {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ucieczkaUtopiec.fxml"));
@@ -157,6 +163,7 @@ protected void initialize(){
             stage.setTitle("Udaje ci się uciec !");
             stage.setScene(scene);
             stage.centerOnScreen();
+            stage.setFullScreen(true);
             stage.show();
         }else {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Śmierć.fxml"));
@@ -165,6 +172,7 @@ protected void initialize(){
             stage.setTitle("Giniesz!");
             stage.setScene(scene);
             stage.centerOnScreen();
+            stage.setFullScreen(true);
             stage.show();
         }
     }
