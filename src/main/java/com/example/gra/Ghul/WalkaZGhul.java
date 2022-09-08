@@ -51,7 +51,7 @@ public class WalkaZGhul {
         pozoHPGhul.setText(String.valueOf(Ghul.currentHP));
         balans.setText(String.valueOf(Geralt.money));
         sila.setText(String.valueOf(Geralt.power));
-        hapeki.setText(String.valueOf(Geralt.CurrentHP));
+        hapeki.setText(String.valueOf(Geralt.MaxHP));
         pozoHPGeralt.setText(String.valueOf(Geralt.CurrentHP));
         potki.setText(String.valueOf(Geralt.amountOfPotions));
     }
