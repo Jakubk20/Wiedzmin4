@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.Utopiec.WygranaUtopiec">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.Utopiec.WygranaUtopiec">
     <ImageView fitHeight="852.0" fitWidth="1515.0" layoutX="-310.0" layoutY="-43.0" pickOnBounds="true" preserveRatio="true">
         <image>
             <Image url="@../../../Zdjęcia/Like.jpg" />
@@ -16,20 +16,25 @@
             <Font name="BellGothicStd-Black" size="64.0" />
         </font>
     </Button>
-    <Label layoutX="11.0" layoutY="14.0" text="Zabijasz utopca! Zdobywasz 200 monet oraz 1 siły!" textFill="#e4ffe6">
+    <Label layoutX="206.0" layoutY="14.0" text="Pokonałeś Utopca! Zdobywasz 200 Monet!" textFill="#e4ffe6">
         <font>
             <Font name="BellGothicStd-Black" size="52.0" />
         </font>
     </Label>
-    <Label layoutX="422.0" layoutY="78.0" text="Twoje monety :" textFill="#e4ffe6">
+    <Label layoutX="345.0" layoutY="450.0" text="Twoje monety :" textFill="#e4ffe6">
         <font>
             <Font name="BellGothicStd-Black" size="52.0" />
         </font>
     </Label>
-    <Label fx:id="brylki" layoutX="783.0" layoutY="78.0" prefHeight="64.0" prefWidth="160.0" textFill="#e4ffe6">
+    <Label fx:id="brylki" layoutX="702.0" layoutY="450.0" prefHeight="64.0" prefWidth="160.0" textFill="#e4ffe6">
         <font>
             <Font name="BellGothicStd-Black" size="52.0" />
         </font>
     </Label>
+   <Label layoutX="617.0" layoutY="103.0" prefHeight="93.0" prefWidth="568.0" text="Twoja Siła wzrosła o 1." textFill="#e4ffe6">
+      <font>
+         <Font size="52.0" />
+      </font>
+   </Label>
 
 </AnchorPane>

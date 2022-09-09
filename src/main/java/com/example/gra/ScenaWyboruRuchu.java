@@ -15,7 +15,6 @@ public class ScenaWyboruRuchu {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("handlarz1.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-        stage.setTitle("Handlarz");
         stage.setScene(scene);
         stage.centerOnScreen();
         stage.show();

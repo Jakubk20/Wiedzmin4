@@ -24,7 +24,6 @@ public class WygranaZLesz {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("walkaZLeszym.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-        stage.setTitle("Gra");
         stage.setScene(scene);
         stage.centerOnScreen();
         stage.show();

@@ -15,7 +15,6 @@ public class StartLocation {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("zleceniodawca.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-        stage.setTitle("Gra");
         stage.setScene(scene);
         stage.centerOnScreen();
         stage.show();
@@ -25,7 +24,6 @@ public class StartLocation {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("spotykaszUtopca.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-        stage.setTitle("Gra");
         stage.setScene(scene);
         stage.centerOnScreen();
         stage.show();
@@ -35,7 +33,6 @@ public class StartLocation {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("startLocation.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-        stage.setTitle("Gra");
         stage.setScene(scene);
         stage.centerOnScreen();
         stage.show();
@@ -45,7 +42,6 @@ public class StartLocation {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Bies.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-        stage.setTitle("Gra");
         stage.setScene(scene);
         stage.centerOnScreen();
         stage.show();

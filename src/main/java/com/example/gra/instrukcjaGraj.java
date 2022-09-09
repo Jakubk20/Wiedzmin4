@@ -15,7 +15,6 @@ public class instrukcjaGraj {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("startLocation.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-        stage.setTitle("Gra");
         stage.setScene(scene);
         stage.centerOnScreen();
         stage.show();
@@ -25,7 +24,6 @@ public class instrukcjaGraj {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("insctruction.fxml"));
         Scene scene = new Scene(fxmlLoader.load(),600,400);
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setTitle("Instrukcja");
         stage.setScene(scene);
         stage.centerOnScreen();
         stage.show();
@@ -35,7 +33,6 @@ public class instrukcjaGraj {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-        stage.setTitle("Zaczynamy!");
         stage.setScene(scene);
         stage.centerOnScreen();
         stage.show();

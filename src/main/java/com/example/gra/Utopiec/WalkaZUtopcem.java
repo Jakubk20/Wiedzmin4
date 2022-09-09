@@ -1,5 +1,6 @@
 package com.example.gra.Utopiec;
 
+import com.example.gra.Bies.WalkaZBiesem;
 import com.example.gra.Geralt;
 import com.example.gra.HelloApplication;
 import javafx.event.ActionEvent;
@@ -16,8 +17,6 @@ import java.util.Random;
 public class WalkaZUtopcem {
     @FXML
     private Label sila;
-    @FXML
-    private Label balans;
     @FXML
     private Label hapeki;
     @FXML
@@ -50,7 +49,6 @@ protected void initialize(){
     hapekiUtopca.setText(String.valueOf(Utopiec.currentHP));
     silaUtopca.setText(String.valueOf(Utopiec.power));
     pozoHPUtopiec.setText(String.valueOf(Utopiec.currentHP));
-    balans.setText(String.valueOf(Geralt.money));
     sila.setText(String.valueOf(Geralt.power));
     hapeki.setText(String.valueOf(Geralt.CurrentHP));
     pozoHPGeralt.setText(String.valueOf(Geralt.CurrentHP));
@@ -58,26 +56,7 @@ protected void initialize(){
 }
     @FXML
     protected void onNormal(ActionEvent actionEvent) throws IOException {
-        if (Geralt.CurrentHP <= 0) {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Śmierć.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Giniesz!");
-            stage.setScene(scene);
-            stage.centerOnScreen();
-            stage.show();
-        }
-        if (Utopiec.currentHP <= 0) {
-            Geralt.money += 200;
-            Geralt.power+=1;
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("wygranaUtopiec.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Zabijasz Utopca!");
-            stage.setScene(scene);
-            stage.centerOnScreen();
-            stage.show();
-        }
+        end(actionEvent);
         if (Geralt.CurrentHP > 0 && Utopiec.currentHP > 0) {
             Utopiec.currentHP -= Geralt.onNormalAttack(actionEvent);
             Geralt.CurrentHP -= Utopiec.onAttack(actionEvent);
@@ -85,30 +64,10 @@ protected void initialize(){
         pozoHPUtopiec.setText(String.valueOf(Utopiec.currentHP));
         pozoHPGeralt.setText(String.valueOf(Geralt.CurrentHP));
     }
-    @FXML
-    protected void onPotion(ActionEvent actionEvent) throws IOException{
-        if (Geralt.amountOfPotions > 0){
-            if (Geralt.CurrentHP + 30 > Geralt.MaxHP){
-                Geralt.CurrentHP = Geralt.MaxHP;
-            } else Geralt.CurrentHP += 30;
-            Geralt.amountOfPotions--;
-            potki.setText(String.valueOf(Geralt.amountOfPotions));
-            pozoHPGeralt.setText(String.valueOf(Geralt.CurrentHP));
-        }
 
-
-    }
-
-    @FXML
-    protected void onHard(ActionEvent actionEvent) throws IOException {
+    private void end(ActionEvent actionEvent) throws IOException {
         if (Geralt.CurrentHP <= 0) {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Śmierć.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Giniesz!");
-            stage.setScene(scene);
-            stage.centerOnScreen();
-            stage.show();
+            WalkaZBiesem.death(actionEvent);
         }
         if (Utopiec.currentHP <= 0) {
             Geralt.money += 200;
@@ -116,11 +75,22 @@ protected void initialize(){
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("wygranaUtopiec.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Zabijasz Utopca !");
             stage.setScene(scene);
             stage.centerOnScreen();
             stage.show();
         }
+    }
+
+    @FXML
+    protected void onPotion(ActionEvent actionEvent) throws IOException{
+        WalkaZBiesem.potionHeal(potki, pozoHPGeralt);
+
+
+    }
+
+    @FXML
+    protected void onHard(ActionEvent actionEvent) throws IOException {
+        end(actionEvent);
         if (Geralt.CurrentHP > 0 && Utopiec.currentHP > 0) {
             Utopiec.currentHP -= Geralt.onStrongAttack(actionEvent);
             Geralt.CurrentHP -= Utopiec.onAttack(actionEvent);
@@ -138,7 +108,6 @@ protected void initialize(){
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ucieczkaUtopiec.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Udaje ci się uciec !");
             stage.setScene(scene);
             stage.centerOnScreen();
             stage.show();
@@ -146,7 +115,6 @@ protected void initialize(){
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ucieczkaUtopiec.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Udaje ci się uciec !");
             stage.setScene(scene);
             stage.centerOnScreen();
             stage.show();
@@ -154,18 +122,11 @@ protected void initialize(){
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ucieczkaUtopiec.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Udaje ci się uciec !");
             stage.setScene(scene);
             stage.centerOnScreen();
             stage.show();
         }else {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Śmierć.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Giniesz!");
-            stage.setScene(scene);
-            stage.centerOnScreen();
-            stage.show();
+            WalkaZBiesem.death(actionEvent);
         }
     }
 }

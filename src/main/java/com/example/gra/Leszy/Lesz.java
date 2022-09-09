@@ -1,5 +1,6 @@
 package com.example.gra.Leszy;
 
+import com.example.gra.Bies.WalkaZBiesem;
 import com.example.gra.HelloApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,15 +14,13 @@ import java.util.Random;
 
 public class Lesz {
     Random random = new Random();
-    public static double power = 10;
-    public static double currentHP = 500;
-    public static double maxHP = 500;
+    public static double power = (4+7)/2;
+    public static int currentHP = 500;
+    public static int maxHP = 500;
 
     public static double onAttack(ActionEvent actionEvent) throws IOException {
         Random random = new Random();
-        int attack = random.nextInt(4, 8);
-        System.out.println(attack*power/10);
-        return attack * power / 10;
+        return random.nextInt(4, 8);
     }
 
 
@@ -30,7 +29,6 @@ public class Lesz {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("walkaZLeszem.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setTitle("Walka z Lesz");
         stage.setScene(scene);
         stage.centerOnScreen();
         stage.show();
@@ -40,21 +38,9 @@ public class Lesz {
     protected void onRun(ActionEvent actionEvent) throws IOException {
         int chance = random.nextInt(0, 100);
         if (chance >= 10) {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Wygrana.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Udaje ci się uciec !");
-            stage.setScene(scene);
-            stage.centerOnScreen();
-            stage.show();
+            WalkaZBiesem.runSuccessful(actionEvent);
         } else {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Śmierć.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Giniesz!");
-            stage.setScene(scene);
-            stage.centerOnScreen();
-            stage.show();
+            WalkaZBiesem.death(actionEvent);
         }
     }
 

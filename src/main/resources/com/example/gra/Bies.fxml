@@ -5,29 +5,29 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.Bies.Bies">
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.Bies.Bies">
    <children>
       <ImageView fitHeight="855.0" fitWidth="1557.0" layoutX="-290.0" layoutY="-14.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../Zdjęcia/walka%20z%20Bies.jpg" />
          </image>
       </ImageView>
-      <Label layoutX="499.0" layoutY="44.0" text="Znalazłeś Bies'a !">
+      <Label layoutX="499.0" layoutY="44.0" text="Spotykasz Biesa.">
          <font>
             <Font name="BellGothicStd-Black" size="33.0" />
          </font>
       </Label>
-      <Label layoutX="498.0" layoutY="86.0" text="Podejmij Wybór">
+      <Label layoutX="498.0" layoutY="86.0">
          <font>
             <Font name="BellGothicStd-Black" size="35.0" />
          </font>
       </Label>
-      <Button layoutY="623.0" mnemonicParsing="false" onAction="#onFight" prefHeight="171.0" prefWidth="356.0" text="Walcz">
+      <Button layoutY="623.0" mnemonicParsing="false" onAction="#onFight" prefHeight="171.0" prefWidth="356.0" text="Walka">
          <font>
             <Font size="74.0" />
          </font>
       </Button>
-      <Button layoutX="842.0" layoutY="623.0" mnemonicParsing="false" onAction="#onRun" prefHeight="171.0" prefWidth="356.0" text="Uciekaj">
+      <Button layoutX="828.0" layoutY="623.0" mnemonicParsing="false" onAction="#onRun" prefHeight="171.0" prefWidth="370.0" text="Ucieczka">
          <font>
             <Font size="69.0" />
          </font>

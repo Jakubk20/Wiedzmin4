@@ -5,27 +5,22 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="774.0" prefWidth="1302.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.StartLocation">
+<AnchorPane prefHeight="774.0" prefWidth="1302.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.StartLocation">
    <children>
       <ImageView fitHeight="820.0" fitWidth="1459.0" layoutX="-96.0" layoutY="-10.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../Zdjęcia/pierwsza%20lokacja.jpg" />
          </image>
       </ImageView>
-      <Label layoutX="61.0" layoutY="52.0" prefHeight="42.0" prefWidth="284.0" text="Jestes w tawernie !" textFill="WHITE">
+      <Label layoutX="110.0" layoutY="53.0" prefHeight="42.0" prefWidth="284.0" text="Jesteś w karczmie." textFill="WHITE">
          <font>
             <Font name="BellGothicStd-Black" size="33.0" />
          </font></Label>
-      <Label layoutX="61.0" layoutY="102.0" text="Wybierz co chcesz robić" textFill="WHITE">
-         <font>
-            <Font name="BellGothicStd-Black" size="33.0" />
-         </font>
-      </Label>
-      <Button layoutX="61.0" layoutY="158.0" mnemonicParsing="false" onAction="#onZleceniodawcaClick" prefHeight="65.0" prefWidth="135.0" text="Zleceniodawca">
+      <Button layoutX="38.0" layoutY="109.0" mnemonicParsing="false" onAction="#onZleceniodawcaClick" prefHeight="65.0" prefWidth="214.0" text="Podejdź do zleceniodawcy">
          <font>
             <Font name="BellGothicStd-Black" size="16.0" />
          </font></Button>
-      <Button layoutX="229.0" layoutY="158.0" mnemonicParsing="false" onAction="#onSamotnaPodrozClick" prefHeight="65.0" prefWidth="135.0" text="Samotna podróż">
+      <Button layoutX="280.0" layoutY="109.0" mnemonicParsing="false" onAction="#onSamotnaPodrozClick" prefHeight="65.0" prefWidth="135.0" text="Wyjdź">
          <font>
             <Font name="BellGothicStd-Black" size="14.0" />
          </font></Button>

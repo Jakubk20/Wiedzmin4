@@ -1,5 +1,6 @@
 package com.example.gra.Utopiec;
 
+import com.example.gra.Bies.WalkaZBiesem;
 import com.example.gra.HelloApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -17,7 +18,6 @@ public class SpotykaszUtopca {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("walkaZUtopcem.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-        stage.setTitle("Walka z Utopcem");
         stage.setScene(scene);
         stage.centerOnScreen();
         stage.show();
@@ -30,18 +30,11 @@ public class SpotykaszUtopca {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ucieczkaUtopiec.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Udaje ci się uciec !");
             stage.setScene(scene);
             stage.centerOnScreen();
             stage.show();
         } else {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Śmierć.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Giniesz!");
-            stage.setScene(scene);
-            stage.centerOnScreen();
-            stage.show();
+            WalkaZBiesem.death(actionEvent);
         }
     }
 }

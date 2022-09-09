@@ -1,5 +1,6 @@
 package com.example.gra.Ghul;
 
+import com.example.gra.Bies.WalkaZBiesem;
 import com.example.gra.Geralt;
 import com.example.gra.HelloApplication;
 import javafx.event.ActionEvent;
@@ -16,8 +17,6 @@ import java.util.Random;
 public class WalkaZGhul {
     @FXML
     private Label sila;
-    @FXML
-    private Label balans;
     @FXML
     private Label hapeki;
     @FXML
@@ -49,7 +48,6 @@ public class WalkaZGhul {
         hapekiGhul.setText(String.valueOf(Ghul.currentHP));
         silaGhul.setText(String.valueOf(Ghul.power));
         pozoHPGhul.setText(String.valueOf(Ghul.currentHP));
-        balans.setText(String.valueOf(Geralt.money));
         sila.setText(String.valueOf(Geralt.power));
         hapeki.setText(String.valueOf(Geralt.MaxHP));
         pozoHPGeralt.setText(String.valueOf(Geralt.CurrentHP));
@@ -57,25 +55,7 @@ public class WalkaZGhul {
     }
     @FXML
     protected void onNormal(ActionEvent actionEvent) throws IOException {
-        if (Geralt.CurrentHP <= 0) {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Śmierć.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Giniesz!");
-            stage.setScene(scene);
-            stage.centerOnScreen();
-            stage.show();
-        }
-        if (Ghul.currentHP <= 0) {
-            Geralt.money += 200;
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("wygranaZGhul.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Zabijasz Ghula");
-            stage.setScene(scene);
-            stage.centerOnScreen();
-            stage.show();
-        }
+        end(actionEvent);
         if (Geralt.CurrentHP > 0 && Ghul.currentHP > 0) {
             Ghul.currentHP -= Geralt.onNormalAttack(actionEvent);
             Geralt.CurrentHP -= Ghul.onAttack(actionEvent);
@@ -83,40 +63,31 @@ public class WalkaZGhul {
         pozoHPGhul.setText(String.valueOf(Ghul.currentHP));
         pozoHPGeralt.setText(String.valueOf(Geralt.CurrentHP));
     }
-    @FXML
-    protected void onPotion(ActionEvent actionEvent) throws IOException{
-        if (Geralt.amountOfPotions > 0){
-            if (Geralt.CurrentHP + 30 > Geralt.MaxHP){
-                Geralt.CurrentHP = Geralt.MaxHP;
-            } else Geralt.CurrentHP += 30;
-            Geralt.amountOfPotions--;
-            potki.setText(String.valueOf(Geralt.amountOfPotions));
-            pozoHPGeralt.setText(String.valueOf(Geralt.CurrentHP));
-        }
 
-
-    }
-    @FXML
-    protected void onHard(ActionEvent actionEvent) throws IOException {
+    private void end(ActionEvent actionEvent) throws IOException {
         if (Geralt.CurrentHP <= 0) {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Śmierć.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Giniesz!");
-            stage.setScene(scene);
-            stage.centerOnScreen();
-            stage.show();
+            WalkaZBiesem.death(actionEvent);
         }
         if (Ghul.currentHP <= 0) {
             Geralt.money += 200;
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("wygranaZGhul.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Zabijasz Ghula !");
             stage.setScene(scene);
             stage.centerOnScreen();
             stage.show();
         }
+    }
+
+    @FXML
+    protected void onPotion(ActionEvent actionEvent) throws IOException{
+        WalkaZBiesem.potionHeal(potki, pozoHPGeralt);
+
+
+    }
+    @FXML
+    protected void onHard(ActionEvent actionEvent) throws IOException {
+        end(actionEvent);
         if (Geralt.CurrentHP > 0 && Ghul.currentHP > 0) {
             Ghul.currentHP -= Geralt.onStrongAttack(actionEvent);
             Geralt.CurrentHP -= Ghul.onAttack(actionEvent);
@@ -141,37 +112,22 @@ public class WalkaZGhul {
         Random random = new Random();
         int chances = random.nextInt(0,10);
         if (Geralt.CurrentHP > 50 && chances <8){
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ucieczkaGhul.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Udaje ci się uciec !");
-            stage.setScene(scene);
-            stage.centerOnScreen();
-            stage.show();
+            runSuccessful(actionEvent);
         } else if (Geralt.CurrentHP > 20 && chances<4) {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ucieczkaGhul.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Udaje ci się uciec !");
-            stage.setScene(scene);
-            stage.centerOnScreen();
-            stage.show();
+            runSuccessful(actionEvent);
         } else if (Geralt.CurrentHP <= 20 && chances<2) {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ucieczkaGhul.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Udaje ci się uciec !");
-            stage.setScene(scene);
-            stage.centerOnScreen();
-            stage.show();
+            runSuccessful(actionEvent);
         }else {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Śmierć.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Giniesz!");
-            stage.setScene(scene);
-            stage.centerOnScreen();
-            stage.show();
+            WalkaZBiesem.death(actionEvent);
         }
+    }
+
+    static void runSuccessful(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ucieczkaGhul.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.centerOnScreen();
+        stage.show();
     }
 }

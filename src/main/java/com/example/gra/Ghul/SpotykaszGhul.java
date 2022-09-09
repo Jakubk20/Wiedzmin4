@@ -1,5 +1,6 @@
 package com.example.gra.Ghul;
 
+import com.example.gra.Bies.WalkaZBiesem;
 import com.example.gra.HelloApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -17,7 +18,6 @@ public class SpotykaszGhul {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("walkaZGhul.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-        stage.setTitle("Walka z Ghul !");
         stage.setScene(scene);
         stage.centerOnScreen();
         stage.show();
@@ -27,21 +27,9 @@ public class SpotykaszGhul {
         Random random = new Random();
         int chance = random.nextInt(0, 100);
         if (chance >= 20) {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ucieczkaGhul.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Udaje ci się uciec !");
-            stage.setScene(scene);
-            stage.centerOnScreen();
-            stage.show();
+            WalkaZGhul.runSuccessful(actionEvent);
         } else {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Śmierć.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Giniesz!");
-            stage.setScene(scene);
-            stage.centerOnScreen();
-            stage.show();
+            WalkaZBiesem.death(actionEvent);
         }
     }
 }

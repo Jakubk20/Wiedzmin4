@@ -1,5 +1,6 @@
 package com.example.gra.Leszy;
 
+import com.example.gra.Bies.WalkaZBiesem;
 import com.example.gra.Geralt;
 import com.example.gra.HelloApplication;
 import javafx.event.ActionEvent;
@@ -55,29 +56,15 @@ protected void onPotion(ActionEvent actionEvent) throws IOException{
 }
     @FXML
     protected void onNormal(ActionEvent actionEvent) throws IOException {
-        if (Geralt.CurrentHP <= 0) {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Śmierć.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Giniesz!");
-            stage.setScene(scene);
-            stage.centerOnScreen();
-            stage.show();
-        }
-        if (Lesz.currentHP <= 0) {
-            Geralt.money += 700;
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("wygranaZLesz.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Zabijasz Lesza!");
-            stage.setScene(scene);
-            stage.centerOnScreen();
-            stage.show();
-        }
+        end(actionEvent);
         if (Geralt.CurrentHP > 0 && Lesz.currentHP > 0) {
             Lesz.currentHP -= Geralt.onNormalAttack(actionEvent);
             Geralt.CurrentHP -= Lesz.onAttack(actionEvent);
         }
+        stats();
+    }
+
+    private void stats() {
         hapekiLeszego.setText(String.valueOf(Lesz.currentHP));
         silaLesza.setText(String.valueOf(Lesz.power));
         pozoHPLesz.setText(String.valueOf(Lesz.currentHP));
@@ -87,39 +74,30 @@ protected void onPotion(ActionEvent actionEvent) throws IOException{
         pozoHPGeralt.setText(String.valueOf(Geralt.CurrentHP));
     }
 
-    @FXML
-    protected void onHard(ActionEvent actionEvent) throws IOException {
+    private void end(ActionEvent actionEvent) throws IOException {
         if (Geralt.CurrentHP <= 0) {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Śmierć.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Giniesz!");
-            stage.setScene(scene);
-            stage.centerOnScreen();
-            stage.show();
+            WalkaZBiesem.death(actionEvent);
         }
         if (Lesz.currentHP <= 0) {
             Geralt.money += 700;
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("wygranaZLesz.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Zabijasz Leszego !");
             stage.setScene(scene);
             stage.centerOnScreen();
             stage.show();
         }
+    }
+
+    @FXML
+    protected void onHard(ActionEvent actionEvent) throws IOException {
+        end(actionEvent);
         if (Geralt.CurrentHP > 0 && Lesz.currentHP > 0) {
             Lesz.currentHP -= Geralt.onStrongAttack(actionEvent);
             Geralt.CurrentHP -= Lesz.onAttack(actionEvent);
             Geralt.CurrentHP -= Lesz.onAttack(actionEvent);
         }
-        hapekiLeszego.setText(String.valueOf(Lesz.currentHP));
-        silaLesza.setText(String.valueOf(Lesz.power));
-        pozoHPLesz.setText(String.valueOf(Lesz.currentHP));
-        balans.setText(String.valueOf(Geralt.money));
-        sila.setText(String.valueOf(Geralt.power));
-        hapeki.setText(String.valueOf(Geralt.CurrentHP));
-        pozoHPGeralt.setText(String.valueOf(Geralt.CurrentHP));
+        stats();
     }
 
     @FXML
@@ -127,37 +105,22 @@ protected void onPotion(ActionEvent actionEvent) throws IOException{
         Random random = new Random();
         int chances = random.nextInt(0,10);
         if (Geralt.CurrentHP > 50 && chances <8){
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ucieczkaLeszy.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Udaje ci się uciec !");
-            stage.setScene(scene);
-            stage.centerOnScreen();
-            stage.show();
+            runSuccessful(actionEvent);
         } else if (Geralt.CurrentHP > 20 && chances<4) {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ucieczkaLeszy.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Udaje ci się uciec !");
-            stage.setScene(scene);
-            stage.centerOnScreen();
-            stage.show();
+            runSuccessful(actionEvent);
         } else if (Geralt.CurrentHP <= 20 && chances<2) {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ucieczkaLeszy.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Udaje ci się uciec !");
-            stage.setScene(scene);
-            stage.centerOnScreen();
-            stage.show();
+            runSuccessful(actionEvent);
         }else {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Śmierć.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Giniesz!");
-            stage.setScene(scene);
-            stage.centerOnScreen();
-            stage.show();
+            WalkaZBiesem.death(actionEvent);
         }
+    }
+
+    private void runSuccessful(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ucieczkaLeszy.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.centerOnScreen();
+        stage.show();
     }
 }

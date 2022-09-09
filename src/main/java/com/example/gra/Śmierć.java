@@ -20,7 +20,6 @@ public class Śmierć {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-        stage.setTitle("Zaczynamy!");
         stage.setScene(scene);
         stage.centerOnScreen();
         stage.show();

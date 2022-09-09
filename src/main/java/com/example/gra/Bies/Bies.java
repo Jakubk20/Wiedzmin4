@@ -13,15 +13,13 @@ import java.util.Random;
 
 public class Bies {
     Random random = new Random();
-   public static double power = 2;
-   public static double currentHP = 1000;
-   public static double maxHP = 1000;
+    public static double power = (1 + 2) / 2;
+    public static int maxHP = 1000;
+    public static int currentHP = maxHP;
 
-   public static double onAttack(ActionEvent actionEvent) throws IOException {
+    public static double onAttack() {
         Random random = new Random();
-        int attack = random.nextInt(1, 11);
-       System.out.println(attack*power/10);
-        return attack * power / 10;
+        return random.nextInt(1, 3);
     }
 
 
@@ -30,7 +28,6 @@ public class Bies {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("walkaZBies.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setTitle("Walka z Bies");
         stage.setScene(scene);
         stage.centerOnScreen();
         stage.show();
@@ -40,21 +37,9 @@ public class Bies {
     protected void onRun(ActionEvent actionEvent) throws IOException {
         int chance = random.nextInt(0, 100);
         if (chance >= 20) {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Wygrana.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Udaje ci się uciec !");
-            stage.setScene(scene);
-            stage.centerOnScreen();
-            stage.show();
+            WalkaZBiesem.runSuccessful(actionEvent);
         } else {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Śmierć.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Giniesz!");
-            stage.setScene(scene);
-            stage.centerOnScreen();
-            stage.show();
+            WalkaZBiesem.death(actionEvent);
         }
     }
 
