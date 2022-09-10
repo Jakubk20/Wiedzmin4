@@ -7,24 +7,31 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.StartLocation">
-   <children>
-      <ImageView fitHeight="800.0" fitWidth="1300.0" pickOnBounds="true">
-         <image>
-            <Image url="@../../../Zdjęcia/pierwsza%20lokacja.jpg" />
-         </image>
-      </ImageView>
-      <Label layoutX="110.0" layoutY="53.0" prefHeight="42.0" prefWidth="284.0" text="Jesteś w karczmie." textFill="WHITE">
-         <font>
-            <Font name="Candara Bold" size="33.0" />
-         </font></Label>
-      <Button layoutX="38.0" layoutY="109.0" mnemonicParsing="false" onAction="#onZleceniodawcaClick" prefHeight="65.0" prefWidth="214.0" text="Podejdź do zleceniodawcy">
-         <font>
-            <Font name="Arial" size="16.0" />
-         </font></Button>
-      <Button layoutX="278.0" layoutY="109.0" mnemonicParsing="false" onAction="#onSamotnaPodrozClick" prefHeight="65.0" prefWidth="184.0" text="Wyjdź">
-         <font>
-            <Font name="Arial" size="20.0" />
-         </font></Button>
-   </children>
+<AnchorPane prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/18"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.StartLocation">
+    <children>
+        <ImageView fitHeight="800.0" fitWidth="1300.0" pickOnBounds="true">
+            <image>
+                <Image url="@../../../zdjecia/pierwszaLokacja.jpg"/>
+            </image>
+        </ImageView>
+        <Label layoutX="110.0" layoutY="53.0" prefHeight="42.0" prefWidth="284.0" text="Jesteś w karczmie."
+               textFill="WHITE">
+            <font>
+                <Font name="Candara Bold" size="33.0"/>
+            </font>
+        </Label>
+        <Button layoutX="38.0" layoutY="109.0" mnemonicParsing="false" onAction="#onZleceniodawcaClick"
+                prefHeight="65.0" prefWidth="214.0" text="Podejdź do zleceniodawcy">
+            <font>
+                <Font name="Arial" size="16.0"/>
+            </font>
+        </Button>
+        <Button layoutX="278.0" layoutY="109.0" mnemonicParsing="false" onAction="#onSamotnaPodrozClick"
+                prefHeight="65.0" prefWidth="184.0" text="Wyjdź">
+            <font>
+                <Font name="Arial" size="20.0"/>
+            </font>
+        </Button>
+    </children>
 </AnchorPane>

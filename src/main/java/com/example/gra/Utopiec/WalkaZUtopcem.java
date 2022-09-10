@@ -1,7 +1,6 @@
 package com.example.gra.Utopiec;
 
-import com.example.gra.Bies.Bies;
-import com.example.gra.Bies.WalkaZBiesem;
+import com.example.gra.Bies.WalkaZBies;
 import com.example.gra.Geralt;
 import com.example.gra.HelloApplication;
 import javafx.event.ActionEvent;
@@ -43,7 +42,7 @@ public class WalkaZUtopcem {
     @FXML
     private Label orzymaneObra2;
 
-//    @FXML
+    //    @FXML
 //    protected void onPokazz() {
 //        balans.setText(String.valueOf(Geralt.money));
 //        sila.setText(String.valueOf(Geralt.power));
@@ -57,16 +56,17 @@ public class WalkaZUtopcem {
 //        silaBiesa.setText(String.valueOf(Bies.power));
 //        pozoHPBies.setText(String.valueOf(Bies.HPB));
 //    }
-@FXML
-protected void initialize(){
-    hapekiUtopca.setText(String.valueOf(Utopiec.currentHP));
-    silaUtopca.setText(String.valueOf(Utopiec.power));
-    pozoHPUtopiec.setText(String.valueOf(Utopiec.currentHP));
-    sila.setText(String.valueOf(Geralt.power));
-    hapeki.setText(String.valueOf(Geralt.CurrentHP));
-    pozoHPGeralt.setText(String.valueOf(Geralt.CurrentHP));
-    potki.setText(String.valueOf(Geralt.amountOfPotions));
-}
+    @FXML
+    protected void initialize() {
+        hapekiUtopca.setText(String.valueOf(Utopiec.currentHP));
+        silaUtopca.setText(String.valueOf(Utopiec.power));
+        pozoHPUtopiec.setText(String.valueOf(Utopiec.currentHP));
+        sila.setText(String.valueOf(Geralt.power));
+        hapeki.setText(String.valueOf(Geralt.CurrentHP));
+        pozoHPGeralt.setText(String.valueOf(Geralt.CurrentHP));
+        potki.setText(String.valueOf(Geralt.amountOfPotions));
+    }
+
     @FXML
     protected void onNormal(ActionEvent actionEvent) throws IOException {
         end(actionEvent);
@@ -90,12 +90,13 @@ protected void initialize(){
 
     private void end(ActionEvent actionEvent) throws IOException {
         if (Geralt.CurrentHP <= 0) {
-            WalkaZBiesem.death(actionEvent);
+            Geralt.death(actionEvent);
         }
         if (Utopiec.currentHP <= 0) {
             Geralt.money += 200;
-            Geralt.power+=1;
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("wygranaUtopiec.fxml"));
+            Geralt.moc += 1;
+            Geralt.power = (10 + 20) / 2 + Geralt.moc;
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Utopiec/wygranaUtopiec.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(scene);
@@ -105,8 +106,8 @@ protected void initialize(){
     }
 
     @FXML
-    protected void onPotion(ActionEvent actionEvent) throws IOException{
-        WalkaZBiesem.potionHeal(potki, pozoHPGeralt);
+    protected void onPotion(ActionEvent actionEvent) throws IOException {
+        WalkaZBies.potionHeal(potki, pozoHPGeralt);
 
 
     }
@@ -132,33 +133,27 @@ protected void initialize(){
         pozoHPGeralt.setText(String.valueOf(Geralt.CurrentHP));
     }
 
+    protected void runSuccessful(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Ucieczka.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.centerOnScreen();
+        stage.show();
+    }
+
     @FXML
     protected void onRun(ActionEvent actionEvent) throws IOException {
         Random random = new Random();
-        int chances = random.nextInt(0,10);
-        if (Geralt.CurrentHP > 50 && chances <8){
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ucieczkaUtopiec.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setScene(scene);
-            stage.centerOnScreen();
-            stage.show();
-        } else if (Geralt.CurrentHP > 20 && chances<4) {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ucieczkaUtopiec.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setScene(scene);
-            stage.centerOnScreen();
-            stage.show();
-        } else if (Geralt.CurrentHP <= 20 && chances<2) {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ucieczkaUtopiec.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setScene(scene);
-            stage.centerOnScreen();
-            stage.show();
-        }else {
-            WalkaZBiesem.death(actionEvent);
+        int chances = random.nextInt(0, 10);
+        if (Geralt.CurrentHP > 50 && chances < 8) {
+            runSuccessful(actionEvent);
+        } else if (Geralt.CurrentHP > 20 && chances < 4) {
+            runSuccessful(actionEvent);
+        } else if (Geralt.CurrentHP <= 20 && chances < 2) {
+            runSuccessful(actionEvent);
+        } else {
+            Geralt.death(actionEvent);
         }
     }
 }

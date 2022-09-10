@@ -25,7 +25,7 @@ public class Bies {
 
     @FXML
     protected void onFight(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("walkaZBies.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Bies/walkaZBiesem.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);
@@ -37,9 +37,9 @@ public class Bies {
     protected void onRun(ActionEvent actionEvent) throws IOException {
         int chance = random.nextInt(0, 100);
         if (chance >= 20) {
-            WalkaZBiesem.runSuccessful(actionEvent);
+            WalkaZBies.runSuccessful(actionEvent);
         } else {
-            WalkaZBiesem.death(actionEvent);
+            com.example.gra.Geralt.death(actionEvent);
         }
     }
 

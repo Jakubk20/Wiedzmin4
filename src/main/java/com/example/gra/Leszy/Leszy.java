@@ -1,6 +1,7 @@
 package com.example.gra.Leszy;
 
-import com.example.gra.Bies.WalkaZBiesem;
+import com.example.gra.Bies.WalkaZBies;
+import com.example.gra.Geralt;
 import com.example.gra.HelloApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -12,7 +13,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Random;
 
-public class Lesz {
+public class Leszy {
     Random random = new Random();
     public static double power = (4+7)/2;
     public static int currentHP = 500;
@@ -26,7 +27,7 @@ public class Lesz {
 
     @FXML
     protected void onFight(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("walkaZLeszem.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Leszy/walkaZLeszym.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);
@@ -38,9 +39,9 @@ public class Lesz {
     protected void onRun(ActionEvent actionEvent) throws IOException {
         int chance = random.nextInt(0, 100);
         if (chance >= 10) {
-            WalkaZBiesem.runSuccessful(actionEvent);
+            WalkaZBies.runSuccessful(actionEvent);
         } else {
-            WalkaZBiesem.death(actionEvent);
+            Geralt.death(actionEvent);
         }
     }
 

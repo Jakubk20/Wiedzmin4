@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Random;
 
-public class WalkaZBiesem {
+public class WalkaZBies {
     @FXML
     private Label sila;
     @FXML
@@ -87,7 +87,7 @@ public class WalkaZBiesem {
     protected void onNormal(ActionEvent actionEvent) throws IOException {
         if (Geralt.CurrentHP <= 0) {
             Bies.currentHP = Bies.maxHP;
-            death(actionEvent);
+            Geralt.death(actionEvent);
         }
         win(actionEvent);
         if (Geralt.CurrentHP > 0 && Bies.currentHP > 0) {
@@ -119,9 +119,10 @@ public class WalkaZBiesem {
     private void win(ActionEvent actionEvent) throws IOException {
         if (Bies.currentHP <= 0) {
             Geralt.money += 500;
-            Geralt.power +=1;
+            Geralt.moc +=1;
+            Geralt.power = (10 + 20) / 2 + Geralt.moc;
             Geralt.MaxHP +=10;
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("wygranaZBies.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Bies/wygranaZBiesem.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(scene);
@@ -130,20 +131,13 @@ public class WalkaZBiesem {
         }
     }
 
-    public static void death(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Śmierć.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.centerOnScreen();
-        stage.show();
-    }
+
 
     @FXML
     protected void onHard(ActionEvent actionEvent) throws IOException {
         if (Geralt.CurrentHP <= 0) {
             Bies.currentHP = Bies.maxHP;
-            death(actionEvent);
+            Geralt.death(actionEvent);
         }
         win(actionEvent);
         if (Geralt.CurrentHP > 0 && Bies.currentHP > 0) {
@@ -174,12 +168,12 @@ public class WalkaZBiesem {
         } else if (Geralt.CurrentHP <= 20 && chances<2) {
             runSuccessful(actionEvent);
         }else {
-            death(actionEvent);
+            Geralt.death(actionEvent);
         }
     }
 
     public static void runSuccessful(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Wygrana.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Ucieczka.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);

@@ -1,6 +1,6 @@
 package com.example.gra.Utopiec;
 
-import com.example.gra.Bies.WalkaZBiesem;
+import com.example.gra.Geralt;
 import com.example.gra.HelloApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,7 +15,7 @@ import java.util.Random;
 public class SpotykaszUtopca {
     @FXML
     protected void onWalcz(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("walkaZUtopcem.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Utopiec/walkaZUtopcem.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);
@@ -27,14 +27,14 @@ public class SpotykaszUtopca {
         Random random = new Random();
         int chance = random.nextInt(0, 100);
         if (chance >= 20) {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ucieczkaUtopiec.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Ucieczka.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(scene);
             stage.centerOnScreen();
             stage.show();
         } else {
-            WalkaZBiesem.death(actionEvent);
+            Geralt.death(actionEvent);
         }
     }
 }

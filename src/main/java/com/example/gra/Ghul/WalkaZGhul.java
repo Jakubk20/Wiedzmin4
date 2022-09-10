@@ -1,7 +1,6 @@
 package com.example.gra.Ghul;
 
-import com.example.gra.Bies.Bies;
-import com.example.gra.Bies.WalkaZBiesem;
+import com.example.gra.Bies.WalkaZBies;
 import com.example.gra.Geralt;
 import com.example.gra.HelloApplication;
 import javafx.event.ActionEvent;
@@ -89,11 +88,11 @@ public class WalkaZGhul {
 
     private void end(ActionEvent actionEvent) throws IOException {
         if (Geralt.CurrentHP <= 0) {
-            WalkaZBiesem.death(actionEvent);
+            Geralt.death(actionEvent);
         }
         if (Ghul.currentHP <= 0) {
             Geralt.money += 200;
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("wygranaZGhul.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Ghul/wygranaZGhul.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(scene);
@@ -104,7 +103,7 @@ public class WalkaZGhul {
 
     @FXML
     protected void onPotion(ActionEvent actionEvent) throws IOException{
-        WalkaZBiesem.potionHeal(potki, pozoHPGeralt);
+        WalkaZBies.potionHeal(potki, pozoHPGeralt);
 
 
     }
@@ -150,12 +149,12 @@ public class WalkaZGhul {
         } else if (Geralt.CurrentHP <= 20 && chances<2) {
             runSuccessful(actionEvent);
         }else {
-            WalkaZBiesem.death(actionEvent);
+            Geralt.death(actionEvent);
         }
     }
 
     static void runSuccessful(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ucieczkaGhul.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Ucieczka.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);

@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.Ghul.WygranaZGhul">
+<AnchorPane prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.Ghul.WygranaZGhul">
     <ImageView fitHeight="800.0" fitWidth="1300.0" pickOnBounds="true">
         <image>
-            <Image url="@../../../Zdjęcia/Like.jpg" />
+            <Image url="@../../../../zdjecia/Like.jpg" />
         </image>
     </ImageView>
     <Button layoutX="502.0" layoutY="555.0" mnemonicParsing="false" onAction="#onDalejClick" prefHeight="143.0" prefWidth="297.0" text="Dalej">
@@ -18,12 +16,12 @@
             <Font name="BellGothicStd-Black" size="64.0" />
         </font>
     </Button>
-    <Label layoutX="220.0" layoutY="95.0" text="Zabijasz ghula! Zdobywasz 200 monet !" textFill="#e4ffe6">
+    <Label layoutX="220.0" layoutY="95.0" text="Zabijasz Ghula! Zdobywasz 200 Monet !" textFill="#e4ffe6">
         <font>
             <Font name="Candara Bold" size="52.0" />
         </font>
     </Label>
-    <Label layoutX="422.0" layoutY="485.0" text="Twoje monety :" textFill="#e4ffe6">
+    <Label layoutX="422.0" layoutY="485.0" text="Twoje Monety :" textFill="#e4ffe6">
         <font>
             <Font name="Candara Bold" size="52.0" />
         </font>

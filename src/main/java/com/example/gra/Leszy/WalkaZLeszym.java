@@ -1,9 +1,6 @@
 package com.example.gra.Leszy;
 
-import com.example.gra.Bies.Bies;
-import com.example.gra.Bies.WalkaZBiesem;
 import com.example.gra.Geralt;
-import com.example.gra.Ghul.Ghul;
 import com.example.gra.HelloApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -62,36 +59,36 @@ public class WalkaZLeszym {
 //    }
     @FXML
     protected void initialize(){
-        hapekiLeszego.setText(String.valueOf(Lesz.maxHP));
-        silaLesza.setText(String.valueOf(Lesz.power));
-        pozoHPLesz.setText(String.valueOf(Lesz.currentHP));
-        sila.setText(String.valueOf(Geralt.power));
-        hapeki.setText(String.valueOf(Geralt.MaxHP));
-        pozoHPGeralt.setText(String.valueOf(Geralt.CurrentHP));
-        potki.setText(String.valueOf(Geralt.amountOfPotions));
+        hapekiLeszego.setText(String.valueOf(Leszy.maxHP));
+        silaLesza.setText(String.valueOf(Leszy.power));
+        pozoHPLesz.setText(String.valueOf(Leszy.currentHP));
+        sila.setText(String.valueOf(com.example.gra.Geralt.power));
+        hapeki.setText(String.valueOf(com.example.gra.Geralt.MaxHP));
+        pozoHPGeralt.setText(String.valueOf(com.example.gra.Geralt.CurrentHP));
+        potki.setText(String.valueOf(com.example.gra.Geralt.amountOfPotions));
     }
 @FXML
 protected void onPotion(ActionEvent actionEvent) throws IOException{
-    if (Geralt.amountOfPotions > 0){
-        if (Geralt.CurrentHP + 30 > Geralt.MaxHP){
-            Geralt.CurrentHP = Geralt.MaxHP;
-        } else Geralt.CurrentHP += 30;
-        Geralt.amountOfPotions--;
+    if (com.example.gra.Geralt.amountOfPotions > 0){
+        if (com.example.gra.Geralt.CurrentHP + 30 > com.example.gra.Geralt.MaxHP){
+            com.example.gra.Geralt.CurrentHP = com.example.gra.Geralt.MaxHP;
+        } else com.example.gra.Geralt.CurrentHP += 30;
+        com.example.gra.Geralt.amountOfPotions--;
     }
 
 }
     @FXML
     protected void onNormal(ActionEvent actionEvent) throws IOException {
         end(actionEvent);
-        if (Geralt.CurrentHP > 0 && Lesz.currentHP > 0) {
-            int obra = (int) Geralt.onNormalAttack(actionEvent);
+        if (com.example.gra.Geralt.CurrentHP > 0 && Leszy.currentHP > 0) {
+            int obra = (int) com.example.gra.Geralt.onNormalAttack(actionEvent);
             textzadaneo.setText("Zadane obrażenia :");
             zadaneObra.setText(String.valueOf(obra));
-            Lesz.currentHP -= obra;
-            int otrz = (int) Lesz.onAttack(actionEvent);
+            Leszy.currentHP -= obra;
+            int otrz = (int) Leszy.onAttack(actionEvent);
             textotrzymaneo1.setText("Otrzymane obrażenia :");
             orzymaneObra1.setText(String.valueOf(otrz));
-            Geralt.CurrentHP -= otrz;
+            com.example.gra.Geralt.CurrentHP -= otrz;
 
 
             textotrzymaneo2.setText("");
@@ -101,22 +98,22 @@ protected void onPotion(ActionEvent actionEvent) throws IOException{
     }
 
     private void stats() {
-        hapekiLeszego.setText(String.valueOf(Lesz.currentHP));
-        silaLesza.setText(String.valueOf(Lesz.power));
-        pozoHPLesz.setText(String.valueOf(Lesz.currentHP));
-        balans.setText(String.valueOf(Geralt.money));
-        sila.setText(String.valueOf(Geralt.power));
-        hapeki.setText(String.valueOf(Geralt.CurrentHP));
-        pozoHPGeralt.setText(String.valueOf(Geralt.CurrentHP));
+        hapekiLeszego.setText(String.valueOf(Leszy.currentHP));
+        silaLesza.setText(String.valueOf(Leszy.power));
+        pozoHPLesz.setText(String.valueOf(Leszy.currentHP));
+        balans.setText(String.valueOf(com.example.gra.Geralt.money));
+        sila.setText(String.valueOf(com.example.gra.Geralt.power));
+        hapeki.setText(String.valueOf(com.example.gra.Geralt.CurrentHP));
+        pozoHPGeralt.setText(String.valueOf(com.example.gra.Geralt.CurrentHP));
     }
 
     private void end(ActionEvent actionEvent) throws IOException {
         if (Geralt.CurrentHP <= 0) {
-            WalkaZBiesem.death(actionEvent);
+            Geralt.death(actionEvent);
         }
-        if (Lesz.currentHP <= 0) {
+        if (Leszy.currentHP <= 0) {
             Geralt.money += 700;
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("wygranaZLesz.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Leszy/wygranaZLesz.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(scene);
@@ -128,18 +125,18 @@ protected void onPotion(ActionEvent actionEvent) throws IOException{
     @FXML
     protected void onHard(ActionEvent actionEvent) throws IOException {
         end(actionEvent);
-        if (Geralt.CurrentHP > 0 && Lesz.currentHP > 0) {
+        if (Geralt.CurrentHP > 0 && Leszy.currentHP > 0) {
             textotrzymaneo1.setText("Otrzymane obrażenia :");
             textotrzymaneo2.setText("Otrzymane obrażenia :");
             textzadaneo.setText("Zadane obrażenia :");
-            int obraz1 = (int) Lesz.onAttack(actionEvent);
-            int obraz2 = (int) Lesz.onAttack(actionEvent);
+            int obraz1 = (int) Leszy.onAttack(actionEvent);
+            int obraz2 = (int) Leszy.onAttack(actionEvent);
             Geralt.CurrentHP -= obraz1;
             Geralt.CurrentHP -= obraz2;
             orzymaneObra1.setText(String.valueOf(obraz1));
             orzymaneObra2.setText(String.valueOf(obraz2));
             int zadane = (int) Geralt.onStrongAttack(actionEvent);
-            Lesz.currentHP -= zadane;
+            Leszy.currentHP -= zadane;
             zadaneObra.setText(String.valueOf(zadane));
         }
         stats();
@@ -156,12 +153,12 @@ protected void onPotion(ActionEvent actionEvent) throws IOException{
         } else if (Geralt.CurrentHP <= 20 && chances<2) {
             runSuccessful(actionEvent);
         }else {
-            WalkaZBiesem.death(actionEvent);
+            Geralt.death(actionEvent);
         }
     }
 
     private void runSuccessful(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ucieczkaLeszy.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Ucieczka.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);

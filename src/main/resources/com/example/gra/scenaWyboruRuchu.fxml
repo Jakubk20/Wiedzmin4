@@ -7,32 +7,37 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.ScenaWyboruRuchu">
-   <children>
-      <ImageView fitHeight="800.0" fitWidth="1300.0" pickOnBounds="true">
-         <image>
-            <Image url="@../../../Zdjęcia/spotkanieZHANDLARZEMa.jpg" />
-         </image>
-      </ImageView>
-      <Label layoutX="444.0" layoutY="51.0" prefHeight="71.0" prefWidth="412.0" text="Spotykasz handlarza." textFill="WHITE">
-         <font>
-            <Font name="Candara Bold" size="43.0" />
-         </font>
-      </Label>
-      <Button layoutX="245.0" layoutY="398.0" mnemonicParsing="false" onAction="#onIdzDalej" prefHeight="85.0" prefWidth="199.0" text="Idź dalej">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Button>
-      <Button layoutX="535.0" layoutY="398.0" mnemonicParsing="false" onAction="#onHandlarz" prefHeight="85.0" prefWidth="230.0" text="Pokaż mi swoje towary">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Button>
-      <Button layoutX="856.0" layoutY="398.0" mnemonicParsing="false" onAction="#onIdzWStroneMiasta" prefHeight="85.0" prefWidth="199.0" text="Idź w stronę miasta">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Button>
-   </children>
+<AnchorPane prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/18"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.ScenaWyboruRuchu">
+    <children>
+        <ImageView fitHeight="800.0" fitWidth="1300.0" pickOnBounds="true">
+            <image>
+                <Image url="@../../../zdjecia/spotkanieZHANDLARZEMa.jpg"/>
+            </image>
+        </ImageView>
+        <Label layoutX="444.0" layoutY="51.0" prefHeight="71.0" prefWidth="412.0" text="Spotykasz handlarza."
+               textFill="WHITE">
+            <font>
+                <Font name="Candara Bold" size="43.0"/>
+            </font>
+        </Label>
+        <Button layoutX="245.0" layoutY="398.0" mnemonicParsing="false" onAction="#onIdzDalej" prefHeight="85.0"
+                prefWidth="199.0" text="Idź dalej">
+            <font>
+                <Font size="20.0"/>
+            </font>
+        </Button>
+        <Button layoutX="535.0" layoutY="398.0" mnemonicParsing="false" onAction="#onHandlarz" prefHeight="85.0"
+                prefWidth="230.0" text="Pokaż mi swoje towary">
+            <font>
+                <Font size="20.0"/>
+            </font>
+        </Button>
+        <Button layoutX="856.0" layoutY="398.0" mnemonicParsing="false" onAction="#onIdzWStroneMiasta" prefHeight="85.0"
+                prefWidth="199.0" text="Idź w stronę miasta">
+            <font>
+                <Font size="20.0"/>
+            </font>
+        </Button>
+    </children>
 </AnchorPane>
