@@ -16,7 +16,7 @@
                 <Font name="Candara Bold" size="46.0" />
             </font>
         </TextArea>
-        <Button layoutX="579.0" layoutY="680.0" mnemonicParsing="false" onAction="#onWrocButton" prefHeight="66.0" prefWidth="144.0" text="Wróć">
+        <Button layoutX="579.0" layoutY="680.0" mnemonicParsing="false" onAction="#onReturnButton" prefHeight="66.0" prefWidth="144.0" text="Wróć">
             <font>
                 <Font name="Arial" size="31.0" />
             </font>

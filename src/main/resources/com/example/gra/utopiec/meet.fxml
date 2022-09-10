@@ -20,13 +20,13 @@
                 <Font name="Candara Bold" size="47.0"/>
             </font>
         </Label>
-        <Button layoutX="836.0" layoutY="672.0" mnemonicParsing="false" onAction="#onUciekaj" prefHeight="103.0"
+        <Button layoutX="836.0" layoutY="672.0" mnemonicParsing="false" onAction="#onRun" prefHeight="103.0"
                 prefWidth="272.0" text="Ucieczka">
             <font>
                 <Font size="49.0"/>
             </font>
         </Button>
-        <Button layoutX="243.0" layoutY="673.0" mnemonicParsing="false" onAction="#onWalcz" prefHeight="101.0"
+        <Button layoutX="243.0" layoutY="673.0" mnemonicParsing="false" onAction="#onFight" prefHeight="101.0"
                 prefWidth="222.0" text="Walka">
             <font>
                 <Font size="47.0"/>

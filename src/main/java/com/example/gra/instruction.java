@@ -29,7 +29,7 @@ public class instruction {
         stage.show();
     }
     @FXML
-    public void onWrocButton(ActionEvent actionEvent) throws IOException {
+    public void onReturnButton(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("start.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();

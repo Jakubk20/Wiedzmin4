@@ -11,7 +11,7 @@ import java.io.IOException;
 
 public class startLocation {
     @FXML
-    protected void onZleceniodawcaClick(ActionEvent actionEvent) throws IOException {
+    protected void onTavernClick(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("tavern/getQuest.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
@@ -20,7 +20,7 @@ public class startLocation {
         stage.show();
     }
     @FXML
-    protected void onSamotnaPodrozClick(ActionEvent actionEvent) throws IOException {
+    protected void onLeaveClick(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("utopiec/meet.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
@@ -29,8 +29,8 @@ public class startLocation {
         stage.show();
     }
     @FXML
-    protected void onWróćClick(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("startLocation.fxml"));
+    protected void onReturnClick(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("tavern/startLocation.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);
@@ -38,7 +38,7 @@ public class startLocation {
         stage.show();
     }
     @FXML
-    protected void onWeźZlecenieClick(ActionEvent actionEvent) throws IOException {
+    protected void onGetQuestClick(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("bies/meet.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();

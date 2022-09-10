@@ -11,10 +11,10 @@ import java.io.IOException;
 
 public class death {
     @FXML
-    protected void onZagrajPonownieClick(ActionEvent actionEvent) throws IOException {
+    protected void onPlayAgainClick(ActionEvent actionEvent) throws IOException {
         geralt.power=10;
-        geralt.CurrentHP =100;
-        geralt.MaxHP=100;
+        geralt.currentHP =100;
+        geralt.maxHP =100;
         geralt.money=0;
         geralt.amountOfPotions = 0;
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("start.fxml"));

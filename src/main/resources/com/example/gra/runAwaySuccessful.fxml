@@ -18,7 +18,7 @@
                 <Font name="Candara Bold" size="52.0"/>
             </font>
         </Label>
-        <Button layoutX="502.0" layoutY="528.0" mnemonicParsing="false" onAction="#onDalejClick" prefHeight="143.0"
+        <Button layoutX="502.0" layoutY="528.0" mnemonicParsing="false" onAction="#onNextClick" prefHeight="143.0"
                 prefWidth="297.0" text="Dalej">
             <font>
                 <Font name="BellGothicStd-Black" size="64.0"/>

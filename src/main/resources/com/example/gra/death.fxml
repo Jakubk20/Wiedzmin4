@@ -14,7 +14,7 @@
                 <Image url="@../../../zdjecia/gameOver.jpg"/>
             </image>
         </ImageView>
-        <Button layoutX="514.0" layoutY="567.0" mnemonicParsing="false" onAction="#onZagrajPonownieClick"
+        <Button layoutX="514.0" layoutY="567.0" mnemonicParsing="false" onAction="#onPlayAgainClick"
                 prefHeight="131.0" prefWidth="272.0" text="Zagraj ponownie">
             <font>
                 <Font name="BellGothicStd-Black" size="27.0"/>

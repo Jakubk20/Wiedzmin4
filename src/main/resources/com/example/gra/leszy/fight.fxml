@@ -36,23 +36,23 @@
                 <Font name="BellGothicStd-Black" size="20.0"/>
             </font>
         </Label>
-        <Label fx:id="sila" layoutX="74.0" layoutY="62.0" prefHeight="31.0" prefWidth="82.0">
+        <Label fx:id="geraltPower" layoutX="74.0" layoutY="62.0" prefHeight="31.0" prefWidth="82.0">
             <font>
                 <Font size="20.0"/>
             </font>
         </Label>
-        <Label fx:id="hapeki" layoutX="105.0" layoutY="93.0" prefHeight="31.0" prefWidth="106.0">
+        <Label fx:id="geraltHP" layoutX="105.0" layoutY="93.0" prefHeight="31.0" prefWidth="106.0">
             <font>
                 <Font size="20.0"/>
             </font>
         </Label>
-        <Button layoutX="-3.0" layoutY="700.0" mnemonicParsing="false" onAction="#onNormal" prefHeight="100.0"
+        <Button layoutX="-3.0" layoutY="700.0" mnemonicParsing="false" onAction="#onNormalAttack" prefHeight="100.0"
                 prefWidth="208.0" text="Atak zwykły (Szybki)">
             <font>
                 <Font size="19.0"/>
             </font>
         </Button>
-        <Button layoutX="1092.0" layoutY="700.0" mnemonicParsing="false" onAction="#onHard" prefHeight="100.0"
+        <Button layoutX="1092.0" layoutY="700.0" mnemonicParsing="false" onAction="#onHardAttack" prefHeight="100.0"
                 prefWidth="208.0" text="Atak mocny (Wolny)">
             <font>
                 <Font size="20.0"/>
@@ -79,12 +79,12 @@
                 <Font name="BellGothicStd-Black" size="20.0"/>
             </font>
         </Label>
-        <Label fx:id="hapekiLeszego" layoutX="1040.0" layoutY="93.0" prefHeight="31.0" prefWidth="166.0">
+        <Label fx:id="leszyHP" layoutX="1040.0" layoutY="93.0" prefHeight="31.0" prefWidth="166.0">
             <font>
                 <Font size="20.0"/>
             </font>
         </Label>
-        <Label fx:id="silaLesza" layoutX="1010.0" layoutY="62.0" prefHeight="31.0" prefWidth="113.0">
+        <Label fx:id="leszyPower" layoutX="1010.0" layoutY="62.0" prefHeight="31.0" prefWidth="113.0">
             <font>
                 <Font size="20.0"/>
             </font>
@@ -99,12 +99,12 @@
                 <Font name="BellGothicStd-Black" size="21.0"/>
             </font>
         </Label>
-        <Label fx:id="pozoHPGeralt" layoutX="274.0" layoutY="206.0" prefHeight="41.0" prefWidth="123.0">
+        <Label fx:id="geraltRemainingHP" layoutX="274.0" layoutY="206.0" prefHeight="41.0" prefWidth="123.0">
             <font>
                 <Font size="32.0"/>
             </font>
         </Label>
-        <Label fx:id="pozoHPLesz" layoutX="1145.0" layoutY="206.0" prefHeight="41.0" prefWidth="123.0">
+        <Label fx:id="leszyRemainingHP" layoutX="1145.0" layoutY="206.0" prefHeight="41.0" prefWidth="123.0">
             <font>
                 <Font size="32.0"/>
             </font>
@@ -124,7 +124,7 @@
                 <Font name="BellGothicStd-Black" size="20.0"/>
             </font>
         </Label>
-        <Label fx:id="potki" layoutX="151.0" layoutY="124.0" prefHeight="31.0" prefWidth="82.0">
+        <Label fx:id="amountOfPotions" layoutX="151.0" layoutY="124.0" prefHeight="31.0" prefWidth="82.0">
             <font>
                 <Font size="20.0"/>
             </font>
@@ -135,35 +135,35 @@
                 <Font size="18.0"/>
             </font>
         </Button>
-        <Label fx:id="textzadaneo" layoutX="906.0" layoutY="192.0" prefHeight="25.0" prefWidth="166.0"
+        <Label fx:id="textDealtDamage" layoutX="906.0" layoutY="192.0" prefHeight="25.0" prefWidth="166.0"
                textFill="#0ba410">
             <font>
                 <Font name="Candara Bold" size="20.0"/>
             </font>
         </Label>
-        <Label fx:id="textotrzymaneo1" layoutX="57.0" layoutY="194.0" prefHeight="25.0" prefWidth="196.0"
+        <Label fx:id="textReceivedDamage1" layoutX="57.0" layoutY="194.0" prefHeight="25.0" prefWidth="196.0"
                textFill="RED">
             <font>
                 <Font name="Candara Bold" size="20.0"/>
             </font>
         </Label>
-        <Label fx:id="textotrzymaneo2" layoutX="57.0" layoutY="169.0" prefHeight="25.0" prefWidth="196.0"
+        <Label fx:id="textReceivedDamage2" layoutX="57.0" layoutY="169.0" prefHeight="25.0" prefWidth="196.0"
                textFill="RED">
             <font>
                 <Font name="Candara Bold" size="20.0"/>
             </font>
         </Label>
-        <Label fx:id="orzymaneObra2" layoutX="253.0" layoutY="169.0" prefHeight="25.0" prefWidth="187.0" textFill="RED">
+        <Label fx:id="receivedDamage2" layoutX="253.0" layoutY="169.0" prefHeight="25.0" prefWidth="187.0" textFill="RED">
             <font>
                 <Font name="Candara Bold" size="20.0"/>
             </font>
         </Label>
-        <Label fx:id="orzymaneObra1" layoutX="253.0" layoutY="192.0" prefHeight="25.0" prefWidth="187.0" textFill="RED">
+        <Label fx:id="receivedDamage1" layoutX="253.0" layoutY="192.0" prefHeight="25.0" prefWidth="187.0" textFill="RED">
             <font>
                 <Font name="Candara Bold" size="20.0"/>
             </font>
         </Label>
-        <Label fx:id="zadaneObra" layoutX="1070.0" layoutY="193.0" prefHeight="25.0" prefWidth="166.0"
+        <Label fx:id="dealtDamage" layoutX="1070.0" layoutY="193.0" prefHeight="25.0" prefWidth="166.0"
                textFill="#0ba410">
             <font>
                 <Font name="Candara Bold" size="20.0"/>

@@ -14,13 +14,13 @@ import java.io.IOException;
 
 public class win {
     @FXML
-    private Label brylki;
+    private Label money;
     @FXML
     protected void onClick(){
-        brylki.setText(String.valueOf(geralt.money));
+        money.setText(String.valueOf(geralt.money));
     }
     @FXML
-    protected void onDalejjClick(ActionEvent actionEvent) throws IOException {
+    protected void onNextClick(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("leszy/fight.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();

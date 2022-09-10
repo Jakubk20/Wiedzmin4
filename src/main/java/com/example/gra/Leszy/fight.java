@@ -15,33 +15,31 @@ import java.util.Random;
 
 public class fight {
     @FXML
-    private Label sila;
+    private Label geraltPower;
     @FXML
-    private Label balans;
+    private Label geraltHP;
     @FXML
-    private Label hapeki;
+    private Label leszyHP;
     @FXML
-    private Label hapekiLeszego;
+    private Label leszyPower;
     @FXML
-    private Label silaLesza;
+    private Label geraltRemainingHP;
     @FXML
-    private Label pozoHPGeralt;
+    private Label leszyRemainingHP;
     @FXML
-    private Label pozoHPLesz;
+    private Label amountOfPotions;
     @FXML
-    private Label potki;
+    private Label textReceivedDamage1;
     @FXML
-    private Label textotrzymaneo1;
+    private Label textReceivedDamage2;
     @FXML
-    private Label textotrzymaneo2;
+    private Label dealtDamage;
     @FXML
-    private Label zadaneObra;
+    private Label textDealtDamage;
     @FXML
-    private Label textzadaneo;
+    private Label receivedDamage1;
     @FXML
-    private Label orzymaneObra1;
-    @FXML
-    private Label orzymaneObra2;
+    private Label receivedDamage2;
 
 //    @FXML
 //    protected void onPokazz() {
@@ -59,56 +57,55 @@ public class fight {
 //    }
     @FXML
     protected void initialize(){
-        hapekiLeszego.setText(String.valueOf(leszy.maxHP));
-        silaLesza.setText(String.valueOf(leszy.power));
-        pozoHPLesz.setText(String.valueOf(leszy.currentHP));
-        sila.setText(String.valueOf(geralt.power));
-        hapeki.setText(String.valueOf(geralt.MaxHP));
-        pozoHPGeralt.setText(String.valueOf(geralt.CurrentHP));
-        potki.setText(String.valueOf(geralt.amountOfPotions));
+        leszyHP.setText(String.valueOf(leszy.maxHP));
+        leszyPower.setText(String.valueOf(leszy.power));
+        leszyRemainingHP.setText(String.valueOf(leszy.currentHP));
+        geraltPower.setText(String.valueOf(geralt.power));
+        geraltHP.setText(String.valueOf(geralt.maxHP));
+        geraltRemainingHP.setText(String.valueOf(geralt.currentHP));
+        amountOfPotions.setText(String.valueOf(geralt.amountOfPotions));
     }
 @FXML
 protected void onPotion(ActionEvent actionEvent) throws IOException{
     if (geralt.amountOfPotions > 0){
-        if (geralt.CurrentHP + 30 > geralt.MaxHP){
-            geralt.CurrentHP = geralt.MaxHP;
-        } else geralt.CurrentHP += 30;
+        if (geralt.currentHP + 30 > geralt.maxHP){
+            geralt.currentHP = geralt.maxHP;
+        } else geralt.currentHP += 30;
         geralt.amountOfPotions--;
     }
 
 }
     @FXML
-    protected void onNormal(ActionEvent actionEvent) throws IOException {
+    protected void onNormalAttack(ActionEvent actionEvent) throws IOException {
         end(actionEvent);
-        if (geralt.CurrentHP > 0 && leszy.currentHP > 0) {
-            int obra = (int) geralt.onNormalAttack(actionEvent);
-            textzadaneo.setText("Zadane obrażenia :");
-            zadaneObra.setText(String.valueOf(obra));
-            leszy.currentHP -= obra;
-            int otrz = (int) leszy.onAttack(actionEvent);
-            textotrzymaneo1.setText("Otrzymane obrażenia :");
-            orzymaneObra1.setText(String.valueOf(otrz));
-            geralt.CurrentHP -= otrz;
+        if (geralt.currentHP > 0 && leszy.currentHP > 0) {
+            int dealtDMG = (int) geralt.onNormalAttack(actionEvent);
+            textDealtDamage.setText("Zadane obrażenia :");
+            dealtDamage.setText(String.valueOf(dealtDMG));
+            leszy.currentHP -= dealtDMG;
+            int receivedDMG = (int) leszy.onAttack(actionEvent);
+            textReceivedDamage1.setText("Otrzymane obrażenia :");
+            receivedDamage1.setText(String.valueOf(receivedDMG));
+            geralt.currentHP -= receivedDMG;
 
 
-            textotrzymaneo2.setText("");
-            orzymaneObra2.setText("");
+            textReceivedDamage2.setText("");
+            receivedDamage2.setText("");
         }
         stats();
     }
 
     private void stats() {
-        hapekiLeszego.setText(String.valueOf(leszy.currentHP));
-        silaLesza.setText(String.valueOf(leszy.power));
-        pozoHPLesz.setText(String.valueOf(leszy.currentHP));
-        balans.setText(String.valueOf(geralt.money));
-        sila.setText(String.valueOf(geralt.power));
-        hapeki.setText(String.valueOf(geralt.CurrentHP));
-        pozoHPGeralt.setText(String.valueOf(geralt.CurrentHP));
+        leszyHP.setText(String.valueOf(leszy.currentHP));
+        leszyPower.setText(String.valueOf(leszy.power));
+        leszyRemainingHP.setText(String.valueOf(leszy.currentHP));
+        geraltPower.setText(String.valueOf(geralt.power));
+        geraltHP.setText(String.valueOf(geralt.currentHP));
+        geraltRemainingHP.setText(String.valueOf(geralt.currentHP));
     }
 
     private void end(ActionEvent actionEvent) throws IOException {
-        if (geralt.CurrentHP <= 0) {
+        if (geralt.currentHP <= 0) {
             geralt.death(actionEvent);
         }
         if (leszy.currentHP <= 0) {
@@ -123,21 +120,21 @@ protected void onPotion(ActionEvent actionEvent) throws IOException{
     }
 
     @FXML
-    protected void onHard(ActionEvent actionEvent) throws IOException {
+    protected void onHardAttack(ActionEvent actionEvent) throws IOException {
         end(actionEvent);
-        if (geralt.CurrentHP > 0 && leszy.currentHP > 0) {
-            textotrzymaneo1.setText("Otrzymane obrażenia :");
-            textotrzymaneo2.setText("Otrzymane obrażenia :");
-            textzadaneo.setText("Zadane obrażenia :");
-            int obraz1 = (int) leszy.onAttack(actionEvent);
-            int obraz2 = (int) leszy.onAttack(actionEvent);
-            geralt.CurrentHP -= obraz1;
-            geralt.CurrentHP -= obraz2;
-            orzymaneObra1.setText(String.valueOf(obraz1));
-            orzymaneObra2.setText(String.valueOf(obraz2));
-            int zadane = (int) geralt.onStrongAttack(actionEvent);
-            leszy.currentHP -= zadane;
-            zadaneObra.setText(String.valueOf(zadane));
+        if (geralt.currentHP > 0 && leszy.currentHP > 0) {
+            textReceivedDamage1.setText("Otrzymane obrażenia :");
+            textReceivedDamage2.setText("Otrzymane obrażenia :");
+            textDealtDamage.setText("Zadane obrażenia :");
+            int receivedDMG1 = (int) leszy.onAttack(actionEvent);
+            int receivedDMG2 = (int) leszy.onAttack(actionEvent);
+            geralt.currentHP -= receivedDMG1;
+            geralt.currentHP -= receivedDMG2;
+            receivedDamage1.setText(String.valueOf(receivedDMG1));
+            receivedDamage2.setText(String.valueOf(receivedDMG2));
+            int dealtDMG = (int) geralt.onStrongAttack(actionEvent);
+            leszy.currentHP -= dealtDMG;
+            dealtDamage.setText(String.valueOf(dealtDMG));
         }
         stats();
     }
@@ -146,11 +143,11 @@ protected void onPotion(ActionEvent actionEvent) throws IOException{
     protected void onRun(ActionEvent actionEvent) throws IOException {
         Random random = new Random();
         int chances = random.nextInt(0,10);
-        if (geralt.CurrentHP > 50 && chances <8){
+        if (geralt.currentHP > 50 && chances <8){
             runSuccessful(actionEvent);
-        } else if (geralt.CurrentHP > 20 && chances<4) {
+        } else if (geralt.currentHP > 20 && chances<4) {
             runSuccessful(actionEvent);
-        } else if (geralt.CurrentHP <= 20 && chances<2) {
+        } else if (geralt.currentHP <= 20 && chances<2) {
             runSuccessful(actionEvent);
         }else {
             geralt.death(actionEvent);

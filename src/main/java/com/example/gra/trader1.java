@@ -17,65 +17,75 @@ public class trader1 {
     private Label maxhp;
     @FXML
     private Label potki;
+
     @FXML
-    protected void initialize(){
-        hp.setText(String.valueOf(geralt.CurrentHP));
-        maxhp.setText(String.valueOf(geralt.MaxHP));
+    protected void initialize() {
+        hp.setText(String.valueOf(geralt.currentHP));
+        maxhp.setText(String.valueOf(geralt.maxHP));
         sila.setText(String.valueOf(geralt.power));
         money.setText(String.valueOf(geralt.money));
         potki.setText(String.valueOf(geralt.amountOfPotions));
     }
+
     @FXML
-    protected void onOstrzenieMieczaClick(ActionEvent actionEvent) throws IOException {
-        if (geralt.money >= 100){
+    protected void onSwordSharpeningClick(ActionEvent actionEvent) throws IOException {
+        if (geralt.money >= 100) {
             geralt.power += 1;
             geralt.money -= 100;
-            hp.setText(String.valueOf(geralt.CurrentHP));
-            maxhp.setText(String.valueOf(geralt.MaxHP));
+            hp.setText(String.valueOf(geralt.currentHP));
+            maxhp.setText(String.valueOf(geralt.maxHP));
             sila.setText(String.valueOf(geralt.power));
             money.setText(String.valueOf(geralt.money));
         }
     }
+
     @FXML
-    protected void onLeczenieClick(ActionEvent actionEvent) throws IOException {
-        if (geralt.money >= 50 && geralt.CurrentHP<(geralt.MaxHP -10)){
-            geralt.CurrentHP += 10;
+    protected void onHealingClick(ActionEvent actionEvent) throws IOException {
+        if (geralt.money >= 50) {
             geralt.money -= 50;
-            hp.setText(String.valueOf(geralt.CurrentHP));
-            maxhp.setText(String.valueOf(geralt.MaxHP));
+            if (geralt.currentHP <= geralt.maxHP - 10) {
+                geralt.currentHP += 10;
+            } else geralt.currentHP = geralt.maxHP;
+            hp.setText(String.valueOf(geralt.currentHP));
+            maxhp.setText(String.valueOf(geralt.maxHP));
             sila.setText(String.valueOf(geralt.power));
             money.setText(String.valueOf(geralt.money));
         }
     }
+
     @FXML
-    protected void onRunaNaMieczClick(ActionEvent actionEvent) throws IOException {
-        if (geralt.money >= 180){
+    protected void onSwordRuneClick(ActionEvent actionEvent) throws IOException {
+        if (geralt.money >= 180) {
             geralt.power += 2;
             geralt.money -= 180;
-            hp.setText(String.valueOf(geralt.CurrentHP));
-            maxhp.setText(String.valueOf(geralt.MaxHP));
+            hp.setText(String.valueOf(geralt.currentHP));
+            maxhp.setText(String.valueOf(geralt.maxHP));
             sila.setText(String.valueOf(geralt.power));
             money.setText(String.valueOf(geralt.money));
         }
     }
+
     @FXML
-    protected void onMocneLeczenieClick(ActionEvent actionEvent) throws IOException {
-        if (geralt.money >= 90 && geralt.CurrentHP<(geralt.MaxHP-20)){
-            geralt.CurrentHP += 20;
+    protected void onStrongHealingCLick(ActionEvent actionEvent) throws IOException {
+        if (geralt.money >= 90) {
             geralt.money -= 90;
-            hp.setText(String.valueOf(geralt.CurrentHP));
-            maxhp.setText(String.valueOf(geralt.MaxHP));
+            if (geralt.currentHP <= geralt.maxHP - 20) {
+                geralt.currentHP += 20;
+            } else geralt.currentHP = geralt.maxHP;
+            hp.setText(String.valueOf(geralt.currentHP));
+            maxhp.setText(String.valueOf(geralt.maxHP));
             sila.setText(String.valueOf(geralt.power));
             money.setText(String.valueOf(geralt.money));
         }
     }
+
     @FXML
-    protected void onMiksturaHPClick(ActionEvent actionEvent) throws IOException {
-        if (geralt.money >= 250){
+    protected void onHPPotionClick(ActionEvent actionEvent) throws IOException {
+        if (geralt.money >= 250) {
             geralt.amountOfPotions += 1;
             geralt.money -= 250;
-            hp.setText(String.valueOf(geralt.CurrentHP));
-            maxhp.setText(String.valueOf(geralt.MaxHP));
+            hp.setText(String.valueOf(geralt.currentHP));
+            maxhp.setText(String.valueOf(geralt.maxHP));
             sila.setText(String.valueOf(geralt.power));
             money.setText(String.valueOf(geralt.money));
             potki.setText(String.valueOf(geralt.amountOfPotions));
@@ -83,7 +93,7 @@ public class trader1 {
     }
 
     @FXML
-    protected void idzWstroneMiasta(ActionEvent actionEvent) throws IOException {
+    protected void onGoToTownClick(ActionEvent actionEvent) throws IOException {
     }
 
 }

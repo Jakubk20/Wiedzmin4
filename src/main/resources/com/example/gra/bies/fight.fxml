@@ -46,13 +46,13 @@
                 <Font size="20.0"/>
             </font>
         </Label>
-        <Button layoutX="-3.0" layoutY="700.0" mnemonicParsing="false" onAction="#onNormal" prefHeight="100.0"
+        <Button layoutX="-3.0" layoutY="700.0" mnemonicParsing="false" onAction="#onNormalAttack" prefHeight="100.0"
                 prefWidth="208.0" text="Atak zwykły (Szybki)">
             <font>
                 <Font size="19.0"/>
             </font>
         </Button>
-        <Button layoutX="1092.0" layoutY="700.0" mnemonicParsing="false" onAction="#onHard" prefHeight="100.0"
+        <Button layoutX="1092.0" layoutY="700.0" mnemonicParsing="false" onAction="#onHardAttack" prefHeight="100.0"
                 prefWidth="208.0" text="Atak mocny (Wolny)">
             <font>
                 <Font size="20.0"/>
@@ -99,12 +99,12 @@
                 <Font name="BellGothicStd-Black" size="21.0"/>
             </font>
         </Label>
-        <Label fx:id="geraltCurrentHP" layoutX="244.0" layoutY="204.0" prefHeight="41.0" prefWidth="123.0">
+        <Label fx:id="geraltRemainingHP" layoutX="244.0" layoutY="204.0" prefHeight="41.0" prefWidth="123.0">
             <font>
                 <Font size="32.0"/>
             </font>
         </Label>
-        <Label fx:id="biesCurrentHP" layoutX="1083.0" layoutY="206.0" prefHeight="41.0" prefWidth="123.0">
+        <Label fx:id="biesRemainingHP" layoutX="1083.0" layoutY="206.0" prefHeight="41.0" prefWidth="123.0">
             <font>
                 <Font size="32.0"/>
             </font>

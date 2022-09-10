@@ -21,19 +21,19 @@
                 <Font name="Candara Bold" size="43.0"/>
             </font>
         </Label>
-        <Button layoutX="245.0" layoutY="398.0" mnemonicParsing="false" onAction="#onIdzDalej" prefHeight="85.0"
+        <Button layoutX="245.0" layoutY="398.0" mnemonicParsing="false" onAction="#onGo" prefHeight="85.0"
                 prefWidth="199.0" text="Idź dalej">
             <font>
                 <Font size="20.0"/>
             </font>
         </Button>
-        <Button layoutX="535.0" layoutY="398.0" mnemonicParsing="false" onAction="#onHandlarz" prefHeight="85.0"
+        <Button layoutX="535.0" layoutY="398.0" mnemonicParsing="false" onAction="#onTrader" prefHeight="85.0"
                 prefWidth="230.0" text="Pokaż mi swoje towary">
             <font>
                 <Font size="20.0"/>
             </font>
         </Button>
-        <Button layoutX="856.0" layoutY="398.0" mnemonicParsing="false" onAction="#onIdzWStroneMiasta" prefHeight="85.0"
+        <Button layoutX="856.0" layoutY="398.0" mnemonicParsing="false" onAction="#onGoTOTown" prefHeight="85.0"
                 prefWidth="199.0" text="Idź w stronę miasta">
             <font>
                 <Font size="20.0"/>

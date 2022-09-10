@@ -14,7 +14,7 @@ import java.util.Random;
 
 public class meet {
     @FXML
-    protected void onWalcz(ActionEvent actionEvent) throws IOException {
+    protected void onFight(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ghul/fight.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
@@ -23,7 +23,7 @@ public class meet {
         stage.show();
     }
     @FXML
-    protected void onUciekaj(ActionEvent actionEvent) throws IOException {
+    protected void onRun(ActionEvent actionEvent) throws IOException {
         Random random = new Random();
         int chance = random.nextInt(0, 100);
         if (chance >= 20) {

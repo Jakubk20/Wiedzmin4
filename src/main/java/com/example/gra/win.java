@@ -11,7 +11,7 @@ import java.io.IOException;
 
 public class win {
     @FXML
-    protected void onDalejClick(ActionEvent actionEvent) throws IOException {
+    protected void onNextClick(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("trader1/trader1meet.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();

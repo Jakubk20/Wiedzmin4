@@ -21,13 +21,13 @@
                 <Font name="Candara Bold" size="33.0"/>
             </font>
         </Label>
-        <Button layoutX="38.0" layoutY="109.0" mnemonicParsing="false" onAction="#onZleceniodawcaClick"
+        <Button layoutX="38.0" layoutY="109.0" mnemonicParsing="false" onAction="#onTavernClick"
                 prefHeight="65.0" prefWidth="214.0" text="Podejdź do zleceniodawcy">
             <font>
                 <Font name="Arial" size="16.0"/>
             </font>
         </Button>
-        <Button layoutX="278.0" layoutY="109.0" mnemonicParsing="false" onAction="#onSamotnaPodrozClick"
+        <Button layoutX="278.0" layoutY="109.0" mnemonicParsing="false" onAction="#onLeaveClick"
                 prefHeight="65.0" prefWidth="184.0" text="Wyjdź">
             <font>
                 <Font name="Arial" size="20.0"/>
