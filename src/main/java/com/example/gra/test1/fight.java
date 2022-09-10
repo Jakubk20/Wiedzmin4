@@ -19,13 +19,13 @@ public class fight {
     @FXML
     private Label geraltHP;
     @FXML
-    private Label utopiecHP;
+    private Label leszyHP;
     @FXML
-    private Label utopiecPower;
+    private Label leszyPower;
     @FXML
     private Label geraltRemainingHP;
     @FXML
-    private Label utopiecRemainingHP;
+    private Label leszyRemainingHP;
     @FXML
     private Label amountOfPotions;
     @FXML
@@ -49,11 +49,11 @@ public class fight {
 
     @FXML
     protected void initialize(){
-        utopiecHP.setText(String.valueOf(utopiec.maxHP));
-        utopiecPower.setText(String.valueOf(utopiec.power));
+        leszyHP.setText(String.valueOf(leszy.maxHP));
+        leszyPower.setText(String.valueOf(leszy.power));
         geraltPower.setText(String.valueOf(geralt.power));
         geraltHP.setText(String.valueOf(geralt.maxHP));
-        utopiecRemainingHP.setText(String.valueOf(utopiec.currentHP));
+        leszyRemainingHP.setText(String.valueOf(leszy.currentHP));
         geraltRemainingHP.setText(String.valueOf(geralt.currentHP));
         amountOfPotions.setText(String.valueOf(geralt.amountOfPotions));
     }
@@ -80,15 +80,15 @@ public class fight {
         int dealtDMGn = dealtDMGN(new ActionEvent());
         int receivedDMG1 = receivedDMG1(new ActionEvent());
         if (geralt.currentHP - receivedDMG1<= 0) {
-            utopiec.currentHP = utopiec.maxHP;
+            leszy.currentHP = leszy.maxHP;
             geralt.death(actionEvent);
         }
-        if (utopiec.currentHP - dealtDMGn <= 0 ) {
+        if (leszy.currentHP - dealtDMGn <= 0 ) {
             geralt.money += 500;
             geralt.moc +=1;
             geralt.power = (10 + 20) / 2 + geralt.moc;
             geralt.maxHP +=10;
-            FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("utopiec/win.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("leszy/win.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(scene);
@@ -96,10 +96,10 @@ public class fight {
             stage.show();
         }
         win(actionEvent);
-        if (geralt.currentHP > 0 && utopiec.currentHP > 0) {
+        if (geralt.currentHP > 0 && leszy.currentHP > 0) {
             textDealtDamage.setText("Zadane obrażenia :");
             dealtDamage.setText(String.valueOf(dealtDMGn));
-            utopiec.currentHP -= dealtDMGn;
+            leszy.currentHP -= dealtDMGn;
             textReceivedDamage1.setText("Otrzymane obrażenia :");
             receivedDamage1.setText(String.valueOf(receivedDMG1));
             geralt.currentHP -= receivedDMG1;
@@ -112,9 +112,9 @@ public class fight {
     }
 
     private void stats() {
-        utopiecHP.setText(String.valueOf(utopiec.maxHP));
-        utopiecPower.setText(String.valueOf(utopiec.power));
-        utopiecRemainingHP.setText(String.valueOf(utopiec.currentHP));
+        leszyHP.setText(String.valueOf(leszy.maxHP));
+        leszyPower.setText(String.valueOf(leszy.power));
+        leszyRemainingHP.setText(String.valueOf(leszy.currentHP));
         geraltPower.setText(String.valueOf(geralt.power));
         geraltHP.setText(String.valueOf(geralt.maxHP));
         geraltRemainingHP.setText(String.valueOf(geralt.currentHP));
@@ -128,7 +128,7 @@ public class fight {
         return dealtDMGN1;
     }
     private int receivedDMG1(ActionEvent actionEvent) throws IOException {
-        int receivedDMG1 = (int) utopiec.onAttack(actionEvent);
+        int receivedDMG1 = (int) leszy.onAttack(actionEvent);
         return receivedDMG1;
     }
     @FXML
@@ -140,12 +140,12 @@ public class fight {
         if (geralt.currentHP - (receivedDMG1 + receivedDMG2) <= 0) {
             geralt.death(actionEvent);
         }
-        if (utopiec.currentHP - dealtDMGS <= 0 ) {
+        if (leszy.currentHP - dealtDMGS <= 0 ) {
             geralt.money += 500;
             geralt.moc +=1;
             geralt.power = (10 + 20) / 2 + geralt.moc;
             geralt.maxHP +=10;
-            FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("utopiec/win.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("leszy/win.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(scene);
@@ -153,7 +153,7 @@ public class fight {
             stage.show();
         }
         win(actionEvent);
-        if (geralt.currentHP > 0 && utopiec.currentHP > 0) {
+        if (geralt.currentHP > 0 && leszy.currentHP > 0) {
             textReceivedDamage1.setText("Otrzymane obrażenia :");
             textReceivedDamage2.setText("Otrzymane obrażenia :");
             textDealtDamage.setText("Zadane obrażenia :");
@@ -161,19 +161,19 @@ public class fight {
             geralt.currentHP -= receivedDMG2;
             receivedDamage1.setText(String.valueOf(receivedDMG1));
             receivedDamage2.setText(String.valueOf(receivedDMG2));
-            utopiec.currentHP -= dealtDMGS;
+            leszy.currentHP -= dealtDMGS;
             dealtDamage.setText(String.valueOf(dealtDMGS));
         }
         stats();
     }
 
     private void win(ActionEvent actionEvent) throws IOException {
-        if (utopiec.currentHP - dealtDMGS <= 0 ) {
+        if (leszy.currentHP - dealtDMGS <= 0 ) {
             geralt.money += 500;
             geralt.moc +=1;
             geralt.power = (10 + 20) / 2 + geralt.moc;
             geralt.maxHP +=10;
-            FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("utopiec/win.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("leszy/win.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(scene);
