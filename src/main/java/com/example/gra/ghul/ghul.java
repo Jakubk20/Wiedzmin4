@@ -1,4 +1,4 @@
-package com.example.gra.Ghul;
+package com.example.gra.ghul;
 
 import javafx.event.ActionEvent;
 

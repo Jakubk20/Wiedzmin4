@@ -1,4 +1,4 @@
-package com.example.gra.Bies;
+package com.example.gra.leszy;
 
 import com.example.gra.geralt;
 import com.example.gra.HelloApplication;
@@ -16,12 +16,12 @@ public class win {
     @FXML
     private Label money;
     @FXML
-    protected void initialize(){
+    protected void onClick(){
         money.setText(String.valueOf(geralt.money));
     }
     @FXML
     protected void onNextClick(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("trader1/trader1meet.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("leszy/fight.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);

@@ -1,4 +1,4 @@
-package com.example.gra.Utopiec;
+package com.example.gra.utopiec;
 
 import javafx.event.ActionEvent;
 

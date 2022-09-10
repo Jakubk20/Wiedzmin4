@@ -1,4 +1,4 @@
-package com.example.gra.Utopiec;
+package com.example.gra.utopiec;
 
 import com.example.gra.geralt;
 import com.example.gra.HelloApplication;

@@ -1,4 +1,4 @@
-package com.example.gra.Bies;
+package com.example.gra.ghul;
 
 import com.example.gra.geralt;
 import com.example.gra.HelloApplication;
@@ -19,29 +19,29 @@ public class fight {
     @FXML
     private Label geraltHP;
     @FXML
-    private Label biesHP;
+    private Label ghulHP;
     @FXML
-    private Label biesPower;
+    private Label ghulPower;
     @FXML
     private Label geraltRemainingHP;
     @FXML
-    private Label biesRemainingHP;
+    private Label ghulRemainingHP;
     @FXML
     private Label amountOfPotions;
-    @FXML
-    private Label receivedDamage1;
-    @FXML
-    private Label receivedDamage2;
-    @FXML
-    private Label dealtDamage;
     @FXML
     private Label textReceivedDamage1;
     @FXML
     private Label textReceivedDamage2;
     @FXML
+    private Label dealtDamage;
+    @FXML
     private Label textDealtDamage;
+    @FXML
+    private Label receivedDamage1;
+    @FXML
+    private Label receivedDamage2;
 
-//    @FXML
+    //    @FXML
 //    protected void onPokazz() {
 //        balans.setText(String.valueOf(Geralt.money));
 //        sila.setText(String.valueOf(Geralt.power));
@@ -57,45 +57,23 @@ public class fight {
 //    }
     @FXML
     protected void initialize(){
-        biesHP.setText(String.valueOf(bies.maxHP));
-        biesPower.setText(String.valueOf(bies.power));
+        ghulHP.setText(String.valueOf(ghul.currentHP));
+        ghulPower.setText(String.valueOf(ghul.power));
+        ghulRemainingHP.setText(String.valueOf(ghul.currentHP));
         geraltPower.setText(String.valueOf(geralt.power));
         geraltHP.setText(String.valueOf(geralt.maxHP));
-        biesRemainingHP.setText(String.valueOf(bies.currentHP));
         geraltRemainingHP.setText(String.valueOf(geralt.currentHP));
         amountOfPotions.setText(String.valueOf(geralt.amountOfPotions));
     }
     @FXML
-    protected void onPotion(ActionEvent actionEvent) {
-        potionHeal(amountOfPotions, geraltRemainingHP);
-
-
-    }
-
-    public static void potionHeal(Label potki, Label pozoHPGeralt) {
-        if (geralt.amountOfPotions > 0){
-            if (geralt.currentHP + 30 > geralt.maxHP){
-                geralt.currentHP = geralt.maxHP;
-            } else geralt.currentHP += 30;
-            geralt.amountOfPotions--;
-            potki.setText(String.valueOf(geralt.amountOfPotions));
-            pozoHPGeralt.setText(String.valueOf(geralt.currentHP));
-        }
-    }
-
-    @FXML
     protected void onNormalAttack(ActionEvent actionEvent) throws IOException {
-        if (geralt.currentHP <= 0) {
-            bies.currentHP = bies.maxHP;
-            geralt.death(actionEvent);
-        }
-        win(actionEvent);
-        if (geralt.currentHP > 0 && bies.currentHP > 0) {
+        end(actionEvent);
+        if (geralt.currentHP > 0 && ghul.currentHP > 0) {
             int dealtDMG = (int) geralt.onNormalAttack(actionEvent);
             textDealtDamage.setText("Zadane obrażenia :");
             dealtDamage.setText(String.valueOf(dealtDMG));
-            bies.currentHP -= dealtDMG;
-            int receivedDMG = (int) bies.onAttack();
+            ghul.currentHP -= dealtDMG;
+            int receivedDMG = (int) ghul.onAttack(actionEvent);
             textReceivedDamage1.setText("Otrzymane obrażenia :");
             receivedDamage1.setText(String.valueOf(receivedDMG));
             geralt.currentHP -= receivedDMG;
@@ -104,25 +82,17 @@ public class fight {
             textReceivedDamage2.setText("");
             receivedDamage2.setText("");
         }
-        stats();
-    }
-
-    private void stats() {
-        biesHP.setText(String.valueOf(bies.maxHP));
-        biesPower.setText(String.valueOf(bies.power));
-        biesRemainingHP.setText(String.valueOf(bies.currentHP));
-        geraltPower.setText(String.valueOf(geralt.power));
-        geraltHP.setText(String.valueOf(geralt.maxHP));
+        ghulRemainingHP.setText(String.valueOf(ghul.currentHP));
         geraltRemainingHP.setText(String.valueOf(geralt.currentHP));
     }
 
-    private void win(ActionEvent actionEvent) throws IOException {
-        if (bies.currentHP <= 0) {
-            geralt.money += 500;
-            geralt.moc +=1;
-            geralt.power = (10 + 20) / 2 + geralt.moc;
-            geralt.maxHP +=10;
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("bies/win.fxml"));
+    private void end(ActionEvent actionEvent) throws IOException {
+        if (geralt.currentHP <= 0) {
+            geralt.death(actionEvent);
+        }
+        if (ghul.currentHP <= 0) {
+            geralt.money += 200;
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ghul/win.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(scene);
@@ -131,32 +101,43 @@ public class fight {
         }
     }
 
+    @FXML
+    protected void onPotion(ActionEvent actionEvent) throws IOException{
+        com.example.gra.bies.fight.potionHeal(amountOfPotions, geraltRemainingHP);
 
 
+    }
     @FXML
     protected void onHardAttack(ActionEvent actionEvent) throws IOException {
-        if (geralt.currentHP <= 0) {
-            bies.currentHP = bies.maxHP;
-            geralt.death(actionEvent);
-        }
-        win(actionEvent);
-        if (geralt.currentHP > 0 && bies.currentHP > 0) {
+        end(actionEvent);
+        if (geralt.currentHP > 0 && ghul.currentHP > 0) {
             textReceivedDamage1.setText("Otrzymane obrażenia :");
             textReceivedDamage2.setText("Otrzymane obrażenia :");
             textDealtDamage.setText("Zadane obrażenia :");
-            int receivedDMG1 = (int) bies.onAttack();
-            int receivedDMG2 = (int) bies.onAttack();
+            int receivedDMG1 = (int) ghul.onAttack(actionEvent);
+            int receivedDMG2 = (int) ghul.onAttack(actionEvent);
             geralt.currentHP -= receivedDMG1;
             geralt.currentHP -= receivedDMG2;
             receivedDamage1.setText(String.valueOf(receivedDMG1));
             receivedDamage2.setText(String.valueOf(receivedDMG2));
             int dealtDMG = (int) geralt.onStrongAttack(actionEvent);
-            bies.currentHP -= dealtDMG;
+            ghul.currentHP -= dealtDMG;
             dealtDamage.setText(String.valueOf(dealtDMG));
         }
-        stats();
+        ghulRemainingHP.setText(String.valueOf(ghul.currentHP));
+        geraltRemainingHP.setText(String.valueOf(geralt.currentHP));
     }
 
+//    @FXML
+//    protected void onRun() {
+//        Random random = new Random();
+//        int chances = random.nextInt(0,10);
+//        if ((Geralt.CurrentHP > 50 && chances <8) ,(Geralt.CurrentHP > 20 && chances<4)  ,(Geralt.CurrentHP <= 20 && chances<2));
+//            //tutaj napisz jacob co sie stanie jezeli ucieczka sie powiedzie
+//         else {
+//            //tutaj napisz jacob co sie stanie jezeli ucieczka sie NIE powiedzie
+//        }
+//    }
     @FXML
     protected void onRun(ActionEvent actionEvent) throws IOException {
         Random random = new Random();
@@ -172,7 +153,7 @@ public class fight {
         }
     }
 
-    public static void runSuccessful(ActionEvent actionEvent) throws IOException {
+    static void runSuccessful(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("runAwaySuccessful.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();

@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/18"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.Utopiec.fight">
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.utopiec.fight">
     <children>
         <ImageView fitHeight="550.0" fitWidth="650.0" layoutY="250.0" pickOnBounds="true" smooth="false">
             <image>
