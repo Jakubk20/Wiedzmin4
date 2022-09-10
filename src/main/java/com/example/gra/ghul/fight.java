@@ -149,7 +149,6 @@ public class fight {
     }
 
     private void win(ActionEvent actionEvent) throws IOException {
-        if (ghul.currentHP - dealtDMGS <= 0 ) {
             geralt.money += 200;
             FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("ghul/win.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
@@ -157,7 +156,6 @@ public class fight {
             stage.setScene(scene);
             stage.centerOnScreen();
             stage.show();
-        }
     }
 
 

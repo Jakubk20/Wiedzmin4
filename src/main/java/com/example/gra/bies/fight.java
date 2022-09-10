@@ -149,7 +149,6 @@ public class fight {
     }
 
     private void win(ActionEvent actionEvent) throws IOException {
-        if (bies.currentHP - dealtDMGS <= 0 ) {
             geralt.money += 500;
             geralt.moc +=1;
             geralt.power = ((10 + 20) / 2) + geralt.moc;
@@ -160,7 +159,6 @@ public class fight {
             stage.setScene(scene);
             stage.centerOnScreen();
             stage.show();
-        }
     }
 
 
