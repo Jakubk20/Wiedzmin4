@@ -12,7 +12,7 @@
     <children>
         <ImageView fitHeight="800.0" fitWidth="1300.0" pickOnBounds="true">
             <image>
-                <Image url="@../../../../zdjecia/pierwszaLokacja.jpg"/>
+                <Image url="@../../../../images/startLocation.jpg"/>
             </image>
         </ImageView>
         <Label layoutX="110.0" layoutY="53.0" prefHeight="42.0" prefWidth="284.0" text="Jesteś w karczmie."

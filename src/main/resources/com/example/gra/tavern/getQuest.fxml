@@ -12,7 +12,7 @@
     <children>
         <ImageView fitHeight="800.0" fitWidth="1300.0" pickOnBounds="true">
             <image>
-                <Image url="@../../../../zdjecia/zleceniodawca.jpg"/>
+                <Image url="@../../../../images/tavern1.jpg"/>
             </image>
         </ImageView>
         <Button layoutX="744.0" layoutY="462.0" mnemonicParsing="false" onAction="#onReturnClick" prefHeight="45.0"
@@ -36,7 +36,7 @@
         <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="1000.0" layoutY="409.0" pickOnBounds="true"
                    preserveRatio="true">
             <image>
-                <Image url="@../../../../zdjecia/bies.png"/>
+                <Image url="@../../../../images/bies_interaction.png"/>
             </image>
         </ImageView>
         <Label layoutX="1000.0" layoutY="375.0" text="Potencjalne nagrody:" textFill="#ff2323">

@@ -8,7 +8,7 @@
 <AnchorPane prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.ghul.win">
     <ImageView fitHeight="800.0" fitWidth="1300.0" pickOnBounds="true">
         <image>
-            <Image url="@../../../../zdjecia/Like.jpg" />
+            <Image url="@../../../../images/geraltThumbsUp.jpg" />
         </image>
     </ImageView>
     <Button layoutX="502.0" layoutY="555.0" mnemonicParsing="false" onAction="#onNextClick" prefHeight="143.0" prefWidth="297.0" text="Dalej">

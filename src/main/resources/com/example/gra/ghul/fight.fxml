@@ -12,13 +12,13 @@
     <children>
         <ImageView fitHeight="550.0" fitWidth="650.0" layoutY="250.0" pickOnBounds="true" smooth="false">
             <image>
-                <Image url="@../../../../zdjecia/GeraltBokiem.jpg"/>
+                <Image url="@../../../../images/geraltSide.jpg"/>
             </image>
         </ImageView>
         <ImageView fitHeight="550.0" fitWidth="650.0" layoutX="650.0" layoutY="250.0" pickOnBounds="true"
                    smooth="false">
             <image>
-                <Image url="@../../../../zdjecia/walkaghul.png"/>
+                <Image url="@../../../../images/ghul_interaction.png"/>
             </image>
         </ImageView>
         <Label layoutX="514.0" layoutY="16.0" prefHeight="48.0" prefWidth="275.0" text="Walka z Ghulem">

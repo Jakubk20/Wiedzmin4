@@ -12,12 +12,12 @@
     <children>
         <ImageView fitHeight="550.0" fitWidth="650.0" layoutX="650.0" layoutY="251.0" pickOnBounds="true">
             <image>
-                <Image url="@../../../../zdjecia/Handlarz.jpg"/>
+                <Image url="@../../../../images/trader1interaction.jpg"/>
             </image>
         </ImageView>
         <ImageView fitHeight="550.0" fitWidth="650.0" layoutY="251.0" pickOnBounds="true">
             <image>
-                <Image url="@../../../../zdjecia/GeraltBokiem.jpg"/>
+                <Image url="@../../../../images/geraltSide.jpg"/>
             </image>
         </ImageView>
         <Label layoutX="435.0" layoutY="421.0" prefHeight="28.0" prefWidth="153.0" text="Pokaż mi swoje towary.">
