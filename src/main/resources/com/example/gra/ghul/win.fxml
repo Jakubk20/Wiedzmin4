@@ -13,7 +13,7 @@
     </ImageView>
     <Button layoutX="502.0" layoutY="555.0" mnemonicParsing="false" onAction="#onNextClick" prefHeight="143.0" prefWidth="297.0" text="Dalej">
         <font>
-            <Font name="BellGothicStd-Black" size="64.0" />
+            <Font size="64.0" />
         </font>
     </Button>
     <Label layoutX="220.0" layoutY="95.0" text="Pokonałeś Ghula! Zdobywasz 200 Monet !" textFill="#e4ffe6">
@@ -31,5 +31,10 @@
             <Font name="BellGothicStd-Black" size="52.0" />
         </font>
     </Label>
+   <Label layoutX="393.0" layoutY="127.0" prefHeight="129.0" prefWidth="554.0" text="Twoja Siła wzrosła o 3." textFill="#e4ffe6">
+      <font>
+         <Font name="Candara Bold" size="52.0" />
+      </font>
+   </Label>
 
 </AnchorPane>

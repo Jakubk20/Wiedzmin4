@@ -36,7 +36,7 @@ public class trader1 {
     @FXML
     protected void onSwordSharpeningClick(ActionEvent actionEvent) throws IOException {
         if (geralt.money >= 100) {
-            geralt.power += 1;
+            geralt.power += 10;
             geralt.money -= 100;
             currentHP.setText(String.valueOf(geralt.currentHP));
             maxHP.setText(String.valueOf(geralt.maxHP));
@@ -62,7 +62,7 @@ public class trader1 {
     @FXML
     protected void onSwordRuneClick(ActionEvent actionEvent) throws IOException {
         if (geralt.money >= 180) {
-            geralt.power += 2;
+            geralt.power += 20;
             geralt.money -= 180;
             currentHP.setText(String.valueOf(geralt.currentHP));
             maxHP.setText(String.valueOf(geralt.maxHP));
