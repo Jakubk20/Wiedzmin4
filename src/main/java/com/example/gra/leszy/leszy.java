@@ -2,7 +2,7 @@ package com.example.gra.leszy;
 
 import com.example.gra.bies.fight;
 import com.example.gra.geralt;
-import com.example.gra.HelloApplication;
+import com.example.gra.start;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -27,7 +27,7 @@ public class leszy {
 
     @FXML
     protected void onFight(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("leszy/fight.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("leszy/fight.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);

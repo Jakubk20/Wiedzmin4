@@ -12,7 +12,7 @@ import java.io.IOException;
 public class instruction {
     @FXML
     protected void onHelloButtonClick(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("tavern/startLocation.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("tavern/startLocation.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);
@@ -21,7 +21,7 @@ public class instruction {
     }
     @FXML
     public void onInstructionButton(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("instruction.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("instruction.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);
@@ -30,7 +30,7 @@ public class instruction {
     }
     @FXML
     public void onReturnButton(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("start.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("start.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);

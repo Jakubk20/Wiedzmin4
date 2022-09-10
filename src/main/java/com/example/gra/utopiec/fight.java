@@ -1,7 +1,7 @@
 package com.example.gra.utopiec;
 
 import com.example.gra.geralt;
-import com.example.gra.HelloApplication;
+import com.example.gra.start;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -95,7 +95,7 @@ public class fight {
             geralt.money += 200;
             geralt.moc += 1;
             geralt.power = (10 + 20) / 2 + geralt.moc;
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("utopiec/win.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("utopiec/win.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(scene);
@@ -133,7 +133,7 @@ public class fight {
     }
 
     protected void runSuccessful(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("runAwaySuccessful.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("runAwaySuccessful.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);

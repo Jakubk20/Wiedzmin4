@@ -1,7 +1,7 @@
 package com.example.gra.ghul;
 
 import com.example.gra.geralt;
-import com.example.gra.HelloApplication;
+import com.example.gra.start;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -92,7 +92,7 @@ public class fight {
         }
         if (ghul.currentHP <= 0) {
             geralt.money += 200;
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ghul/win.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("ghul/win.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(scene);
@@ -154,7 +154,7 @@ public class fight {
     }
 
     static void runSuccessful(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("runAwaySuccessful.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("runAwaySuccessful.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);

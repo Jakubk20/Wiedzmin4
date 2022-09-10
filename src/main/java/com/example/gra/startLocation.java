@@ -12,7 +12,7 @@ import java.io.IOException;
 public class startLocation {
     @FXML
     protected void onTavernClick(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("tavern/getQuest.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("tavern/getQuest.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);
@@ -21,7 +21,7 @@ public class startLocation {
     }
     @FXML
     protected void onLeaveClick(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("utopiec/meet.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("utopiec/meet.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);
@@ -30,7 +30,7 @@ public class startLocation {
     }
     @FXML
     protected void onReturnClick(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("tavern/startLocation.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("tavern/startLocation.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);
@@ -39,7 +39,7 @@ public class startLocation {
     }
     @FXML
     protected void onGetQuestClick(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("bies/meet.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("bies/meet.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);

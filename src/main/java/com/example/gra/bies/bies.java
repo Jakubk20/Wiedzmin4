@@ -1,6 +1,6 @@
 package com.example.gra.bies;
 
-import com.example.gra.HelloApplication;
+import com.example.gra.start;
 import com.example.gra.geralt;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -26,7 +26,7 @@ public class bies {
 
     @FXML
     protected void onFight(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("bies/fight.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("bies/fight.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);

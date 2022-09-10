@@ -1,7 +1,7 @@
 package com.example.gra.bies;
 
 import com.example.gra.geralt;
-import com.example.gra.HelloApplication;
+import com.example.gra.start;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -122,7 +122,7 @@ public class fight {
             geralt.moc +=1;
             geralt.power = (10 + 20) / 2 + geralt.moc;
             geralt.maxHP +=10;
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("bies/win.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("bies/win.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(scene);
@@ -173,7 +173,7 @@ public class fight {
     }
 
     public static void runSuccessful(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("runAwaySuccessful.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("runAwaySuccessful.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);

@@ -12,7 +12,7 @@ import java.io.IOException;
 public class trader1meet {
     @FXML
     protected void onTrader(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("trader1/trader1.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("trader1/trader1.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);

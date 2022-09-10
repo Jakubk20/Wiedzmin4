@@ -1,7 +1,7 @@
 package com.example.gra.leszy;
 
 import com.example.gra.geralt;
-import com.example.gra.HelloApplication;
+import com.example.gra.start;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -110,7 +110,7 @@ protected void onPotion(ActionEvent actionEvent) throws IOException{
         }
         if (leszy.currentHP <= 0) {
             geralt.money += 700;
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("leszy/win.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("leszy/win.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(scene);
@@ -155,7 +155,7 @@ protected void onPotion(ActionEvent actionEvent) throws IOException{
     }
 
     private void runSuccessful(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("runAwaySuccessful.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("runAwaySuccessful.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);

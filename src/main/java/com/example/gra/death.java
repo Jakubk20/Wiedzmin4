@@ -17,7 +17,7 @@ public class death {
         geralt.maxHP =100;
         geralt.money=0;
         geralt.amountOfPotions = 0;
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("start.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("start.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);

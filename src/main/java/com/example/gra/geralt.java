@@ -31,7 +31,7 @@ public class geralt {
     }
 
     public static void death(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("death.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("death.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);
