@@ -41,24 +41,7 @@ public class fight {
     @FXML
     private Label textDealtDamage;
 
-//    @FXML
-//    protected void onPokazz() {
-//        balans.setText(String.valueOf(Geralt.money));
-//        sila.setText(String.valueOf(Geralt.power));
-//        hapeki.setText(String.valueOf(Geralt.HP));
-//        pozoHPGeralt.setText(String.valueOf(Geralt.HP));
-//    }
-//
-//    @FXML
-//    protected void onPokazzz() {
-//        hapekiBiesa.setText(String.valueOf(Bies.HPB));
-//        silaBiesa.setText(String.valueOf(Bies.power));
-//        pozoHPBies.setText(String.valueOf(Bies.HPB));
-//    }
     private int dealtDMGS = dealtDMGS(new ActionEvent());
-    private int dealtDMGn = dealtDMGN(new ActionEvent());
-    private int receivedDMG1 = receivedDMG1(new ActionEvent());
-    private int receivedDMG2 = receivedDMG1(new ActionEvent());
 
 
     public fight() throws IOException {
@@ -94,10 +77,8 @@ public class fight {
 
     @FXML
     protected void onNormalAttack(ActionEvent actionEvent) throws IOException {
-//        int dealtDMGS = dealtDMGS(new ActionEvent());
         int dealtDMGn = dealtDMGN(new ActionEvent());
         int receivedDMG1 = receivedDMG1(new ActionEvent());
-//        int receivedDMG2 = receivedDMG1(new ActionEvent());
         if (geralt.currentHP - receivedDMG1<= 0) {
             bies.currentHP = bies.maxHP;
             geralt.death(actionEvent);
@@ -149,10 +130,6 @@ public class fight {
     private int receivedDMG1(ActionEvent actionEvent) throws IOException {
         int receivedDMG1 = (int) bies.onAttack();
         return receivedDMG1;
-    }
-    private int receivedDMG2(ActionEvent actionEvent) throws IOException {
-        int receivedDMG2 = (int) bies.onAttack();
-        return receivedDMG2;
     }
     @FXML
     protected void onHardAttack(ActionEvent actionEvent) throws IOException {
