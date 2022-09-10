@@ -84,10 +84,9 @@ public class fight {
             geralt.death(actionEvent);
         }
         if (utopiec.currentHP - dealtDMGn <= 0 ) {
-            geralt.money += 500;
+            geralt.money += 200;
             geralt.moc +=1;
             geralt.power = (10 + 20) / 2 + geralt.moc;
-            geralt.maxHP +=10;
             FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("utopiec/win.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -141,10 +140,9 @@ public class fight {
             geralt.death(actionEvent);
         }
         if (utopiec.currentHP - dealtDMGS <= 0 ) {
-            geralt.money += 500;
+            geralt.money += 200;
             geralt.moc +=1;
             geralt.power = (10 + 20) / 2 + geralt.moc;
-            geralt.maxHP +=10;
             FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("utopiec/win.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -169,10 +167,9 @@ public class fight {
 
     private void win(ActionEvent actionEvent) throws IOException {
         if (utopiec.currentHP - dealtDMGS <= 0 ) {
-            geralt.money += 500;
+            geralt.money += 200;
             geralt.moc +=1;
             geralt.power = (10 + 20) / 2 + geralt.moc;
-            geralt.maxHP +=10;
             FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("utopiec/win.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
