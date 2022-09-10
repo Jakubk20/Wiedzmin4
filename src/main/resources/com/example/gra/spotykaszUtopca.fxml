@@ -1,28 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.Utopiec.SpotykaszUtopca">
+<AnchorPane prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.Utopiec.SpotykaszUtopca">
    <children>
-      <ImageView fitHeight="807.0" fitWidth="1207.0" layoutX="-7.0" layoutY="-7.0" pickOnBounds="true">
+      <ImageView fitHeight="800.0" fitWidth="1300.0" pickOnBounds="true">
          <image>
             <Image url="@../../../Zdjęcia/unknown.png" />
          </image>
       </ImageView>
-      <Label layoutX="461.0" layoutY="23.0" prefHeight="50.0" prefWidth="339.0" text="Spotykasz Utopca">
+      <Label layoutX="465.0" layoutY="54.0" prefHeight="56.0" prefWidth="371.0" text="Spotykasz Utopca">
          <font>
-            <Font name="BellGothicStd-Black" size="38.0" />
+            <Font name="Candara Bold" size="47.0" />
          </font>
       </Label>
-      <Button layoutX="884.0" layoutY="685.0" mnemonicParsing="false" onAction="#onUciekaj" prefHeight="103.0" prefWidth="272.0" text="Ucieczka">
+      <Button layoutX="836.0" layoutY="672.0" mnemonicParsing="false" onAction="#onUciekaj" prefHeight="103.0" prefWidth="272.0" text="Ucieczka">
          <font>
             <Font size="49.0" />
          </font>
       </Button>
-      <Button layoutX="38.0" layoutY="685.0" mnemonicParsing="false" onAction="#onWalcz" prefHeight="101.0" prefWidth="222.0" text="Walka">
+      <Button layoutX="243.0" layoutY="673.0" mnemonicParsing="false" onAction="#onWalcz" prefHeight="101.0" prefWidth="222.0" text="Walka">
          <font>
             <Font size="47.0" />
          </font>

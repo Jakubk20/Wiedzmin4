@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.instrukcjaGraj">
+<AnchorPane prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.instrukcjaGraj">
    <children>
-      <Label layoutX="162.0" layoutY="14.0" prefHeight="66.0" prefWidth="277.0" text="           Zasady gry" textAlignment="CENTER">
+      <Label layoutX="512.0" layoutY="71.0" prefHeight="66.0" prefWidth="277.0" text="           Zasady gry" textAlignment="CENTER">
          <font>
             <Font name="BellGothicStd-Black" size="24.0" />
          </font></Label>
-      <TextArea editable="false" layoutX="25.0" layoutY="80.0" prefHeight="216.0" prefWidth="553.0" text="Gra Wiedźmin 4 polega na przyjmowaniu wiedźmińskich zleceń, czyli pozbywania się potworów ze świata. System walki jest turowy, za pokonanie przeciwników zyskujemy złoto oraz punkty doświadczenia. Z czasem przeciwnicy są coraz trudniejsi, więc musimy rozsądnie podejmować decyzje." wrapText="true">
+      <TextArea editable="false" layoutX="137.0" layoutY="154.0" prefHeight="493.0" prefWidth="1026.0" text="Gra Wiedźmin 4 polega na przyjmowaniu wiedźmińskich zleceń, czyli pozbywania się potworów ze świata. System walki jest turowy, za pokonanie przeciwników zyskujemy złoto oraz punkty doświadczenia. Z czasem przeciwnicy są coraz trudniejsi, więc musimy rozsądnie podejmować decyzje." wrapText="true">
          <font>
-            <Font name="BellGothicStd-Black" size="20.0" />
+            <Font name="Candara Bold" size="46.0" />
          </font>
       </TextArea>
-      <Button layoutX="229.0" layoutY="308.0" mnemonicParsing="false" onAction="#onWrocButton" prefHeight="66.0" prefWidth="144.0" text="Wróć">
+      <Button layoutX="579.0" layoutY="680.0" mnemonicParsing="false" onAction="#onWrocButton" prefHeight="66.0" prefWidth="144.0" text="Wróć">
          <font>
             <Font name="Arial" size="31.0" />
          </font>

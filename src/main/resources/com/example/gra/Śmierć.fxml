@@ -6,15 +6,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.Śmierć">
+<AnchorPane prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.Śmierć">
    <children>
-      <ImageView fitHeight="822.0" fitWidth="1444.0" layoutX="-11.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="800.0" fitWidth="1300.0" pickOnBounds="true">
          <image>
             <Image url="@../../../Zdjęcia/game%20over.jpg" />
          </image>
       </ImageView>
-      <Button layoutX="575.0" layoutY="581.0" mnemonicParsing="false" onAction="#onZagrajPonownieClick" prefHeight="131.0" prefWidth="272.0" text="Zagraj ponownie">
+      <Button layoutX="514.0" layoutY="567.0" mnemonicParsing="false" onAction="#onZagrajPonownieClick" prefHeight="131.0" prefWidth="272.0" text="Zagraj ponownie">
          <font>
             <Font name="BellGothicStd-Black" size="27.0" />
          </font>

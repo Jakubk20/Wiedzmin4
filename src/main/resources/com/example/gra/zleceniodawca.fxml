@@ -1,58 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.StartLocation">
+<AnchorPane prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.StartLocation">
    <children>
-      <ImageView fitHeight="878.0" fitWidth="1548.0" layoutY="-42.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="800.0" fitWidth="1300.0" pickOnBounds="true">
          <image>
             <Image url="@../../../Zdjęcia/zleceniodawca.jpg" />
          </image>
       </ImageView>
-      <Button layoutX="722.0" layoutY="529.0" mnemonicParsing="false" onAction="#onWróćClick" prefHeight="16.0" prefWidth="440.0" text="Bywaj.">
+      <Button layoutX="744.0" layoutY="462.0" mnemonicParsing="false" onAction="#onWróćClick" prefHeight="45.0" prefWidth="154.0" text="Bywaj.">
          <font>
-            <Font size="24.0" />
+            <Font size="21.0" />
          </font>
       </Button>
-      <Label layoutX="859.0" layoutY="150.0" prefHeight="29.0" prefWidth="617.0" text="Witaj Wiedźminie! Ostatnio pod naszą wioską urządził sobie legowisko Bies." textFill="WHITE">
+      <Label layoutX="590.0" layoutY="181.0" prefHeight="29.0" prefWidth="617.0" text="Witaj Wiedźminie! Ostatnio pod naszą wioską urządził sobie legowisko Bies." textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Button layoutX="719.0" layoutY="456.0" mnemonicParsing="false" onAction="#onWeźZlecenieClick" prefHeight="27.0" prefWidth="446.0" text="Dobrze. Zobaczę co da się zrobić.">
+      <Button layoutX="670.0" layoutY="415.0" mnemonicParsing="false" onAction="#onWeźZlecenieClick" prefHeight="30.0" prefWidth="301.0" text="Dobrze. Zobaczę co da się zrobić.">
          <font>
-            <Font name="BellGothicStd-Black" size="24.0" />
+            <Font name="Arial" size="18.0" />
          </font>
       </Button>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="1248.0" layoutY="464.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="1000.0" layoutY="409.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../Zdjęcia/bies.png" />
          </image>
       </ImageView>
-      <Label layoutX="1235.0" layoutY="415.0" text="Potencjalne nagrody:" textFill="#ff2323">
+      <Label layoutX="1000.0" layoutY="375.0" text="Potencjalne nagrody:" textFill="#ff2323">
          <font>
             <Font name="BellGothicStd-Black" size="27.0" />
          </font>
       </Label>
-      <Label layoutX="1360.0" layoutY="464.0" text="500 Monet" textFill="#e48989">
+      <Label layoutX="1110.0" layoutY="415.0" text="500 Monet" textFill="#e48989">
          <font>
             <Font name="BellGothicStd-Black" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="1360.0" layoutY="493.0" text="+1 do Siły" textFill="#e48989">
+      <Label layoutX="1110.0" layoutY="454.0" text="+1 do Siły" textFill="#e48989">
          <font>
             <Font name="BellGothicStd-Black" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="1360.0" layoutY="524.0" text="+10 do HP" textFill="#e48989">
+      <Label layoutX="1107.0" layoutY="491.0" text="+10 do HP" textFill="#e48989">
          <font>
             <Font name="BellGothicStd-Black" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="774.0" layoutY="179.0" prefHeight="27.0" prefWidth="808.0" text="Strach z domu wyjść! Zrób coś z tym, proszę! Pozbądź się potwora, a srogo cię wynagrodzimy!" textFill="WHITE">
+      <Label layoutX="525.0" layoutY="210.0" prefHeight="27.0" prefWidth="747.0" text="Strach z domu wyjść! Zrób coś z tym, proszę! Pozbądź się potwora, a srogo cię wynagrodzimy!" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>

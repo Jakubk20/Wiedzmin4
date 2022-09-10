@@ -1,69 +1,127 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="744.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.Leszy.WalkaZLeszym">
+<AnchorPane prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.Leszy.WalkaZLeszym">
    <children>
-      <ImageView fitHeight="568.0" fitWidth="600.0" layoutY="232.0" pickOnBounds="true" smooth="false">
+      <ImageView fitHeight="550.0" fitWidth="650.0" layoutY="250.0" pickOnBounds="true" smooth="false">
          <image>
             <Image url="@../../../Zdjęcia/dsadsadsadsadasdsa.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="568.0" fitWidth="600.0" layoutX="600.0" layoutY="232.0" pickOnBounds="true" smooth="false">
+      <ImageView fitHeight="550.0" fitWidth="650.0" layoutX="650.0" layoutY="250.0" pickOnBounds="true" smooth="false">
          <image>
-            <Image url="@../../../Zdjęcia/leszy.jpg" />
+            <Image url="@../../../Zdjęcia/walkaghul.png" />
          </image>
       </ImageView>
-      <Label layoutX="375.0" layoutY="14.0" text="Po drodze napotkałeś na Leszego !">
+      <Label layoutX="514.0" layoutY="16.0" prefHeight="48.0" prefWidth="275.0" text="Walka z Leszym">
          <font>
-            <Font name="BellGothicStd-Black" size="29.0" />
+            <Font name="BellGothicStd-Black" size="38.0" />
          </font>
       </Label>
-      <Label layoutX="14.0" layoutY="55.0" text="Siła :">
-         <font>
-            <Font name="BellGothicStd-Black" size="24.0" />
-         </font>
-      </Label>
-      <Label fx:id="silla" layoutX="69.0" layoutY="53.0" prefHeight="35.0" prefWidth="90.0">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <Button layoutX="14.0" layoutY="11.0" mnemonicParsing="false" onAction="#onPokaz" prefHeight="44.0" prefWidth="176.0" text="Pokaż statystyki" />
-      <Label layoutX="14.0" layoutY="94.0" text="Monety :">
-         <font>
-            <Font name="BellGothicStd-Black" size="24.0" />
-         </font>
-      </Label>
-      <Label fx:id="ballans" layoutX="107.0" layoutY="92.0" prefHeight="35.0" prefWidth="90.0">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <Label layoutX="14.0" layoutY="136.0" text="HP :">
-         <font>
-            <Font name="BellGothicStd-Black" size="24.0" />
-         </font>
-      </Label>
-      <Label fx:id="zdrowie" layoutX="62.0" layoutY="134.0" prefHeight="35.0" prefWidth="90.0">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <Label layoutX="33.0" layoutY="155.0" prefHeight="31.0" prefWidth="129.0" text="Mikstury HP :">
+      <Label layoutX="33.0" layoutY="62.0" prefHeight="31.0" prefWidth="47.0" text="Siła:">
          <font>
             <Font name="BellGothicStd-Black" size="20.0" />
          </font>
       </Label>
-      <Label fx:id="potki" layoutX="161.0" layoutY="155.0" prefHeight="31.0" prefWidth="82.0">
+      <Label layoutX="33.0" layoutY="93.0" prefHeight="31.0" prefWidth="82.0" text="MaxHP:">
+         <font>
+            <Font name="BellGothicStd-Black" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="sila" layoutX="74.0" layoutY="62.0" prefHeight="31.0" prefWidth="82.0">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Button layoutX="518.0" layoutY="604.0" mnemonicParsing="false" onAction="#onPotion" prefHeight="64.0" prefWidth="166.0" text="Użyj Mikstury HP">
+      <Label fx:id="hapeki" layoutX="105.0" layoutY="93.0" prefHeight="31.0" prefWidth="106.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button layoutX="-3.0" layoutY="700.0" mnemonicParsing="false" onAction="#onNormal" prefHeight="100.0" prefWidth="208.0" text="Atak zwykły (Szybki)">
+         <font>
+            <Font size="19.0" />
+         </font></Button>
+      <Button layoutX="1092.0" layoutY="700.0" mnemonicParsing="false" onAction="#onHard" prefHeight="100.0" prefWidth="208.0" text="Atak mocny (Wolny)">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
+      <Button layoutX="568.0" layoutY="700.0" mnemonicParsing="false" onAction="#onRun" prefHeight="80.0" prefWidth="166.0" text="Ucieczka">
+         <font>
+            <Font size="29.0" />
+         </font></Button>
+      <Label layoutX="531.0" layoutY="209.0" prefHeight="41.0" prefWidth="239.0" text="Wybierz swój atak">
+         <font>
+            <Font name="BellGothicStd-Black" size="27.0" />
+         </font>
+      </Label>
+      <Label layoutX="969.0" layoutY="62.0" prefHeight="31.0" prefWidth="47.0" text="Siła:">
+         <font>
+            <Font name="BellGothicStd-Black" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="969.0" layoutY="93.0" prefHeight="31.0" prefWidth="82.0" text="MaxHP:">
+         <font>
+            <Font name="BellGothicStd-Black" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="hapekiLeszego" layoutX="1040.0" layoutY="93.0" prefHeight="31.0" prefWidth="166.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="silaLesza" layoutX="1010.0" layoutY="62.0" prefHeight="31.0" prefWidth="113.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="99.0" layoutY="209.0" prefHeight="41.0" prefWidth="187.0" text="Pozostałe zdrowie:">
+         <font>
+            <Font name="BellGothicStd-Black" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="969.0" layoutY="209.0" prefHeight="41.0" prefWidth="187.0" text="Pozostałe zdrowie:">
+         <font>
+            <Font name="BellGothicStd-Black" size="21.0" />
+         </font>
+      </Label>
+      <Label fx:id="pozoHPGeralt" layoutX="274.0" layoutY="206.0" prefHeight="41.0" prefWidth="123.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Label>
+      <Label fx:id="pozoHPLesz" layoutX="1145.0" layoutY="206.0" prefHeight="41.0" prefWidth="123.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Label>
+      <Label layoutX="33.0" layoutY="18.0" prefHeight="41.0" prefWidth="262.0" text="Twoje statystyki:">
+         <font>
+            <Font name="BellGothicStd-Black" size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="970.0" layoutY="19.0" prefHeight="41.0" prefWidth="239.0" text="Statystyki Lesza:">
+         <font>
+            <Font name="BellGothicStd-Black" size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="33.0" layoutY="124.0" prefHeight="31.0" prefWidth="129.0" text="Mikstury HP:">
+         <font>
+            <Font name="BellGothicStd-Black" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="potki" layoutX="151.0" layoutY="124.0" prefHeight="31.0" prefWidth="82.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button layoutX="567.0" layoutY="606.0" mnemonicParsing="false" onAction="#onPotion" prefHeight="64.0" prefWidth="166.0" text="Użyj Mikstury HP">
          <font>
             <Font size="18.0" />
          </font>

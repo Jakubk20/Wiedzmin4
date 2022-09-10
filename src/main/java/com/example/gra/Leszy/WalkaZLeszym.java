@@ -2,6 +2,7 @@ package com.example.gra.Leszy;
 
 import com.example.gra.Bies.WalkaZBiesem;
 import com.example.gra.Geralt;
+import com.example.gra.Ghul.Ghul;
 import com.example.gra.HelloApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -29,6 +30,8 @@ public class WalkaZLeszym {
     private Label pozoHPGeralt;
     @FXML
     private Label pozoHPLesz;
+    @FXML
+    private Label potki;
 
 //    @FXML
 //    protected void onPokazz() {
@@ -44,6 +47,16 @@ public class WalkaZLeszym {
 //        silaBiesa.setText(String.valueOf(Bies.power));
 //        pozoHPBies.setText(String.valueOf(Bies.HPB));
 //    }
+    @FXML
+    protected void initialize(){
+        hapekiLeszego.setText(String.valueOf(Lesz.maxHP));
+        silaLesza.setText(String.valueOf(Lesz.power));
+        pozoHPLesz.setText(String.valueOf(Lesz.currentHP));
+        sila.setText(String.valueOf(Geralt.power));
+        hapeki.setText(String.valueOf(Geralt.MaxHP));
+        pozoHPGeralt.setText(String.valueOf(Geralt.CurrentHP));
+        potki.setText(String.valueOf(Geralt.amountOfPotions));
+    }
 @FXML
 protected void onPotion(ActionEvent actionEvent) throws IOException{
     if (Geralt.amountOfPotions > 0){
