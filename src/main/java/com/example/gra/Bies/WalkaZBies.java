@@ -154,6 +154,7 @@ public class WalkaZBies {
             Bies.currentHP -= zadane;
             zadaneObra.setText(String.valueOf(zadane));
             System.out.println("lol");
+            System.out.println("lol");
         }
         stats();
     }
