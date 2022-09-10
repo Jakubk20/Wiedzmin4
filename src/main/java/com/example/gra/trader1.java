@@ -8,23 +8,23 @@ import java.io.IOException;
 
 public class trader1 {
     @FXML
-    private Label hp;
+    private Label currentHP;
     @FXML
     private Label money;
     @FXML
-    private Label sila;
+    private Label power;
     @FXML
-    private Label maxhp;
+    private Label maxHP;
     @FXML
-    private Label potki;
+    private Label amountOfPotions;
 
     @FXML
     protected void initialize() {
-        hp.setText(String.valueOf(geralt.currentHP));
-        maxhp.setText(String.valueOf(geralt.maxHP));
-        sila.setText(String.valueOf(geralt.power));
+        currentHP.setText(String.valueOf(geralt.currentHP));
+        maxHP.setText(String.valueOf(geralt.maxHP));
+        power.setText(String.valueOf(geralt.power));
         money.setText(String.valueOf(geralt.money));
-        potki.setText(String.valueOf(geralt.amountOfPotions));
+        amountOfPotions.setText(String.valueOf(geralt.amountOfPotions));
     }
 
     @FXML
@@ -32,9 +32,9 @@ public class trader1 {
         if (geralt.money >= 100) {
             geralt.power += 1;
             geralt.money -= 100;
-            hp.setText(String.valueOf(geralt.currentHP));
-            maxhp.setText(String.valueOf(geralt.maxHP));
-            sila.setText(String.valueOf(geralt.power));
+            currentHP.setText(String.valueOf(geralt.currentHP));
+            maxHP.setText(String.valueOf(geralt.maxHP));
+            power.setText(String.valueOf(geralt.power));
             money.setText(String.valueOf(geralt.money));
         }
     }
@@ -46,9 +46,9 @@ public class trader1 {
             if (geralt.currentHP <= geralt.maxHP - 10) {
                 geralt.currentHP += 10;
             } else geralt.currentHP = geralt.maxHP;
-            hp.setText(String.valueOf(geralt.currentHP));
-            maxhp.setText(String.valueOf(geralt.maxHP));
-            sila.setText(String.valueOf(geralt.power));
+            currentHP.setText(String.valueOf(geralt.currentHP));
+            maxHP.setText(String.valueOf(geralt.maxHP));
+            power.setText(String.valueOf(geralt.power));
             money.setText(String.valueOf(geralt.money));
         }
     }
@@ -58,9 +58,9 @@ public class trader1 {
         if (geralt.money >= 180) {
             geralt.power += 2;
             geralt.money -= 180;
-            hp.setText(String.valueOf(geralt.currentHP));
-            maxhp.setText(String.valueOf(geralt.maxHP));
-            sila.setText(String.valueOf(geralt.power));
+            currentHP.setText(String.valueOf(geralt.currentHP));
+            maxHP.setText(String.valueOf(geralt.maxHP));
+            power.setText(String.valueOf(geralt.power));
             money.setText(String.valueOf(geralt.money));
         }
     }
@@ -72,9 +72,9 @@ public class trader1 {
             if (geralt.currentHP <= geralt.maxHP - 20) {
                 geralt.currentHP += 20;
             } else geralt.currentHP = geralt.maxHP;
-            hp.setText(String.valueOf(geralt.currentHP));
-            maxhp.setText(String.valueOf(geralt.maxHP));
-            sila.setText(String.valueOf(geralt.power));
+            currentHP.setText(String.valueOf(geralt.currentHP));
+            maxHP.setText(String.valueOf(geralt.maxHP));
+            power.setText(String.valueOf(geralt.power));
             money.setText(String.valueOf(geralt.money));
         }
     }
@@ -84,11 +84,11 @@ public class trader1 {
         if (geralt.money >= 250) {
             geralt.amountOfPotions += 1;
             geralt.money -= 250;
-            hp.setText(String.valueOf(geralt.currentHP));
-            maxhp.setText(String.valueOf(geralt.maxHP));
-            sila.setText(String.valueOf(geralt.power));
+            currentHP.setText(String.valueOf(geralt.currentHP));
+            maxHP.setText(String.valueOf(geralt.maxHP));
+            power.setText(String.valueOf(geralt.power));
             money.setText(String.valueOf(geralt.money));
-            potki.setText(String.valueOf(geralt.amountOfPotions));
+            amountOfPotions.setText(String.valueOf(geralt.amountOfPotions));
         }
     }
 

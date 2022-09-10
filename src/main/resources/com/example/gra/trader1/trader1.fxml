@@ -52,7 +52,7 @@
                 <Font name="BellGothicStd-Black" size="22.0"/>
             </font>
         </Label>
-        <Label fx:id="sila" layoutX="63.0" layoutY="135.0" prefHeight="28.0" prefWidth="100.0">
+        <Label fx:id="power" layoutX="63.0" layoutY="135.0" prefHeight="28.0" prefWidth="100.0">
             <font>
                 <Font name="BellGothicStd-Black" size="22.0"/>
             </font>
@@ -62,12 +62,12 @@
                 <Font name="BellGothicStd-Black" size="22.0"/>
             </font>
         </Label>
-        <Label fx:id="maxhp" layoutX="97.0" layoutY="191.0" prefHeight="28.0" prefWidth="115.0">
+        <Label fx:id="maxHP" layoutX="97.0" layoutY="191.0" prefHeight="28.0" prefWidth="115.0">
             <font>
                 <Font name="BellGothicStd-Black" size="22.0"/>
             </font>
         </Label>
-        <Label fx:id="hp" layoutX="53.0" layoutY="163.0" prefHeight="28.0" prefWidth="140.0">
+        <Label fx:id="currentHP" layoutX="53.0" layoutY="163.0" prefHeight="28.0" prefWidth="140.0">
             <font>
                 <Font name="BellGothicStd-Black" size="22.0"/>
             </font>
@@ -178,7 +178,7 @@
                 <Font name="BellGothicStd-Black" size="22.0"/>
             </font>
         </Label>
-        <Label fx:id="potki" layoutX="152.0" layoutY="219.0" prefHeight="28.0" prefWidth="81.0">
+        <Label fx:id="amountOfPotions" layoutX="152.0" layoutY="219.0" prefHeight="28.0" prefWidth="81.0">
             <font>
                 <Font name="BellGothicStd-Black" size="22.0"/>
             </font>
