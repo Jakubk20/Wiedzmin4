@@ -84,14 +84,9 @@ public class fight {
             geralt.death(actionEvent);
         }
         if (bies.currentHP - dealtDMGn <= 0 ) {
-            FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("bies/win.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setScene(scene);
-            stage.centerOnScreen();
-            stage.show();
+            win(actionEvent);
         }
-        win(actionEvent);
+
         if (geralt.currentHP > 0 && bies.currentHP > 0) {
             textDealtDamage.setText("Zadane obrażenia:");
             dealtDamage.setText(String.valueOf(dealtDMGn));
@@ -136,14 +131,9 @@ public class fight {
             geralt.death(actionEvent);
         }
         if (bies.currentHP - dealtDMGS <= 0 ) {
-            FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("bies/win.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setScene(scene);
-            stage.centerOnScreen();
-            stage.show();
+            win(actionEvent);
         }
-        win(actionEvent);
+
         if (geralt.currentHP > 0 && bies.currentHP > 0) {
             textReceivedDamage1.setText("Otrzymane obrażenia:");
             textReceivedDamage2.setText("Otrzymane obrażenia:");
@@ -162,7 +152,7 @@ public class fight {
         if (bies.currentHP - dealtDMGS <= 0 ) {
             geralt.money += 500;
             geralt.moc +=1;
-            geralt.power = (10 + 20) / 2 + geralt.moc;
+            geralt.power = ((10 + 20) / 2) + geralt.moc;
             geralt.maxHP +=10;
             FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("bies/win.fxml"));
             Scene scene = new Scene(fxmlLoader.load());

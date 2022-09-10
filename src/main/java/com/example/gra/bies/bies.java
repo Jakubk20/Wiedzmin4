@@ -14,7 +14,7 @@ import java.util.Random;
 
 public class bies {
     Random random = new Random();
-    public static double power = (1 + 2) / 2;
+    public static double power = ((1 + 2) / 2);
     public static int maxHP = 1000;
     public static int currentHP = maxHP;
 

@@ -84,14 +84,9 @@ public class fight {
             geralt.death(actionEvent);
         }
         if (ghul.currentHP - dealtDMGn <= 0 ) {
-            FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("ghul/win.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setScene(scene);
-            stage.centerOnScreen();
-            stage.show();
+            win(actionEvent);
         }
-        win(actionEvent);
+
         if (geralt.currentHP > 0 && ghul.currentHP > 0) {
             textDealtDamage.setText("Zadane obrażenia:");
             dealtDamage.setText(String.valueOf(dealtDMGn));
@@ -136,14 +131,9 @@ public class fight {
             geralt.death(actionEvent);
         }
         if (ghul.currentHP - dealtDMGS <= 0 ) {
-            FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("ghul/win.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setScene(scene);
-            stage.centerOnScreen();
-            stage.show();
+            win(actionEvent);
         }
-        win(actionEvent);
+
         if (geralt.currentHP > 0 && ghul.currentHP > 0) {
             textReceivedDamage1.setText("Otrzymane obrażenia:");
             textReceivedDamage2.setText("Otrzymane obrażenia:");

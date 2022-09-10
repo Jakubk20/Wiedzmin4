@@ -84,14 +84,9 @@ public class fight {
             geralt.death(actionEvent);
         }
         if (utopiec.currentHP - dealtDMGn <= 0 ) {
-            FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("utopiec/win.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setScene(scene);
-            stage.centerOnScreen();
-            stage.show();
+            win(actionEvent);
         }
-        win(actionEvent);
+
         if (geralt.currentHP > 0 && utopiec.currentHP > 0) {
             textDealtDamage.setText("Zadane obrażenia:");
             dealtDamage.setText(String.valueOf(dealtDMGn));
@@ -136,14 +131,9 @@ public class fight {
             geralt.death(actionEvent);
         }
         if (utopiec.currentHP - dealtDMGS <= 0 ) {
-            FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("utopiec/win.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setScene(scene);
-            stage.centerOnScreen();
-            stage.show();
+            win(actionEvent);
         }
-        win(actionEvent);
+
         if (geralt.currentHP > 0 && utopiec.currentHP > 0) {
             textReceivedDamage1.setText("Otrzymane obrażenia:");
             textReceivedDamage2.setText("Otrzymane obrażenia:");
@@ -162,7 +152,7 @@ public class fight {
         if (utopiec.currentHP - dealtDMGS <= 0 ) {
             geralt.money += 200;
             geralt.moc +=1;
-            geralt.power = (10 + 20) / 2 + geralt.moc;
+            geralt.power = ((10 + 20) / 2) + geralt.moc;
             FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("utopiec/win.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
