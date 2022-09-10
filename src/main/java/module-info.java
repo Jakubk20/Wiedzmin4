@@ -17,4 +17,6 @@ module com.example.gra {
     opens com.example.gra.utopiec to javafx.fxml;
     exports com.example.gra.strzyga;
     opens com.example.gra.strzyga to javafx.fxml;
+    exports com.example.gra.miasto;
+    opens com.example.gra.miasto to javafx.fxml;
 }
