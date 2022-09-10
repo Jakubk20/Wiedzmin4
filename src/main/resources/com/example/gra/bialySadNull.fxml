@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.startLocation">
+    <children>
+        <ImageView fitHeight="800.0" fitWidth="1300.0" pickOnBounds="true">
+            <image>
+                <Image url="@../../../images/bialySadPoludnie.jpg" />
+            </image>
+        </ImageView>
+        <Label layoutX="400.0" layoutY="635.0" prefHeight="158.0" prefWidth="520.0" text="Niczego tu nie znajdę..." textFill="WHITE">
+            <font>
+                <Font name="Candara Bold" size="50.0" />
+            </font>
+        </Label>
+        <Button layoutX="21.0" layoutY="504.0" mnemonicParsing="false" onAction="#onGoToWhiteOrchardClick" prefHeight="51.0" prefWidth="193.0" text="Wróć do wioski">
+            <font>
+                <Font size="20.0" />
+            </font></Button>
+    </children>
+</AnchorPane>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.startLocation">
+    <children>
+        <ImageView fitHeight="800.0" fitWidth="1300.0" pickOnBounds="true">
+            <image>
+                <Image url="@../../../images/bialy_sad.jpg" />
+            </image>
+        </ImageView>
+        <Label layoutX="508.0" layoutY="21.0" prefHeight="42.0" prefWidth="284.0" text="Wieś Biały Sad">
+            <font>
+                <Font name="Candara Bold" size="33.0" />
+            </font>
+        </Label>
+        <Button layoutX="681.0" layoutY="439.0" mnemonicParsing="false" onAction="#onGoToTavernClick" prefHeight="42.0" prefWidth="161.0" text="Tawerna">
+            <font>
+                <Font name="Arial" size="20.0" />
+            </font>
+        </Button>
+        <Button layoutX="1078.0" layoutY="600.0" mnemonicParsing="false" onAction="#onGoSouthClick" prefHeight="51.0" prefWidth="186.0" text="Idź na południe">
+            <font>
+                <Font name="Arial" size="20.0" />
+            </font>
+        </Button>
+      <Button layoutX="351.0" layoutY="191.0" mnemonicParsing="false" onAction="#onGoToNorthClick" prefHeight="44.0" prefWidth="161.0" text="Idź na północ">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
+        <Button layoutX="460.0" layoutY="382.0" mnemonicParsing="false" onAction="#onTraderClick" prefHeight="42.0" prefWidth="110.0" text="Handlarz">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Button>
+    </children>
+</AnchorPane>

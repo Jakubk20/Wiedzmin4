@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.startLocation">
+    <children>
+        <ImageView fitHeight="800.0" fitWidth="1300.0" pickOnBounds="true">
+            <image>
+                <Image url="@../../../../images/tavern1.jpg" />
+            </image>
+        </ImageView>
+        <Button layoutX="744.0" layoutY="462.0" mnemonicParsing="false" onAction="#onReturnClick" prefHeight="45.0" prefWidth="154.0" text="Jeszcze nie.">
+            <font>
+                <Font size="21.0" />
+            </font>
+        </Button>
+        <Label layoutX="689.0" layoutY="181.0" prefHeight="29.0" prefWidth="376.0" text="I jak? Pozbyłeś się tego potwora, wiedźminie?" textFill="WHITE">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.startLocation">
+    <children>
+        <ImageView fitHeight="800.0" fitWidth="1300.0" pickOnBounds="true">
+            <image>
+                <Image url="@../../../../images/tavern1.jpg" />
+            </image>
+        </ImageView>
+        <Button layoutX="590.0" layoutY="438.0" mnemonicParsing="false" onAction="#onReturnClick" prefHeight="45.0" prefWidth="408.0" text="Dziękuję. Bywaj.">
+            <font>
+                <Font size="21.0" />
+            </font>
+        </Button>
+        <Label layoutX="689.0" layoutY="148.0" prefHeight="31.0" prefWidth="600.0" text="O Bogowie! Dziękuję w imieniu całej wsi! Oto twoje złoto. Mam dla ciebie" textFill="WHITE">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+      <Label layoutX="711.0" layoutY="173.0" prefHeight="31.0" prefWidth="600.0" text="jeszcze coś. To mikstura uzdrawiająca wytworzona przez moją żonę." textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="737.0" layoutY="188.0" prefHeight="45.0" prefWidth="468.0" text="Na pewno ci się przyda w walce z potworami, wiedźminie." textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="1071.0" layoutY="302.0" prefHeight="59.0" prefWidth="175.0" text="+500 Złota" textFill="#ffd400">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <Label layoutX="990.0" layoutY="347.0" prefHeight="59.0" prefWidth="336.0" text="+1 Mikstura uzdrawiająca" textFill="RED">
+         <font>
+            <Font size="26.0" />
+         </font></Label>
+    </children>
+</AnchorPane>

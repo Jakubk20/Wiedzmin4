@@ -14,14 +14,8 @@ import java.io.IOException;
 
 public class win {
     @FXML
-    private Label money;
-    @FXML
-    protected void initialize(){
-        money.setText(String.valueOf(geralt.money));
-    }
-    @FXML
     protected void onNextClick(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("trader1/trader1meet.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("bialySadNull.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);
