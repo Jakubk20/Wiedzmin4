@@ -1,5 +1,6 @@
 package com.example.gra.Leszy;
 
+import com.example.gra.Bies.Bies;
 import com.example.gra.Bies.WalkaZBiesem;
 import com.example.gra.Geralt;
 import com.example.gra.Ghul.Ghul;
@@ -32,6 +33,18 @@ public class WalkaZLeszym {
     private Label pozoHPLesz;
     @FXML
     private Label potki;
+    @FXML
+    private Label textotrzymaneo1;
+    @FXML
+    private Label textotrzymaneo2;
+    @FXML
+    private Label zadaneObra;
+    @FXML
+    private Label textzadaneo;
+    @FXML
+    private Label orzymaneObra1;
+    @FXML
+    private Label orzymaneObra2;
 
 //    @FXML
 //    protected void onPokazz() {
@@ -71,8 +84,18 @@ protected void onPotion(ActionEvent actionEvent) throws IOException{
     protected void onNormal(ActionEvent actionEvent) throws IOException {
         end(actionEvent);
         if (Geralt.CurrentHP > 0 && Lesz.currentHP > 0) {
-            Lesz.currentHP -= Geralt.onNormalAttack(actionEvent);
-            Geralt.CurrentHP -= Lesz.onAttack(actionEvent);
+            int obra = (int) Geralt.onNormalAttack(actionEvent);
+            textzadaneo.setText("Zadane obrażenia :");
+            zadaneObra.setText(String.valueOf(obra));
+            Lesz.currentHP -= obra;
+            int otrz = (int) Lesz.onAttack(actionEvent);
+            textotrzymaneo1.setText("Otrzymane obrażenia :");
+            orzymaneObra1.setText(String.valueOf(otrz));
+            Geralt.CurrentHP -= otrz;
+
+
+            textotrzymaneo2.setText("");
+            orzymaneObra2.setText("");
         }
         stats();
     }
@@ -106,9 +129,18 @@ protected void onPotion(ActionEvent actionEvent) throws IOException{
     protected void onHard(ActionEvent actionEvent) throws IOException {
         end(actionEvent);
         if (Geralt.CurrentHP > 0 && Lesz.currentHP > 0) {
-            Lesz.currentHP -= Geralt.onStrongAttack(actionEvent);
-            Geralt.CurrentHP -= Lesz.onAttack(actionEvent);
-            Geralt.CurrentHP -= Lesz.onAttack(actionEvent);
+            textotrzymaneo1.setText("Otrzymane obrażenia :");
+            textotrzymaneo2.setText("Otrzymane obrażenia :");
+            textzadaneo.setText("Zadane obrażenia :");
+            int obraz1 = (int) Lesz.onAttack(actionEvent);
+            int obraz2 = (int) Lesz.onAttack(actionEvent);
+            Geralt.CurrentHP -= obraz1;
+            Geralt.CurrentHP -= obraz2;
+            orzymaneObra1.setText(String.valueOf(obraz1));
+            orzymaneObra2.setText(String.valueOf(obraz2));
+            int zadane = (int) Geralt.onStrongAttack(actionEvent);
+            Lesz.currentHP -= zadane;
+            zadaneObra.setText(String.valueOf(zadane));
         }
         stats();
     }

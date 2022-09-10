@@ -1,5 +1,6 @@
 package com.example.gra.Ghul;
 
+import com.example.gra.Bies.Bies;
 import com.example.gra.Bies.WalkaZBiesem;
 import com.example.gra.Geralt;
 import com.example.gra.HelloApplication;
@@ -29,6 +30,18 @@ public class WalkaZGhul {
     private Label pozoHPGhul;
     @FXML
     private Label potki;
+    @FXML
+    private Label textotrzymaneo1;
+    @FXML
+    private Label textotrzymaneo2;
+    @FXML
+    private Label zadaneObra;
+    @FXML
+    private Label textzadaneo;
+    @FXML
+    private Label orzymaneObra1;
+    @FXML
+    private Label orzymaneObra2;
     //    @FXML
 //    protected void onPokazz() {
 //        balans.setText(String.valueOf(Geralt.money));
@@ -57,8 +70,18 @@ public class WalkaZGhul {
     protected void onNormal(ActionEvent actionEvent) throws IOException {
         end(actionEvent);
         if (Geralt.CurrentHP > 0 && Ghul.currentHP > 0) {
-            Ghul.currentHP -= Geralt.onNormalAttack(actionEvent);
-            Geralt.CurrentHP -= Ghul.onAttack(actionEvent);
+            int obra = (int) Geralt.onNormalAttack(actionEvent);
+            textzadaneo.setText("Zadane obrażenia :");
+            zadaneObra.setText(String.valueOf(obra));
+            Ghul.currentHP -= obra;
+            int otrz = (int) Ghul.onAttack(actionEvent);
+            textotrzymaneo1.setText("Otrzymane obrażenia :");
+            orzymaneObra1.setText(String.valueOf(otrz));
+            Geralt.CurrentHP -= otrz;
+
+
+            textotrzymaneo2.setText("");
+            orzymaneObra2.setText("");
         }
         pozoHPGhul.setText(String.valueOf(Ghul.currentHP));
         pozoHPGeralt.setText(String.valueOf(Geralt.CurrentHP));
@@ -89,9 +112,18 @@ public class WalkaZGhul {
     protected void onHard(ActionEvent actionEvent) throws IOException {
         end(actionEvent);
         if (Geralt.CurrentHP > 0 && Ghul.currentHP > 0) {
-            Ghul.currentHP -= Geralt.onStrongAttack(actionEvent);
-            Geralt.CurrentHP -= Ghul.onAttack(actionEvent);
-            Geralt.CurrentHP -= Ghul.onAttack(actionEvent);
+            textotrzymaneo1.setText("Otrzymane obrażenia :");
+            textotrzymaneo2.setText("Otrzymane obrażenia :");
+            textzadaneo.setText("Zadane obrażenia :");
+            int obraz1 = (int) Ghul.onAttack(actionEvent);
+            int obraz2 = (int) Ghul.onAttack(actionEvent);
+            Geralt.CurrentHP -= obraz1;
+            Geralt.CurrentHP -= obraz2;
+            orzymaneObra1.setText(String.valueOf(obraz1));
+            orzymaneObra2.setText(String.valueOf(obraz2));
+            int zadane = (int) Geralt.onStrongAttack(actionEvent);
+            Ghul.currentHP -= zadane;
+            zadaneObra.setText(String.valueOf(zadane));
         }
         pozoHPGhul.setText(String.valueOf(Ghul.currentHP));
         pozoHPGeralt.setText(String.valueOf(Geralt.CurrentHP));

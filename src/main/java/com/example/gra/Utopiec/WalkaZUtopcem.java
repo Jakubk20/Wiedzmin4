@@ -1,5 +1,6 @@
 package com.example.gra.Utopiec;
 
+import com.example.gra.Bies.Bies;
 import com.example.gra.Bies.WalkaZBiesem;
 import com.example.gra.Geralt;
 import com.example.gra.HelloApplication;
@@ -29,6 +30,18 @@ public class WalkaZUtopcem {
     private Label pozoHPUtopiec;
     @FXML
     private Label potki;
+    @FXML
+    private Label textotrzymaneo1;
+    @FXML
+    private Label textotrzymaneo2;
+    @FXML
+    private Label zadaneObra;
+    @FXML
+    private Label textzadaneo;
+    @FXML
+    private Label orzymaneObra1;
+    @FXML
+    private Label orzymaneObra2;
 
 //    @FXML
 //    protected void onPokazz() {
@@ -58,8 +71,18 @@ protected void initialize(){
     protected void onNormal(ActionEvent actionEvent) throws IOException {
         end(actionEvent);
         if (Geralt.CurrentHP > 0 && Utopiec.currentHP > 0) {
-            Utopiec.currentHP -= Geralt.onNormalAttack(actionEvent);
-            Geralt.CurrentHP -= Utopiec.onAttack(actionEvent);
+            int obra = (int) Geralt.onNormalAttack(actionEvent);
+            textzadaneo.setText("Zadane obrażenia :");
+            zadaneObra.setText(String.valueOf(obra));
+            Utopiec.currentHP -= obra;
+            int otrz = (int) Utopiec.onAttack(actionEvent);
+            textotrzymaneo1.setText("Otrzymane obrażenia :");
+            orzymaneObra1.setText(String.valueOf(otrz));
+            Geralt.CurrentHP -= otrz;
+
+
+            textotrzymaneo2.setText("");
+            orzymaneObra2.setText("");
         }
         pozoHPUtopiec.setText(String.valueOf(Utopiec.currentHP));
         pozoHPGeralt.setText(String.valueOf(Geralt.CurrentHP));
@@ -92,9 +115,18 @@ protected void initialize(){
     protected void onHard(ActionEvent actionEvent) throws IOException {
         end(actionEvent);
         if (Geralt.CurrentHP > 0 && Utopiec.currentHP > 0) {
-            Utopiec.currentHP -= Geralt.onStrongAttack(actionEvent);
-            Geralt.CurrentHP -= Utopiec.onAttack(actionEvent);
-            Geralt.CurrentHP -= Utopiec.onAttack(actionEvent);
+            textotrzymaneo1.setText("Otrzymane obrażenia :");
+            textotrzymaneo2.setText("Otrzymane obrażenia :");
+            textzadaneo.setText("Zadane obrażenia :");
+            int obraz1 = (int) Utopiec.onAttack(actionEvent);
+            int obraz2 = (int) Utopiec.onAttack(actionEvent);
+            Geralt.CurrentHP -= obraz1;
+            Geralt.CurrentHP -= obraz2;
+            orzymaneObra1.setText(String.valueOf(obraz1));
+            orzymaneObra2.setText(String.valueOf(obraz2));
+            int zadane = (int) Geralt.onStrongAttack(actionEvent);
+            Utopiec.currentHP -= zadane;
+            zadaneObra.setText(String.valueOf(zadane));
         }
         pozoHPUtopiec.setText(String.valueOf(Utopiec.currentHP));
         pozoHPGeralt.setText(String.valueOf(Geralt.CurrentHP));

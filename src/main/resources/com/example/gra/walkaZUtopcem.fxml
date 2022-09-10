@@ -126,5 +126,35 @@
                 <Font size="18.0" />
             </font>
         </Button>
+        <Label fx:id="textzadaneo" layoutX="906.0" layoutY="192.0" prefHeight="25.0" prefWidth="166.0" textFill="#0ba410">
+            <font>
+                <Font name="Candara Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label fx:id="textotrzymaneo1" layoutX="57.0" layoutY="194.0" prefHeight="25.0" prefWidth="196.0" textFill="RED">
+            <font>
+                <Font name="Candara Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label fx:id="textotrzymaneo2" layoutX="57.0" layoutY="169.0" prefHeight="25.0" prefWidth="196.0" textFill="RED">
+            <font>
+                <Font name="Candara Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label fx:id="orzymaneObra2" layoutX="253.0" layoutY="169.0" prefHeight="25.0" prefWidth="187.0" textFill="RED">
+            <font>
+                <Font name="Candara Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label fx:id="orzymaneObra1" layoutX="253.0" layoutY="192.0" prefHeight="25.0" prefWidth="187.0" textFill="RED">
+            <font>
+                <Font name="Candara Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label fx:id="zadaneObra" layoutX="1070.0" layoutY="193.0" prefHeight="25.0" prefWidth="166.0" textFill="#0ba410">
+            <font>
+                <Font name="Candara Bold" size="20.0" />
+            </font>
+        </Label>
     </children>
 </AnchorPane>
