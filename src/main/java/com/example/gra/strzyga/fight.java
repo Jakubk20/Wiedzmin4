@@ -153,7 +153,7 @@ public class fight {
     }
 
     private void win(ActionEvent actionEvent) throws IOException {
-        geralt.money += 200;
+        geralt.money += 1500;
         FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("strzyga/win.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();

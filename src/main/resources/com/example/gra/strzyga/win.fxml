@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-
-<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.gra.strzyga.win"
-            prefHeight="400.0" prefWidth="600.0">
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.strzyga.win">
     <ImageView fitHeight="800.0" fitWidth="1300.0" pickOnBounds="true">
         <image>
             <Image url="@../../../../images/geraltThumbsUp.jpg" />
@@ -23,7 +18,7 @@
             <Font name="BellGothicStd-Black" size="64.0" />
         </font>
     </Button>
-    <Label layoutX="220.0" layoutY="95.0" text="Pokonałeś Ghula! Zdobywasz 200 Monet !" textFill="#e4ffe6">
+    <Label layoutX="166.0" layoutY="100.0" text="Pokonałeś jako jeden z nielicznych Strzygę !" textFill="#e4ffe6">
         <font>
             <Font name="Candara Bold" size="52.0" />
         </font>
@@ -38,5 +33,15 @@
             <Font name="BellGothicStd-Black" size="52.0" />
         </font>
     </Label>
+   <Label layoutX="525.0" layoutY="46.0" text="Gratulacje !" textFill="#e4ffe6">
+      <font>
+         <Font name="Candara Bold" size="52.0" />
+      </font>
+   </Label>
+   <Label layoutX="399.0" layoutY="422.0" text="Zyskujesz 1500 monet !" textFill="#e4ffe6">
+      <font>
+         <Font name="Candara Bold" size="52.0" />
+      </font>
+   </Label>
 
 </AnchorPane>

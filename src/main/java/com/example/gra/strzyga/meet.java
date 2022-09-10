@@ -28,7 +28,12 @@ public class meet {
         Random random = new Random();
         int chance = random.nextInt(0, 100);
         if (chance >= 30) {
-            fight.runSuccessful(actionEvent);
+            FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("strzyga/runAway.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.centerOnScreen();
+            stage.show();
         } else {
             geralt.death(actionEvent);
         }
