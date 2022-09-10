@@ -1,5 +1,6 @@
-package com.example.gra;
+package com.example.gra.trader1;
 
+import com.example.gra.start;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

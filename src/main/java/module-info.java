@@ -13,4 +13,6 @@ module com.example.gra {
     opens com.example.gra.ghul to javafx.fxml;
     exports com.example.gra.leszy;
     opens com.example.gra.leszy to javafx.fxml;
+    exports com.example.gra.trader1;
+    opens com.example.gra.trader1 to javafx.fxml;
 }
