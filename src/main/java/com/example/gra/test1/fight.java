@@ -1,7 +1,8 @@
-package com.example.gra.ghul;
+package com.example.gra.test1;
 
 import com.example.gra.geralt;
 import com.example.gra.start;
+import com.example.gra.test4.utopiec;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,13 +20,13 @@ public class fight {
     @FXML
     private Label geraltHP;
     @FXML
-    private Label ghulHP;
+    private Label leszyHP;
     @FXML
-    private Label ghulPower;
+    private Label leszyPower;
     @FXML
     private Label geraltRemainingHP;
     @FXML
-    private Label ghulRemainingHP;
+    private Label leszyRemainingHP;
     @FXML
     private Label amountOfPotions;
     @FXML
@@ -41,7 +42,7 @@ public class fight {
     @FXML
     private Label receivedDamage2;
 
-    //    @FXML
+//    @FXML
 //    protected void onPokazz() {
 //        balans.setText(String.valueOf(Geralt.money));
 //        sila.setText(String.valueOf(Geralt.power));
@@ -57,23 +58,33 @@ public class fight {
 //    }
     @FXML
     protected void initialize(){
-        ghulHP.setText(String.valueOf(ghul.currentHP));
-        ghulPower.setText(String.valueOf(ghul.power));
-        ghulRemainingHP.setText(String.valueOf(ghul.currentHP));
+        leszyHP.setText(String.valueOf(leszy.maxHP));
+        leszyPower.setText(String.valueOf(leszy.power));
+        leszyRemainingHP.setText(String.valueOf(leszy.currentHP));
         geraltPower.setText(String.valueOf(geralt.power));
         geraltHP.setText(String.valueOf(geralt.maxHP));
         geraltRemainingHP.setText(String.valueOf(geralt.currentHP));
         amountOfPotions.setText(String.valueOf(geralt.amountOfPotions));
     }
+@FXML
+protected void onPotion(ActionEvent actionEvent) throws IOException{
+    if (geralt.amountOfPotions > 0){
+        if (geralt.currentHP + 30 > geralt.maxHP){
+            geralt.currentHP = geralt.maxHP;
+        } else geralt.currentHP += 30;
+        geralt.amountOfPotions--;
+    }
+
+}
     @FXML
     protected void onNormalAttack(ActionEvent actionEvent) throws IOException {
         end(actionEvent);
-        if (geralt.currentHP > 0 && ghul.currentHP > 0) {
+        if (geralt.currentHP > 0 && leszy.currentHP > 0) {
             int dealtDMG = (int) geralt.onNormalAttack(actionEvent);
             textDealtDamage.setText("Zadane obrażenia :");
             dealtDamage.setText(String.valueOf(dealtDMG));
-            ghul.currentHP -= dealtDMG;
-            int receivedDMG = (int) ghul.onAttack(actionEvent);
+            leszy.currentHP -= dealtDMG;
+            int receivedDMG = (int) leszy.onAttack(actionEvent);
             textReceivedDamage1.setText("Otrzymane obrażenia :");
             receivedDamage1.setText(String.valueOf(receivedDMG));
             geralt.currentHP -= receivedDMG;
@@ -82,7 +93,15 @@ public class fight {
             textReceivedDamage2.setText("");
             receivedDamage2.setText("");
         }
-        ghulRemainingHP.setText(String.valueOf(ghul.currentHP));
+        stats();
+    }
+
+    private void stats() {
+        leszyHP.setText(String.valueOf(leszy.currentHP));
+        leszyPower.setText(String.valueOf(leszy.power));
+        leszyRemainingHP.setText(String.valueOf(leszy.currentHP));
+        geraltPower.setText(String.valueOf(geralt.power));
+        geraltHP.setText(String.valueOf(geralt.currentHP));
         geraltRemainingHP.setText(String.valueOf(geralt.currentHP));
     }
 
@@ -90,9 +109,9 @@ public class fight {
         if (geralt.currentHP <= 0) {
             geralt.death(actionEvent);
         }
-        if (ghul.currentHP <= 0) {
-            geralt.money += 200;
-            FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("ghul/win.fxml"));
+        if (leszy.currentHP <= 0) {
+            geralt.money += 700;
+            FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("leszy/win.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(scene);
@@ -102,42 +121,25 @@ public class fight {
     }
 
     @FXML
-    protected void onPotion(ActionEvent actionEvent) throws IOException{
-        com.example.gra.bies.fight.potionHeal(amountOfPotions, geraltRemainingHP);
-
-
-    }
-    @FXML
     protected void onHardAttack(ActionEvent actionEvent) throws IOException {
         end(actionEvent);
-        if (geralt.currentHP > 0 && ghul.currentHP > 0) {
+        if (geralt.currentHP > 0 && leszy.currentHP > 0) {
             textReceivedDamage1.setText("Otrzymane obrażenia :");
             textReceivedDamage2.setText("Otrzymane obrażenia :");
             textDealtDamage.setText("Zadane obrażenia :");
-            int receivedDMG1 = (int) ghul.onAttack(actionEvent);
-            int receivedDMG2 = (int) ghul.onAttack(actionEvent);
+            int receivedDMG1 = (int) leszy.onAttack(actionEvent);
+            int receivedDMG2 = (int) leszy.onAttack(actionEvent);
             geralt.currentHP -= receivedDMG1;
             geralt.currentHP -= receivedDMG2;
             receivedDamage1.setText(String.valueOf(receivedDMG1));
             receivedDamage2.setText(String.valueOf(receivedDMG2));
             int dealtDMG = (int) geralt.onStrongAttack(actionEvent);
-            ghul.currentHP -= dealtDMG;
+            leszy.currentHP -= dealtDMG;
             dealtDamage.setText(String.valueOf(dealtDMG));
         }
-        ghulRemainingHP.setText(String.valueOf(ghul.currentHP));
-        geraltRemainingHP.setText(String.valueOf(geralt.currentHP));
+        stats();
     }
 
-//    @FXML
-//    protected void onRun() {
-//        Random random = new Random();
-//        int chances = random.nextInt(0,10);
-//        if ((Geralt.CurrentHP > 50 && chances <8) ,(Geralt.CurrentHP > 20 && chances<4)  ,(Geralt.CurrentHP <= 20 && chances<2));
-//            //tutaj napisz jacob co sie stanie jezeli ucieczka sie powiedzie
-//         else {
-//            //tutaj napisz jacob co sie stanie jezeli ucieczka sie NIE powiedzie
-//        }
-//    }
     @FXML
     protected void onRun(ActionEvent actionEvent) throws IOException {
         Random random = new Random();
@@ -153,7 +155,7 @@ public class fight {
         }
     }
 
-    static void runSuccessful(ActionEvent actionEvent) throws IOException {
+    private void runSuccessful(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("runAwaySuccessful.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();

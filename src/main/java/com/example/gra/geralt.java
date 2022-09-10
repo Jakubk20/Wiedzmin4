@@ -12,7 +12,7 @@ import java.util.Random;
 public class geralt {
 
     public static int moc = 0;
-    public static double power = (10 + 20) / 2 + moc;
+    public static double power = ((10 + 20) / 2) + moc;
     public static int money;
     public static int currentHP = 100;
     public static int maxHP = 100;

@@ -1,4 +1,4 @@
-package com.example.gra.bies;
+package com.example.gra.test3;
 
 import com.example.gra.geralt;
 import com.example.gra.start;
@@ -55,6 +55,15 @@ public class fight {
 //        silaBiesa.setText(String.valueOf(Bies.power));
 //        pozoHPBies.setText(String.valueOf(Bies.HPB));
 //    }
+    private int dealtDMGS = dealtDMGS(new ActionEvent());
+    private int dealtDMGn = dealtDMGN(new ActionEvent());
+    private int receivedDMG1 = receivedDMG1(new ActionEvent());
+    private int receivedDMG2 = receivedDMG1(new ActionEvent());
+
+
+    public fight() throws IOException {
+    }
+
     @FXML
     protected void initialize(){
         biesHP.setText(String.valueOf(bies.maxHP));
@@ -85,20 +94,34 @@ public class fight {
 
     @FXML
     protected void onNormalAttack(ActionEvent actionEvent) throws IOException {
-        if (geralt.currentHP <= 0) {
+//        int dealtDMGS = dealtDMGS(new ActionEvent());
+        int dealtDMGn = dealtDMGN(new ActionEvent());
+        int receivedDMG1 = receivedDMG1(new ActionEvent());
+//        int receivedDMG2 = receivedDMG1(new ActionEvent());
+        if (geralt.currentHP - receivedDMG1<= 0) {
             bies.currentHP = bies.maxHP;
             geralt.death(actionEvent);
         }
+        if (bies.currentHP - dealtDMGn <= 0 ) {
+            geralt.money += 500;
+            geralt.moc +=1;
+            geralt.power = (10 + 20) / 2 + geralt.moc;
+            geralt.maxHP +=10;
+            FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("bies/win.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.centerOnScreen();
+            stage.show();
+        }
         win(actionEvent);
         if (geralt.currentHP > 0 && bies.currentHP > 0) {
-            int dealtDMG = (int) geralt.onNormalAttack(actionEvent);
             textDealtDamage.setText("Zadane obrażenia :");
-            dealtDamage.setText(String.valueOf(dealtDMG));
-            bies.currentHP -= dealtDMG;
-            int receivedDMG = (int) bies.onAttack();
+            dealtDamage.setText(String.valueOf(dealtDMGn));
+            bies.currentHP -= dealtDMGn;
             textReceivedDamage1.setText("Otrzymane obrażenia :");
-            receivedDamage1.setText(String.valueOf(receivedDMG));
-            geralt.currentHP -= receivedDMG;
+            receivedDamage1.setText(String.valueOf(receivedDMG1));
+            geralt.currentHP -= receivedDMG1;
 
 
             textReceivedDamage2.setText("");
@@ -115,9 +138,60 @@ public class fight {
         geraltHP.setText(String.valueOf(geralt.maxHP));
         geraltRemainingHP.setText(String.valueOf(geralt.currentHP));
     }
+    private int dealtDMGS(ActionEvent actionEvent) throws IOException {
+        int dealtDMG = (int) geralt.onStrongAttack(actionEvent);
+        return dealtDMG;
+    }
+    private int dealtDMGN(ActionEvent actionEvent) throws IOException {
+        int dealtDMGN1 = (int) geralt.onNormalAttack(actionEvent);
+        return dealtDMGN1;
+    }
+    private int receivedDMG1(ActionEvent actionEvent) throws IOException {
+        int receivedDMG1 = (int) bies.onAttack();
+        return receivedDMG1;
+    }
+    private int receivedDMG2(ActionEvent actionEvent) throws IOException {
+        int receivedDMG2 = (int) bies.onAttack();
+        return receivedDMG2;
+    }
+    @FXML
+    protected void onHardAttack(ActionEvent actionEvent) throws IOException {
+        int dealtDMGS = dealtDMGS(new ActionEvent());
+        int dealtDMGn = dealtDMGN(new ActionEvent());
+        int receivedDMG1 = receivedDMG1(new ActionEvent());
+        int receivedDMG2 = receivedDMG1(new ActionEvent());
+        if (geralt.currentHP - (receivedDMG1 + receivedDMG2) <= 0) {
+            geralt.death(actionEvent);
+        }
+        if (bies.currentHP - dealtDMGS <= 0 ) {
+            geralt.money += 500;
+            geralt.moc +=1;
+            geralt.power = (10 + 20) / 2 + geralt.moc;
+            geralt.maxHP +=10;
+            FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("bies/win.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.centerOnScreen();
+            stage.show();
+        }
+        win(actionEvent);
+        if (geralt.currentHP > 0 && bies.currentHP > 0) {
+            textReceivedDamage1.setText("Otrzymane obrażenia :");
+            textReceivedDamage2.setText("Otrzymane obrażenia :");
+            textDealtDamage.setText("Zadane obrażenia :");
+            geralt.currentHP -= receivedDMG1;
+            geralt.currentHP -= receivedDMG2;
+            receivedDamage1.setText(String.valueOf(receivedDMG1));
+            receivedDamage2.setText(String.valueOf(receivedDMG2));
+            bies.currentHP -= dealtDMGS;
+            dealtDamage.setText(String.valueOf(dealtDMGS));
+        }
+        stats();
+    }
 
     private void win(ActionEvent actionEvent) throws IOException {
-        if (bies.currentHP <= 0) {
+        if (bies.currentHP - dealtDMGS <= 0 ) {
             geralt.money += 500;
             geralt.moc +=1;
             geralt.power = (10 + 20) / 2 + geralt.moc;
@@ -133,29 +207,7 @@ public class fight {
 
 
 
-    @FXML
-    protected void onHardAttack(ActionEvent actionEvent) throws IOException {
-        if (geralt.currentHP <= 0) {
-            bies.currentHP = bies.maxHP;
-            geralt.death(actionEvent);
-        }
-        win(actionEvent);
-        if (geralt.currentHP > 0 && bies.currentHP > 0) {
-            textReceivedDamage1.setText("Otrzymane obrażenia :");
-            textReceivedDamage2.setText("Otrzymane obrażenia :");
-            textDealtDamage.setText("Zadane obrażenia :");
-            int receivedDMG1 = (int) bies.onAttack();
-            int receivedDMG2 = (int) bies.onAttack();
-            geralt.currentHP -= receivedDMG1;
-            geralt.currentHP -= receivedDMG2;
-            receivedDamage1.setText(String.valueOf(receivedDMG1));
-            receivedDamage2.setText(String.valueOf(receivedDMG2));
-            int dealtDMG = (int) geralt.onStrongAttack(actionEvent);
-            bies.currentHP -= dealtDMG;
-            dealtDamage.setText(String.valueOf(dealtDMG));
-        }
-        stats();
-    }
+
 
     @FXML
     protected void onRun(ActionEvent actionEvent) throws IOException {
