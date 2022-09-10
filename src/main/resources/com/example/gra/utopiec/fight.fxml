@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/18"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.Utopiec.fight">
+    <children>
+        <ImageView fitHeight="550.0" fitWidth="650.0" layoutY="250.0" pickOnBounds="true" smooth="false">
+            <image>
+                <Image url="@../../../../zdjecia/GeraltBokiem.jpg"/>
+            </image>
+        </ImageView>
+        <ImageView fitHeight="550.0" fitWidth="650.0" layoutX="650.0" layoutY="250.0" pickOnBounds="true"
+                   smooth="false">
+            <image>
+                <Image url="@../../../../zdjecia/walkautopiec.png"/>
+            </image>
+        </ImageView>
+        <Label layoutX="500.0" layoutY="16.0" prefHeight="48.0" prefWidth="300.0" text="Walka z Utopcem">
+            <font>
+                <Font name="BellGothicStd-Black" size="38.0"/>
+            </font>
+        </Label>
+        <Label layoutX="33.0" layoutY="62.0" prefHeight="31.0" prefWidth="47.0" text="Siła:">
+            <font>
+                <Font name="BellGothicStd-Black" size="20.0"/>
+            </font>
+        </Label>
+        <Label layoutX="33.0" layoutY="93.0" prefHeight="31.0" prefWidth="82.0" text="MaxHP:">
+            <font>
+                <Font name="BellGothicStd-Black" size="20.0"/>
+            </font>
+        </Label>
+        <Label fx:id="sila" layoutX="74.0" layoutY="62.0" prefHeight="31.0" prefWidth="66.0">
+            <font>
+                <Font size="20.0"/>
+            </font>
+        </Label>
+        <Label fx:id="hapeki" layoutX="107.0" layoutY="93.0" prefHeight="31.0" prefWidth="88.0">
+            <font>
+                <Font size="20.0"/>
+            </font>
+        </Label>
+        <Button layoutY="700.0" mnemonicParsing="false" onAction="#onNormal" prefHeight="100.0" prefWidth="208.0"
+                text="Atak zwykły (Szybki)">
+            <font>
+                <Font size="19.0"/>
+            </font>
+        </Button>
+        <Button layoutX="1092.0" layoutY="700.0" mnemonicParsing="false" onAction="#onHard" prefHeight="100.0"
+                prefWidth="208.0" text="Atak mocny (Wolny)">
+            <font>
+                <Font size="20.0"/>
+            </font>
+        </Button>
+        <Button layoutX="567.0" layoutY="683.0" mnemonicParsing="false" onAction="#onRun" prefHeight="80.0"
+                prefWidth="166.0" text="Ucieczka">
+            <font>
+                <Font size="29.0"/>
+            </font>
+        </Button>
+        <Label layoutX="481.0" layoutY="209.0" prefHeight="41.0" prefWidth="239.0" text="Wybierz swój atak">
+            <font>
+                <Font name="BellGothicStd-Black" size="27.0"/>
+            </font>
+        </Label>
+        <Label layoutX="961.0" layoutY="62.0" prefHeight="31.0" prefWidth="47.0" text="Siła:">
+            <font>
+                <Font name="BellGothicStd-Black" size="20.0"/>
+            </font>
+        </Label>
+        <Label layoutX="959.0" layoutY="93.0" prefHeight="31.0" prefWidth="82.0" text="MaxHP:">
+            <font>
+                <Font name="BellGothicStd-Black" size="20.0"/>
+            </font>
+        </Label>
+        <Label fx:id="hapekiUtopca" layoutX="1035.0" layoutY="93.0" prefHeight="31.0" prefWidth="166.0">
+            <font>
+                <Font size="20.0"/>
+            </font>
+        </Label>
+        <Label fx:id="silaUtopca" layoutX="1002.0" layoutY="62.0" prefHeight="31.0" prefWidth="66.0">
+            <font>
+                <Font size="20.0"/>
+            </font>
+        </Label>
+        <Label layoutX="57.0" layoutY="209.0" prefHeight="41.0" prefWidth="187.0" text="Pozostałe zdrowie:">
+            <font>
+                <Font name="BellGothicStd-Black" size="21.0"/>
+            </font>
+        </Label>
+        <Label layoutX="826.0" layoutY="209.0" prefHeight="41.0" prefWidth="187.0" text="Pozostałe zdrowie:">
+            <font>
+                <Font name="BellGothicStd-Black" size="21.0"/>
+            </font>
+        </Label>
+        <Label fx:id="pozoHPGeralt" layoutX="244.0" layoutY="204.0" prefHeight="41.0" prefWidth="123.0">
+            <font>
+                <Font size="32.0"/>
+            </font>
+        </Label>
+        <Label fx:id="pozoHPUtopiec" layoutX="1013.0" layoutY="206.0" prefHeight="41.0" prefWidth="123.0">
+            <font>
+                <Font size="32.0"/>
+            </font>
+        </Label>
+        <Label layoutX="33.0" layoutY="18.0" prefHeight="41.0" prefWidth="262.0" text="Twoje statystyki:">
+            <font>
+                <Font name="BellGothicStd-Black" size="30.0"/>
+            </font>
+        </Label>
+        <Label layoutX="959.0" layoutY="19.0" prefHeight="41.0" prefWidth="275.0" text="Statystyki Utopca:">
+            <font>
+                <Font name="BellGothicStd-Black" size="30.0"/>
+            </font>
+        </Label>
+        <Label layoutX="33.0" layoutY="124.0" prefHeight="31.0" prefWidth="129.0" text="Mikstury HP:">
+            <font>
+                <Font name="BellGothicStd-Black" size="20.0"/>
+            </font>
+        </Label>
+        <Label fx:id="potki" layoutX="151.0" layoutY="124.0" prefHeight="31.0" prefWidth="88.0">
+            <font>
+                <Font size="20.0"/>
+            </font>
+        </Label>
+        <Button layoutX="567.0" layoutY="596.0" mnemonicParsing="false" onAction="#onPotion" prefHeight="64.0"
+                prefWidth="166.0" text="Użyj Mikstury HP">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Button>
+        <Label fx:id="textzadaneo" layoutX="906.0" layoutY="192.0" prefHeight="25.0" prefWidth="166.0"
+               textFill="#0ba410">
+            <font>
+                <Font name="Candara Bold" size="20.0"/>
+            </font>
+        </Label>
+        <Label fx:id="textotrzymaneo1" layoutX="57.0" layoutY="194.0" prefHeight="25.0" prefWidth="196.0"
+               textFill="RED">
+            <font>
+                <Font name="Candara Bold" size="20.0"/>
+            </font>
+        </Label>
+        <Label fx:id="textotrzymaneo2" layoutX="57.0" layoutY="169.0" prefHeight="25.0" prefWidth="196.0"
+               textFill="RED">
+            <font>
+                <Font name="Candara Bold" size="20.0"/>
+            </font>
+        </Label>
+        <Label fx:id="orzymaneObra2" layoutX="253.0" layoutY="169.0" prefHeight="25.0" prefWidth="187.0" textFill="RED">
+            <font>
+                <Font name="Candara Bold" size="20.0"/>
+            </font>
+        </Label>
+        <Label fx:id="orzymaneObra1" layoutX="253.0" layoutY="192.0" prefHeight="25.0" prefWidth="187.0" textFill="RED">
+            <font>
+                <Font name="Candara Bold" size="20.0"/>
+            </font>
+        </Label>
+        <Label fx:id="zadaneObra" layoutX="1070.0" layoutY="193.0" prefHeight="25.0" prefWidth="166.0"
+               textFill="#0ba410">
+            <font>
+                <Font name="Candara Bold" size="20.0"/>
+            </font>
+        </Label>
+    </children>
+</AnchorPane>
