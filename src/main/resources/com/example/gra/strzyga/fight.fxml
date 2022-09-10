@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.gra.strzyga.fight"
+            prefHeight="400.0" prefWidth="600.0">
+    <children>
+        <ImageView fitHeight="550.0" fitWidth="650.0" layoutY="250.0" pickOnBounds="true" smooth="false">
+            <image>
+                <Image url="@../../../../images/geraltSide.jpg"/>
+            </image>
+        </ImageView>
+        <ImageView fitHeight="550.0" fitWidth="650.0" layoutX="650.0" layoutY="250.0" pickOnBounds="true"
+                   smooth="false">
+            <image>
+                <Image url="@../../../../images/ghul_interaction.png"/>
+            </image>
+        </ImageView>
+        <Label layoutX="514.0" layoutY="16.0" prefHeight="48.0" prefWidth="275.0" text="Walka z Ghulem">
+            <font>
+                <Font name="BellGothicStd-Black" size="38.0"/>
+            </font>
+        </Label>
+        <Label layoutX="33.0" layoutY="62.0" prefHeight="31.0" prefWidth="47.0" text="Siła:">
+            <font>
+                <Font name="BellGothicStd-Black" size="20.0"/>
+            </font>
+        </Label>
+        <Label layoutX="33.0" layoutY="93.0" prefHeight="31.0" prefWidth="82.0" text="MaxHP:">
+            <font>
+                <Font name="BellGothicStd-Black" size="20.0"/>
+            </font>
+        </Label>
+        <Label fx:id="geraltPower" layoutX="74.0" layoutY="62.0" prefHeight="31.0" prefWidth="82.0">
+            <font>
+                <Font size="20.0"/>
+            </font>
+        </Label>
+        <Label fx:id="geraltHP" layoutX="105.0" layoutY="93.0" prefHeight="31.0" prefWidth="106.0">
+            <font>
+                <Font size="20.0"/>
+            </font>
+        </Label>
+        <Button layoutX="-3.0" layoutY="700.0" mnemonicParsing="false" onAction="#onNormalAttack" prefHeight="100.0"
+                prefWidth="208.0" text="Atak zwykły (Szybki)">
+            <font>
+                <Font size="19.0"/>
+            </font>
+        </Button>
+        <Button layoutX="1092.0" layoutY="700.0" mnemonicParsing="false" onAction="#onHardAttack" prefHeight="100.0"
+                prefWidth="208.0" text="Atak mocny (Wolny)">
+            <font>
+                <Font size="20.0"/>
+            </font>
+        </Button>
+        <Button layoutX="568.0" layoutY="700.0" mnemonicParsing="false" onAction="#onRun" prefHeight="80.0"
+                prefWidth="166.0" text="Ucieczka">
+            <font>
+                <Font size="29.0"/>
+            </font>
+        </Button>
+        <Label layoutX="531.0" layoutY="209.0" prefHeight="41.0" prefWidth="239.0" text="Wybierz swój atak">
+            <font>
+                <Font name="BellGothicStd-Black" size="27.0"/>
+            </font>
+        </Label>
+        <Label layoutX="969.0" layoutY="62.0" prefHeight="31.0" prefWidth="47.0" text="Siła:">
+            <font>
+                <Font name="BellGothicStd-Black" size="20.0"/>
+            </font>
+        </Label>
+        <Label layoutX="969.0" layoutY="93.0" prefHeight="31.0" prefWidth="82.0" text="MaxHP:">
+            <font>
+                <Font name="BellGothicStd-Black" size="20.0"/>
+            </font>
+        </Label>
+        <Label fx:id="strzygaHP" layoutX="1040.0" layoutY="93.0" prefHeight="31.0" prefWidth="166.0">
+            <font>
+                <Font size="20.0"/>
+            </font>
+        </Label>
+        <Label fx:id="strzygaPower" layoutX="1010.0" layoutY="62.0" prefHeight="31.0" prefWidth="113.0">
+            <font>
+                <Font size="20.0"/>
+            </font>
+        </Label>
+        <Label layoutX="99.0" layoutY="209.0" prefHeight="41.0" prefWidth="187.0" text="Pozostałe zdrowie:">
+            <font>
+                <Font name="BellGothicStd-Black" size="21.0"/>
+            </font>
+        </Label>
+        <Label layoutX="969.0" layoutY="209.0" prefHeight="41.0" prefWidth="187.0" text="Pozostałe zdrowie:">
+            <font>
+                <Font name="BellGothicStd-Black" size="21.0"/>
+            </font>
+        </Label>
+        <Label fx:id="geraltRemainingHP" layoutX="274.0" layoutY="206.0" prefHeight="41.0" prefWidth="123.0">
+            <font>
+                <Font size="32.0"/>
+            </font>
+        </Label>
+        <Label fx:id="strzygaRemainingHP" layoutX="1145.0" layoutY="206.0" prefHeight="41.0" prefWidth="123.0">
+            <font>
+                <Font size="32.0"/>
+            </font>
+        </Label>
+        <Label layoutX="33.0" layoutY="18.0" prefHeight="41.0" prefWidth="262.0" text="Twoje statystyki:">
+            <font>
+                <Font name="BellGothicStd-Black" size="30.0"/>
+            </font>
+        </Label>
+        <Label layoutX="970.0" layoutY="19.0" prefHeight="41.0" prefWidth="275.0" text="Statystyki Ghula:">
+            <font>
+                <Font name="BellGothicStd-Black" size="30.0"/>
+            </font>
+        </Label>
+        <Label layoutX="33.0" layoutY="124.0" prefHeight="31.0" prefWidth="129.0" text="Mikstury HP:">
+            <font>
+                <Font name="BellGothicStd-Black" size="20.0"/>
+            </font>
+        </Label>
+        <Label fx:id="amountOfPotions" layoutX="151.0" layoutY="124.0" prefHeight="31.0" prefWidth="82.0">
+            <font>
+                <Font size="20.0"/>
+            </font>
+        </Label>
+        <Button layoutX="567.0" layoutY="606.0" mnemonicParsing="false" onAction="#onPotion" prefHeight="64.0"
+                prefWidth="166.0" text="Użyj Mikstury HP">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Button>
+        <Label fx:id="textDealtDamage" layoutX="906.0" layoutY="192.0" prefHeight="25.0" prefWidth="166.0"
+               textFill="#0ba410">
+            <font>
+                <Font name="Candara Bold" size="20.0"/>
+            </font>
+        </Label>
+        <Label fx:id="textReceivedDamage1" layoutX="57.0" layoutY="194.0" prefHeight="25.0" prefWidth="196.0"
+               textFill="RED">
+            <font>
+                <Font name="Candara Bold" size="20.0"/>
+            </font>
+        </Label>
+        <Label fx:id="textReceivedDamage2" layoutX="57.0" layoutY="169.0" prefHeight="25.0" prefWidth="196.0"
+               textFill="RED">
+            <font>
+                <Font name="Candara Bold" size="20.0"/>
+            </font>
+        </Label>
+        <Label fx:id="receivedDamage2" layoutX="253.0" layoutY="169.0" prefHeight="25.0" prefWidth="187.0" textFill="RED">
+            <font>
+                <Font name="Candara Bold" size="20.0"/>
+            </font>
+        </Label>
+        <Label fx:id="receivedDamage1" layoutX="253.0" layoutY="192.0" prefHeight="25.0" prefWidth="187.0" textFill="RED">
+            <font>
+                <Font name="Candara Bold" size="20.0"/>
+            </font>
+        </Label>
+        <Label fx:id="dealtDamage" layoutX="1070.0" layoutY="193.0" prefHeight="25.0" prefWidth="166.0"
+               textFill="#0ba410">
+            <font>
+                <Font name="Candara Bold" size="20.0"/>
+            </font>
+        </Label>
+    </children>
+
+</AnchorPane>

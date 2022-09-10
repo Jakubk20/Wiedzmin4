@@ -32,12 +32,11 @@ public class trader1meet {
     }
     @FXML
     protected void onGoTOTown(ActionEvent actionEvent) throws IOException {
-//        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("startLocation.fxml"));
-//        Scene scene = new Scene(fxmlLoader.load());
-//        Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-//        stage.setTitle("Gra");
-//        stage.setScene(scene);
-//        stage.centerOnScreen();
-//        stage.show();
+        FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("strzyga/meet.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.centerOnScreen();
+        stage.show();
     }
 }
