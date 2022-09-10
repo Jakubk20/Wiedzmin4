@@ -1,9 +1,9 @@
 package com.example.gra;
 
-import com.example.gra.test1.leszy;
-import com.example.gra.test2.ghul;
-import com.example.gra.test3.bies;
-import com.example.gra.test4.utopiec;
+import com.example.gra.leszy.leszy;
+import com.example.gra.ghul.ghul;
+import com.example.gra.bies.bies;
+import com.example.gra.utopiec.utopiec;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

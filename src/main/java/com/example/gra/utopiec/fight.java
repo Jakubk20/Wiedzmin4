@@ -1,4 +1,4 @@
-package com.example.gra.test2;
+package com.example.gra.utopiec;
 
 import com.example.gra.geralt;
 import com.example.gra.start;
@@ -19,13 +19,13 @@ public class fight {
     @FXML
     private Label geraltHP;
     @FXML
-    private Label ghulHP;
+    private Label utopiecHP;
     @FXML
-    private Label ghulPower;
+    private Label utopiecPower;
     @FXML
     private Label geraltRemainingHP;
     @FXML
-    private Label ghulRemainingHP;
+    private Label utopiecRemainingHP;
     @FXML
     private Label amountOfPotions;
     @FXML
@@ -49,11 +49,11 @@ public class fight {
 
     @FXML
     protected void initialize(){
-        ghulHP.setText(String.valueOf(ghul.maxHP));
-        ghulPower.setText(String.valueOf(ghul.power));
+        utopiecHP.setText(String.valueOf(utopiec.maxHP));
+        utopiecPower.setText(String.valueOf(utopiec.power));
         geraltPower.setText(String.valueOf(geralt.power));
         geraltHP.setText(String.valueOf(geralt.maxHP));
-        ghulRemainingHP.setText(String.valueOf(ghul.currentHP));
+        utopiecRemainingHP.setText(String.valueOf(utopiec.currentHP));
         geraltRemainingHP.setText(String.valueOf(geralt.currentHP));
         amountOfPotions.setText(String.valueOf(geralt.amountOfPotions));
     }
@@ -80,11 +80,11 @@ public class fight {
         int dealtDMGn = dealtDMGN(new ActionEvent());
         int receivedDMG1 = receivedDMG1(new ActionEvent());
         if (geralt.currentHP - receivedDMG1<= 0) {
-            ghul.currentHP = ghul.maxHP;
+            utopiec.currentHP = utopiec.maxHP;
             geralt.death(actionEvent);
         }
-        if (ghul.currentHP - dealtDMGn <= 0 ) {
-            FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("ghul/win.fxml"));
+        if (utopiec.currentHP - dealtDMGn <= 0 ) {
+            FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("utopiec/win.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(scene);
@@ -92,10 +92,10 @@ public class fight {
             stage.show();
         }
         win(actionEvent);
-        if (geralt.currentHP > 0 && ghul.currentHP > 0) {
+        if (geralt.currentHP > 0 && utopiec.currentHP > 0) {
             textDealtDamage.setText("Zadane obrażenia:");
             dealtDamage.setText(String.valueOf(dealtDMGn));
-            ghul.currentHP -= dealtDMGn;
+            utopiec.currentHP -= dealtDMGn;
             textReceivedDamage1.setText("Otrzymane obrażenia:");
             receivedDamage1.setText(String.valueOf(receivedDMG1));
             geralt.currentHP -= receivedDMG1;
@@ -108,9 +108,9 @@ public class fight {
     }
 
     private void stats() {
-        ghulHP.setText(String.valueOf(ghul.maxHP));
-        ghulPower.setText(String.valueOf(ghul.power));
-        ghulRemainingHP.setText(String.valueOf(ghul.currentHP));
+        utopiecHP.setText(String.valueOf(utopiec.maxHP));
+        utopiecPower.setText(String.valueOf(utopiec.power));
+        utopiecRemainingHP.setText(String.valueOf(utopiec.currentHP));
         geraltPower.setText(String.valueOf(geralt.power));
         geraltHP.setText(String.valueOf(geralt.maxHP));
         geraltRemainingHP.setText(String.valueOf(geralt.currentHP));
@@ -124,20 +124,19 @@ public class fight {
         return dealtDMGN1;
     }
     private int receivedDMG1(ActionEvent actionEvent) throws IOException {
-        int receivedDMG1 = (int) ghul.onAttack(actionEvent);
+        int receivedDMG1 = (int) utopiec.onAttack(actionEvent);
         return receivedDMG1;
     }
     @FXML
     protected void onHardAttack(ActionEvent actionEvent) throws IOException {
         int dealtDMGS = dealtDMGS(new ActionEvent());
-        int dealtDMGn = dealtDMGN(new ActionEvent());
         int receivedDMG1 = receivedDMG1(new ActionEvent());
         int receivedDMG2 = receivedDMG1(new ActionEvent());
         if (geralt.currentHP - (receivedDMG1 + receivedDMG2) <= 0) {
             geralt.death(actionEvent);
         }
-        if (ghul.currentHP - dealtDMGS <= 0 ) {
-            FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("ghul/win.fxml"));
+        if (utopiec.currentHP - dealtDMGS <= 0 ) {
+            FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("utopiec/win.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(scene);
@@ -145,7 +144,7 @@ public class fight {
             stage.show();
         }
         win(actionEvent);
-        if (geralt.currentHP > 0 && ghul.currentHP > 0) {
+        if (geralt.currentHP > 0 && utopiec.currentHP > 0) {
             textReceivedDamage1.setText("Otrzymane obrażenia:");
             textReceivedDamage2.setText("Otrzymane obrażenia:");
             textDealtDamage.setText("Zadane obrażenia:");
@@ -153,16 +152,18 @@ public class fight {
             geralt.currentHP -= receivedDMG2;
             receivedDamage1.setText(String.valueOf(receivedDMG1));
             receivedDamage2.setText(String.valueOf(receivedDMG2));
-            ghul.currentHP -= dealtDMGS;
+            utopiec.currentHP -= dealtDMGS;
             dealtDamage.setText(String.valueOf(dealtDMGS));
         }
         stats();
     }
 
     private void win(ActionEvent actionEvent) throws IOException {
-        if (ghul.currentHP - dealtDMGS <= 0 ) {
+        if (utopiec.currentHP - dealtDMGS <= 0 ) {
             geralt.money += 200;
-            FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("ghul/win.fxml"));
+            geralt.moc +=1;
+            geralt.power = (10 + 20) / 2 + geralt.moc;
+            FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("utopiec/win.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(scene);
@@ -191,7 +192,7 @@ public class fight {
     }
 
     public static void runSuccessful(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("runAwaySuccessful.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("utopiec/runAway.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);

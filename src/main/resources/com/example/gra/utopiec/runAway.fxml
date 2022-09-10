@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.utopiec.runAway">
+    <children>
+        <ImageView fitHeight="800.0" fitWidth="1300.0" pickOnBounds="true">
+            <image>
+                <Image url="@../../../../images/geraltThumbsUp.jpg" />
+            </image>
+        </ImageView>
+        <Label layoutX="460.0" layoutY="451.0" text="Udało ci się uciec!" textFill="#e4ffe6">
+            <font>
+                <Font name="Candara Bold" size="52.0" />
+            </font>
+        </Label>
+        <Button layoutX="502.0" layoutY="528.0" mnemonicParsing="false" onAction="#onNextClickk" prefHeight="143.0" prefWidth="297.0" text="Dalej">
+            <font>
+                <Font name="BellGothicStd-Black" size="64.0" />
+            </font>
+        </Button>
+    </children>
+
+</AnchorPane>

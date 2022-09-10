@@ -7,12 +7,12 @@ module com.example.gra {
     exports com.example.gra;
     exports com.example.gra.trader1;
     opens com.example.gra.trader1 to javafx.fxml;
-    exports com.example.gra.test1;
-    opens com.example.gra.test1 to javafx.fxml;
-    exports com.example.gra.test2;
-    opens com.example.gra.test2 to javafx.fxml;
-    exports com.example.gra.test3;
-    opens com.example.gra.test3 to javafx.fxml;
-    exports com.example.gra.test4;
-    opens com.example.gra.test4 to javafx.fxml;
+    exports com.example.gra.leszy;
+    opens com.example.gra.leszy to javafx.fxml;
+    exports com.example.gra.ghul;
+    opens com.example.gra.ghul to javafx.fxml;
+    exports com.example.gra.bies;
+    opens com.example.gra.bies to javafx.fxml;
+    exports com.example.gra.utopiec;
+    opens com.example.gra.utopiec to javafx.fxml;
 }

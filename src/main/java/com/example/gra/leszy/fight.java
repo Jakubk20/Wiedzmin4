@@ -1,4 +1,4 @@
-package com.example.gra.test1;
+package com.example.gra.leszy;
 
 import com.example.gra.geralt;
 import com.example.gra.start;

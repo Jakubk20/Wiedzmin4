@@ -1,6 +1,6 @@
-package com.example.gra.test1;
+package com.example.gra.leszy;
 
-import com.example.gra.test3.fight;
+import com.example.gra.bies.fight;
 import com.example.gra.geralt;
 import com.example.gra.start;
 import javafx.event.ActionEvent;

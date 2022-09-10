@@ -1,4 +1,4 @@
-package com.example.gra.test4;
+package com.example.gra.bies;
 
 import com.example.gra.start;
 import javafx.event.ActionEvent;
@@ -13,7 +13,7 @@ import java.io.IOException;
 public class runAway {
     @FXML
     protected void onNextClick(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("ghul/meet.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("trader1/trader1meet.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);

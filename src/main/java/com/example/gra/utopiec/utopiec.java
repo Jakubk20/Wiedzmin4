@@ -1,17 +1,18 @@
-package com.example.gra.test2;
+package com.example.gra.utopiec;
 
 import javafx.event.ActionEvent;
 
 import java.io.IOException;
 import java.util.Random;
 
-public class ghul {
-    public static double power = (1 + 2) / 2;
-    public static int maxHP = 420;
+public class utopiec {
+    public static double power = (1+4)/2;
+    public static int maxHP = 550;
     public static int currentHP = maxHP;
 
     public static double onAttack(ActionEvent actionEvent) throws IOException {
         Random random = new Random();
-        return random.nextInt(1, 3);
+        return random.nextInt(1, 4);
     }
 }
+
