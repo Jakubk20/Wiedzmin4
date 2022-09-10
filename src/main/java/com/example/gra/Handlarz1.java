@@ -23,6 +23,7 @@ public class Handlarz1 {
         maxhp.setText(String.valueOf(Geralt.MaxHP));
         sila.setText(String.valueOf(Geralt.power));
         money.setText(String.valueOf(Geralt.money));
+        potki.setText(String.valueOf(Geralt.amountOfPotions));
     }
     @FXML
     protected void onOstrzenieMieczaClick(ActionEvent actionEvent) throws IOException {
@@ -71,7 +72,7 @@ public class Handlarz1 {
     @FXML
     protected void onMiksturaHPClick(ActionEvent actionEvent) throws IOException {
         if (Geralt.money >= 250){
-            Geralt.CurrentHP += 30;
+            Geralt.amountOfPotions += 1;
             Geralt.money -= 250;
             hp.setText(String.valueOf(Geralt.CurrentHP));
             maxhp.setText(String.valueOf(Geralt.MaxHP));
