@@ -27,7 +27,7 @@ public class meet {
         Random random = new Random();
         int chance = random.nextInt(0, 100);
         if (chance >= 20) {
-            FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("runAwaySuccessful.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("ghul/meet.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(scene);

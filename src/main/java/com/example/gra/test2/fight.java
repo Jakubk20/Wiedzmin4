@@ -84,6 +84,7 @@ public class fight {
             geralt.death(actionEvent);
         }
         if (ghul.currentHP - dealtDMGn <= 0 ) {
+            geralt.money += 200;
             FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("ghul/win.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -137,6 +138,7 @@ public class fight {
             geralt.death(actionEvent);
         }
         if (ghul.currentHP - dealtDMGS <= 0 ) {
+            geralt.money += 200;
             FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("ghul/win.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
