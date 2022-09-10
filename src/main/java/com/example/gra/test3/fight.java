@@ -97,10 +97,10 @@ public class fight {
         }
         win(actionEvent);
         if (geralt.currentHP > 0 && bies.currentHP > 0) {
-            textDealtDamage.setText("Zadane obrażenia :");
+            textDealtDamage.setText("Zadane obrażenia:");
             dealtDamage.setText(String.valueOf(dealtDMGn));
             bies.currentHP -= dealtDMGn;
-            textReceivedDamage1.setText("Otrzymane obrażenia :");
+            textReceivedDamage1.setText("Otrzymane obrażenia:");
             receivedDamage1.setText(String.valueOf(receivedDMG1));
             geralt.currentHP -= receivedDMG1;
 
@@ -154,9 +154,9 @@ public class fight {
         }
         win(actionEvent);
         if (geralt.currentHP > 0 && bies.currentHP > 0) {
-            textReceivedDamage1.setText("Otrzymane obrażenia :");
-            textReceivedDamage2.setText("Otrzymane obrażenia :");
-            textDealtDamage.setText("Zadane obrażenia :");
+            textReceivedDamage1.setText("Otrzymane obrażenia:");
+            textReceivedDamage2.setText("Otrzymane obrażenia:");
+            textDealtDamage.setText("Zadane obrażenia:");
             geralt.currentHP -= receivedDMG1;
             geralt.currentHP -= receivedDMG2;
             receivedDamage1.setText(String.valueOf(receivedDMG1));
