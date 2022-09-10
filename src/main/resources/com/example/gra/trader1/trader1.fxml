@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.trader1.trader1">
+<AnchorPane prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.trader1.trader1">
     <children>
         <ImageView fitHeight="550.0" fitWidth="650.0" layoutX="650.0" layoutY="251.0" pickOnBounds="true">
             <image>
@@ -77,7 +77,7 @@
                 <Font size="20.0" />
             </font>
         </Button>
-        <Button layoutX="418.0" layoutY="165.0" mnemonicParsing="false" onAction="#onSwordRuneClick" prefHeight="55.0" prefWidth="125.0" text="+2 Siła">
+        <Button layoutX="418.0" layoutY="165.0" mnemonicParsing="false" onAction="#onSwordRuneClick" prefHeight="55.0" prefWidth="125.0" text="+20 Siła">
             <font>
                 <Font size="20.0" />
             </font>
@@ -87,7 +87,7 @@
                 <Font size="20.0" />
             </font>
         </Button>
-        <Button layoutX="248.0" layoutY="165.0" mnemonicParsing="false" onAction="#onSwordSharpeningClick" prefHeight="55.0" prefWidth="125.0" text="+1 Siła">
+        <Button layoutX="248.0" layoutY="165.0" mnemonicParsing="false" onAction="#onSwordSharpeningClick" prefHeight="55.0" prefWidth="125.0" text="+10 Siła">
             <font>
                 <Font size="20.0" />
             </font>

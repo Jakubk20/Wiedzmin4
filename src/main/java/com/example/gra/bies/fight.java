@@ -150,7 +150,7 @@ public class fight {
 
     private void win(ActionEvent actionEvent) throws IOException {
             geralt.money += 500;
-            geralt.moc +=1;
+            geralt.moc +=10;
             geralt.power = ((10 + 20) / 2) + geralt.moc;
             geralt.maxHP +=10;
             FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("bies/win.fxml"));
