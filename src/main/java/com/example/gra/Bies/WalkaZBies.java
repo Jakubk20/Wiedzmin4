@@ -153,6 +153,7 @@ public class WalkaZBies {
             int zadane = (int) Geralt.onStrongAttack(actionEvent);
             Bies.currentHP -= zadane;
             zadaneObra.setText(String.valueOf(zadane));
+            System.out.println("lol");
         }
         stats();
     }
