@@ -17,6 +17,7 @@ public class jaskierKarczma {
     public static boolean banditTookMoney = false;
     public static boolean jaskierQuestTaken = false;
     public static boolean jaskierQuest2Taken = false;
+    public static boolean jaskierQuest1Done = false;
     @FXML
     protected void onLeave(ActionEvent actionEvent) throws IOException {
         if (startLocation.isZygfryd) {
@@ -111,7 +112,7 @@ public class jaskierKarczma {
     }
     @FXML
     protected void onTavernOwnerClick(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("jaskierKarczma/tryAgain.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("jaskierKarczma/tavernOwner.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);
@@ -121,6 +122,9 @@ public class jaskierKarczma {
     @FXML
     protected void onGetQuest2(ActionEvent actionEvent) throws IOException {
         jaskierQuest2Taken = true;
+        banditTookMoney = false;
+        jaskierQuestTaken = false;
+        jaskierQuest1Done = true;
         FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("novigrad/meet.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();

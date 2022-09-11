@@ -17,11 +17,12 @@ public class winboss {
     @FXML
     protected void initialize(){
         int monetyy = 500 + jaskierKarczma.banditMoney;
+        jaskierKarczma.banditMoney = 0;
         monety.setText(String.valueOf(monetyy));
     }
     @FXML
     protected void onNextClick(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("jaskierKarczma/fight4.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("jaskierKarczma/jaskierWin.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);

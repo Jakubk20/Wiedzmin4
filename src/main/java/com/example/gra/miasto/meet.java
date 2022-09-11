@@ -12,8 +12,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-import static com.example.gra.miasto.jaskierKarczma.banditTookMoney;
-import static com.example.gra.miasto.jaskierKarczma.jaskierQuestTaken;
+import static com.example.gra.miasto.jaskierKarczma.*;
 import static com.example.gra.startLocation.isZygfryd;
 
 public class meet {
@@ -68,6 +67,13 @@ public class meet {
             stage.show();
         } else if (jaskierQuestTaken){
             FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("jaskierKarczma/tutrzebazmienic.fxml")); // tu trzeba zmienic
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.centerOnScreen();
+            stage.show();
+        } else if (jaskierQuest1Done){
+            FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("jaskierKarczma/jaskierNone.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(scene);
