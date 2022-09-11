@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.miasto.jaskierKarczma">
+    <children>
+        <ImageView fitHeight="800.0" fitWidth="1300.0" pickOnBounds="true">
+            <image>
+                <Image url="@../../../../images/walka_karczma.jpg" />
+            </image>
+        </ImageView>
+        <Button layoutX="480.0" layoutY="642.0" mnemonicParsing="false" onAction="#onFightClick" prefHeight="45.0" prefWidth="352.0" text="Doigrałeś się. (Walcz)">
+            <font>
+                <Font size="21.0" />
+            </font>
+        </Button>
+        <Label layoutX="399.0" layoutY="101.0" prefHeight="27.0" prefWidth="614.0" text="Chwila! Nie uciekaj stąd! Najpierw oddaj wszystkie swoje monety!" textFill="WHITE">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Button layoutX="480.0" layoutY="583.0" mnemonicParsing="false" onAction="#onGiveAllMoneyClick" prefHeight="45.0" prefWidth="352.0" text="Proszę. (Oddaj wszystkie monety)">
+            <font>
+                <Font size="21.0" />
+            </font>
+        </Button>
+        <Label layoutX="537.0" layoutY="170.0" prefHeight="27.0" prefWidth="411.0" textFill="WHITE">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>

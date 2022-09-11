@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.miasto.jaskierKarczma">
+    <children>
+        <ImageView fitHeight="800.0" fitWidth="1300.0" pickOnBounds="true">
+            <image>
+                <Image url="@../../../../images/walka_karczma.jpg" />
+            </image>
+        </ImageView>
+        <Button layoutX="609.0" layoutY="642.0" mnemonicParsing="false" onAction="#onFightClick" prefHeight="45.0" prefWidth="128.0" text="Kontynuuj">
+            <font>
+                <Font size="21.0" />
+            </font>
+        </Button>
+        <Label layoutX="529.0" layoutY="99.0" prefHeight="27.0" prefWidth="174.0" text="Panowie, na niego!" textFill="WHITE">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>

@@ -12,6 +12,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+import static com.example.gra.miasto.jaskierKarczma.banditTookMoney;
+import static com.example.gra.miasto.jaskierKarczma.jaskierQuestTaken;
 import static com.example.gra.startLocation.isZygfryd;
 
 public class meet {
@@ -57,12 +59,29 @@ public class meet {
 
     @FXML
     protected void onTavern(ActionEvent actionEvent) throws IOException {
+        if (banditTookMoney){
+            FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("jaskierKarczma/banditTookMoney.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.centerOnScreen();
+            stage.show();
+        } else if (jaskierQuestTaken){
+            FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("jaskierKarczma/tutrzebazmienic.fxml")); // tu trzeba zmienic
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.centerOnScreen();
+            stage.show();
+        } else {
             FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("jaskierKarczma/meetFirstTime.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(scene);
             stage.centerOnScreen();
             stage.show();
+        }
+
     }
     @FXML
     protected void onGoNorthClick(ActionEvent actionEvent) throws IOException {

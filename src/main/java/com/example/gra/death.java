@@ -3,6 +3,7 @@ package com.example.gra;
 import com.example.gra.leszy.leszy;
 import com.example.gra.ghul.ghul;
 import com.example.gra.bies.bies;
+import com.example.gra.miasto.jaskierKarczma;
 import com.example.gra.utopiec.utopiec;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -34,6 +35,8 @@ public class death {
         utopiec.isDefeated = false;
         ghul.awardAvailable = false;
         isZygfryd = false;
+        jaskierKarczma.banditMoney = 0;
+        jaskierKarczma.banditTookMoney = false;
 
         FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("start.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
