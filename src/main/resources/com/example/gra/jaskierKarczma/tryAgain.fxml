@@ -5,14 +5,14 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.miasto.jaskierKarczma">
+<AnchorPane prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.miasto.jaskierKarczma">
     <children>
         <ImageView fitHeight="800.0" fitWidth="1300.0" pickOnBounds="true">
             <image>
                 <Image url="@../../../../images/walka_karczma.jpg" />
             </image>
         </ImageView>
-        <Label layoutX="529.0" layoutY="99.0" prefHeight="0.0" prefWidth="478.0" text="To ty? Czego tu znowu chcesz?" textFill="WHITE">
+        <Label layoutX="529.0" layoutY="99.0" prefHeight="27.0" prefWidth="257.0" text="To ty? Czego tu znowu chcesz?" textFill="WHITE">
             <font>
                 <Font size="18.0" />
             </font>

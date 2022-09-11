@@ -4,9 +4,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.instruction">
+<AnchorPane prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.instruction">
     <children>
-        <Label layoutX="573.0" layoutY="70.0" prefHeight="66.0" prefWidth="277.0" text="Zasady gry" textAlignment="CENTER">
+        <Label layoutX="592.0" layoutY="70.0" prefHeight="66.0" prefWidth="118.0" text="Zasady gry" textAlignment="CENTER">
             <font>
                 <Font name="BellGothicStd-Black" size="24.0" />
             </font>
