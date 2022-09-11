@@ -28,7 +28,7 @@
          <Font name="Candara Bold" size="41.0" />
       </font>
    </Label>
-   <Label layoutX="661.0" layoutY="493.0" prefHeight="62.0" prefWidth="173.0" textFill="#fff000">
+   <Label fx:id="monety" layoutX="661.0" layoutY="493.0" prefHeight="62.0" prefWidth="173.0" textFill="#fff000">
       <font>
          <Font name="Candara Bold" size="41.0" />
       </font>
