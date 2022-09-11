@@ -26,7 +26,7 @@ public class geralt {
 
     public static double onStrongAttack(ActionEvent actionEvent) {
         Random random = new Random();
-        int attack = random.nextInt(1, 71);
+        int attack = random.nextInt(1, 41);
         return attack + moc;
     }
 

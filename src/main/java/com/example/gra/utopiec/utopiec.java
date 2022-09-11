@@ -7,7 +7,7 @@ import java.util.Random;
 
 public class utopiec {
     public static double power = ((1+4)/2);
-    public static int maxHP = 550;
+    public static int maxHP = 300;
     public static int currentHP = maxHP;
     public static boolean isDefeated = false;
 
