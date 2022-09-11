@@ -12,25 +12,10 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+import static com.example.gra.startLocation.isZygfryd;
+
 public class trader {
-    @FXML
-    protected void onGetQuest(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("leszy/fight.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.centerOnScreen();
-        stage.show();
-    }
-    @FXML
-    protected void onBack(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("miasto/meet.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.centerOnScreen();
-        stage.show();
-    }
+
     @FXML
     private Label currentHP;
     @FXML
@@ -114,5 +99,25 @@ public class trader {
             money.setText(String.valueOf(geralt.money));
             amountOfPotions.setText(String.valueOf(geralt.amountOfPotions));
         }
+    }
+
+    @FXML
+    protected void onLeave(ActionEvent actionEvent) throws IOException {
+        if (isZygfryd) {
+            FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("novigrad/meetZygfrydAwardAvailable.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.centerOnScreen();
+            stage.show();
+        } else {
+            FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("novigrad/meet.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.centerOnScreen();
+            stage.show();
+        }
+
     }
 }

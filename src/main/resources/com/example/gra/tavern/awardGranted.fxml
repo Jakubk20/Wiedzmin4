@@ -7,7 +7,7 @@
 
 <AnchorPane prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.startLocation">
     <children>
-        <ImageView fitHeight="800.0" fitWidth="1300.0" pickOnBounds="true">
+        <ImageView fitHeight="800.0" fitWidth="1326.0" pickOnBounds="true">
             <image>
                 <Image url="@../../../../images/tavern1.jpg" />
             </image>
@@ -22,12 +22,12 @@
                 <Font size="18.0" />
             </font>
         </Label>
-      <Label layoutX="711.0" layoutY="173.0" prefHeight="31.0" prefWidth="600.0" text="jeszcze coś. To mikstura uzdrawiająca wytworzona przez moją żonę." textFill="WHITE">
+      <Label layoutX="711.0" layoutY="173.0" prefHeight="31.0" prefWidth="600.0" text="coś jeszcze. To mikstura uzdrawiająca wytworzona przez moją żonę." textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="737.0" layoutY="188.0" prefHeight="45.0" prefWidth="468.0" text="Na pewno ci się przyda w walce z potworami, wiedźminie." textFill="WHITE">
+      <Label layoutX="738.0" layoutY="192.0" prefHeight="45.0" prefWidth="468.0" text="Na pewno ci się przyda w walce z potworami, wiedźminie." textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>

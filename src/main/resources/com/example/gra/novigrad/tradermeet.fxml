@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.miasto.tradermeet">
+    <children>
+        <ImageView fitHeight="800.0" fitWidth="1300.0" pickOnBounds="true">
+            <image>
+                <Image url="@../../../../images/handlarz_novigrad_meet.jpg" />
+            </image>
+        </ImageView>
+        <Button layoutX="472.0" layoutY="644.0" mnemonicParsing="false" onAction="#onBack" prefHeight="52.0" prefWidth="311.0" text="Bywaj.">
+            <font>
+                <Font size="25.0" />
+            </font>
+        </Button>
+        <Button layoutX="476.0" layoutY="573.0" mnemonicParsing="false" onAction="#onTrade" prefHeight="52.0" prefWidth="311.0" text="Pokaż mi swoje towary.">
+            <font>
+                <Font size="25.0" />
+            </font>
+        </Button>
+        <Label layoutX="444.0" layoutY="51.0" prefHeight="71.0" prefWidth="412.0" text="Spotykasz handlarza." textFill="WHITE">
+            <font>
+                <Font name="Candara Bold" size="43.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>

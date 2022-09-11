@@ -152,6 +152,7 @@ public class fight {
         geralt.money += 200;
         geralt.moc += 2;
         geralt.power = ((10 + 20) / 2) + geralt.moc;
+        utopiec.isDefeated = true;
             FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("utopiec/win.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();

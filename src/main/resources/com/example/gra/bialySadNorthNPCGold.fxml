@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.startLocation">
+    <children>
+        <ImageView fitHeight="800.0" fitWidth="1300.0" pickOnBounds="true">
+            <image>
+                <Image url="@../../../images/bialy_sad_polnoc_npc.jpg" />
+            </image>
+        </ImageView>
+        <Button layoutX="446.0" layoutY="672.0" mnemonicParsing="false" onAction="#onLeaveClick" prefHeight="45.0" prefWidth="408.0" text="Dobrze. Bywaj.">
+            <font>
+                <Font size="21.0" />
+            </font>
+        </Button>
+        <Label layoutX="470.0" layoutY="14.0" prefHeight="58.0" prefWidth="756.0" text="A mówią, że wiedźminy pazerne na złoto, bez zapłaty nawet palcem nie kiwną," textFill="WHITE">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="476.0" layoutY="56.0" prefHeight="45.0" prefWidth="725.0" text="A tu proszę.  W Novigradzie jest teraz mój znajomy, handlarz, nazywa się Zygfryd." textFill="WHITE">
+            <font>
+                <Font size="20.0" />
+            </font></Label>
+      <Label layoutX="491.0" layoutY="93.0" prefHeight="45.0" prefWidth="714.0" text=" Koniecznie do niego idź, powiedz, że przysyła cię Bram, a on cię wynagrodzi." textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>

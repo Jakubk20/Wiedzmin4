@@ -12,7 +12,7 @@
                 <Image url="@../../../../images/tavern1.jpg" />
             </image>
         </ImageView>
-        <Button layoutX="744.0" layoutY="462.0" mnemonicParsing="false" onAction="#onReturnClick" prefHeight="45.0" prefWidth="154.0" text="Bywaj.">
+        <Button layoutX="670.0" layoutY="462.0" mnemonicParsing="false" onAction="#onReturnClick" prefHeight="45.0" prefWidth="301.0" text="Bywaj.">
             <font>
                 <Font size="21.0" />
             </font>
@@ -22,7 +22,7 @@
                 <Font size="18.0" />
             </font>
         </Label>
-        <Button layoutX="670.0" layoutY="415.0" mnemonicParsing="false" onAction="#onGetQuestClick" prefHeight="30.0" prefWidth="301.0" text="Dobrze. Zobaczę co da się zrobić.">
+        <Button layoutX="670.0" layoutY="403.0" mnemonicParsing="false" onAction="#onGetQuestClick" prefHeight="45.0" prefWidth="301.0" text="Dobrze. Zobaczę co da się zrobić.">
             <font>
                 <Font name="Arial" size="18.0" />
             </font>

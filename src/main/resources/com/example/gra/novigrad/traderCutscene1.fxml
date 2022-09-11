@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.miasto.tradermeet">
+    <children>
+        <ImageView fitHeight="800.0" fitWidth="1300.0" pickOnBounds="true">
+            <image>
+                <Image url="@../../../../images/handlarz_novigrad_meet.jpg" />
+            </image>
+        </ImageView>
+        <Button layoutX="477.0" layoutY="644.0" mnemonicParsing="false" onAction="#onBack" prefHeight="52.0" prefWidth="311.0" text="Bywaj.">
+            <font>
+                <Font size="25.0" />
+            </font>
+        </Button>
+        <Button layoutX="476.0" layoutY="573.0" mnemonicParsing="false" onAction="#onTrade" prefHeight="52.0" prefWidth="311.0" text="Pokaż mi swoje towary.">
+            <font>
+                <Font size="25.0" />
+            </font>
+        </Button>
+        <Button layoutX="478.0" layoutY="507.0" mnemonicParsing="false" onAction="#onClick2" prefHeight="52.0" prefWidth="311.0" text="Przysyła mnie Bram.">
+            <font>
+                <Font size="25.0" />
+            </font></Button>
+      <Label layoutX="681.0" layoutY="16.0" prefHeight="67.0" prefWidth="311.0" text="Zgadza się! Czego potrzebujesz?" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+    </children>
+</AnchorPane>

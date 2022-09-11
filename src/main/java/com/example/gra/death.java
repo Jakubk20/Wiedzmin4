@@ -13,6 +13,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+import static com.example.gra.startLocation.isZygfryd;
+
 public class death {
     @FXML
     protected void onPlayAgainClick(ActionEvent actionEvent) throws IOException {
@@ -28,6 +30,10 @@ public class death {
         utopiec.currentHP = utopiec.maxHP;
         startLocation.isQuest = false;
         startLocation.isBiesDefeated = false;
+        ghul.isDefeated = false;
+        utopiec.isDefeated = false;
+        ghul.awardAvailable = false;
+        isZygfryd = false;
 
         FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("start.fxml"));
         Scene scene = new Scene(fxmlLoader.load());

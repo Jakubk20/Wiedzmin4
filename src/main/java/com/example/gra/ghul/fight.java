@@ -157,6 +157,8 @@ public class fight {
         geralt.money += 200;
         geralt.moc += 3;
         geralt.power = ((10 + 20) / 2) + geralt.moc;
+        ghul.isDefeated = true;
+        ghul.awardAvailable = true;
         FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("ghul/win.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();

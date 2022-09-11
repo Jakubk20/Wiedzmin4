@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.utopiec.runAway">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.utopiec.runAway">
     <children>
         <ImageView fitHeight="800.0" fitWidth="1300.0" pickOnBounds="true">
             <image>
@@ -17,7 +17,7 @@
                 <Font name="Candara Bold" size="52.0" />
             </font>
         </Label>
-        <Button layoutX="502.0" layoutY="528.0" mnemonicParsing="false" onAction="#onNextClickk" prefHeight="143.0" prefWidth="297.0" text="Dalej">
+        <Button layoutX="502.0" layoutY="528.0" mnemonicParsing="false" onAction="#onGoToWhiteOrchardClick" prefHeight="143.0" prefWidth="297.0" text="Dalej">
             <font>
                 <Font name="BellGothicStd-Black" size="64.0" />
             </font>
