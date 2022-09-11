@@ -6,11 +6,11 @@ import java.io.IOException;
 import java.util.Random;
 
 public class bandit2 {
-    public static double power = ((1 + 1) / 2);
-    public static int maxHP = 100;
+    public static double power = ((2 + 4) / 2);
+    public static int maxHP = 400;
     public static int currentHP = maxHP;
     public static double onAttack(ActionEvent actionEvent) throws IOException {
         Random random = new Random();
-        return random.nextInt(1, 2);
+        return random.nextInt(2, 5);
     }
 }

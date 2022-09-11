@@ -37,6 +37,7 @@ public class death {
         isZygfryd = false;
         jaskierKarczma.banditMoney = 0;
         jaskierKarczma.banditTookMoney = false;
+        jaskierKarczma.jaskierQuest2Taken = false;
 
         FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("start.fxml"));
         Scene scene = new Scene(fxmlLoader.load());

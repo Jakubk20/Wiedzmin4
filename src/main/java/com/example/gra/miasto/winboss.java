@@ -21,11 +21,11 @@ public class winboss {
     }
     @FXML
     protected void onNextClick(ActionEvent actionEvent) throws IOException {
-//        FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("jaskierKarczma/fight4.fxml"));
-//        Scene scene = new Scene(fxmlLoader.load());
-//        Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-//        stage.setScene(scene);
-//        stage.centerOnScreen();
-//        stage.show();
+        FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("jaskierKarczma/fight4.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.centerOnScreen();
+        stage.show();
     }
 }
