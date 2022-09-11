@@ -149,9 +149,6 @@ public class fight {
     }
 
     private void win(ActionEvent actionEvent) throws IOException {
-        geralt.money += 200;
-        geralt.moc += 2;
-        geralt.power = ((10 + 20) / 2) + geralt.moc;
         utopiec.isDefeated = true;
             FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("utopiec/win.fxml"));
             Scene scene = new Scene(fxmlLoader.load());

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.miasto.jaskierKarczma">
+    <children>
+        <ImageView fitHeight="800.0" fitWidth="1300.0" pickOnBounds="true">
+            <image>
+                <Image url="@../../../../images/jaskierKarczma.jpg" />
+            </image>
+        </ImageView>
+        <Button layoutX="670.0" layoutY="462.0" mnemonicParsing="false" onAction="#onLeave" prefHeight="45.0" prefWidth="301.0" text="Innym razem.">
+            <font>
+                <Font size="21.0" />
+            </font>
+        </Button>
+        <Label layoutX="496.0" layoutY="14.0" prefHeight="29.0" prefWidth="801.0" text="Geralt! Jak dobrze, że cię spotykam. Potrzebuję twojej pomocy." textFill="WHITE">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Button layoutX="670.0" layoutY="403.0" mnemonicParsing="false" onAction="#onLeave" prefHeight="45.0" prefWidth="301.0" text="Dobrze, spróbuję ich przekonać.">
+            <font>
+                <Font name="Arial" size="18.0" />
+            </font>
+        </Button>
+      <Label layoutX="496.0" layoutY="29.0" prefHeight="45.0" prefWidth="535.0" text="Ci włóczędzy zalęgli się w moim lokalu, zachowują się jak" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="532.0" layoutY="30.0" prefHeight="88.0" prefWidth="499.0" text="babrarzyńcy i mimo próśb nie chcą wyjść! Proszę," textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="639.0" layoutY="76.0" prefHeight="39.0" prefWidth="425.0" text="zrób z nimi porządek." textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>

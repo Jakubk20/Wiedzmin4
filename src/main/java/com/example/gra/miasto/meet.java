@@ -12,6 +12,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+import static com.example.gra.startLocation.isZygfryd;
+
 public class meet {
     @FXML
     protected void onTrader(ActionEvent actionEvent) throws IOException {
@@ -45,6 +47,43 @@ public class meet {
             stage.show();
         } else {
             FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("BialySadNorth.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.centerOnScreen();
+            stage.show();
+        }
+    }
+
+    @FXML
+    protected void onTavern(ActionEvent actionEvent) throws IOException {
+            FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("jaskierKarczma/meetFirstTime.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.centerOnScreen();
+            stage.show();
+    }
+    @FXML
+    protected void onGoNorthClick(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("novigrad/port.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.centerOnScreen();
+        stage.show();
+    }
+    @FXML
+    protected void onGoSouthClick(ActionEvent actionEvent) throws IOException {
+        if (isZygfryd) {
+            FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("novigrad/meetZygfrydAwardAvailable.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.centerOnScreen();
+            stage.show();
+        } else {
+            FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("novigrad/meet.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(scene);

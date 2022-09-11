@@ -16,22 +16,12 @@
             <Font size="64.0" />
         </font>
     </Button>
-    <Label layoutX="220.0" layoutY="95.0" text="Pokonałeś Ghula! Zdobywasz 200 Monet !" textFill="#e4ffe6">
+    <Label layoutX="204.0" layoutY="14.0" text="Pokonałeś Ghula i zdobyłeś kolejny poziom!" textFill="#e4ffe6">
         <font>
             <Font name="Candara Bold" size="52.0" />
         </font>
     </Label>
-    <Label layoutX="422.0" layoutY="485.0" text="Twoje Monety :" textFill="#e4ffe6">
-        <font>
-            <Font name="Candara Bold" size="52.0" />
-        </font>
-    </Label>
-    <Label fx:id="money" layoutX="767.0" layoutY="485.0" prefHeight="64.0" prefWidth="160.0" textFill="#e4ffe6">
-        <font>
-            <Font name="BellGothicStd-Black" size="52.0" />
-        </font>
-    </Label>
-   <Label layoutX="393.0" layoutY="127.0" prefHeight="129.0" prefWidth="554.0" text="Twoja Siła wzrosła o 3." textFill="#e4ffe6">
+   <Label layoutX="421.0" layoutY="46.0" prefHeight="129.0" prefWidth="554.0" text="Twoja siła wzrosła o 5." textFill="#e4ffe6">
       <font>
          <Font name="Candara Bold" size="52.0" />
       </font>

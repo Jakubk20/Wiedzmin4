@@ -14,12 +14,6 @@ import java.io.IOException;
 
 public class win {
     @FXML
-    private Label money;
-    @FXML
-    protected void initialize(){
-        money.setText(String.valueOf(geralt.money));
-    }
-    @FXML
     protected void onNextClick(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("ghul/meet.fxml"));
         Scene scene = new Scene(fxmlLoader.load());

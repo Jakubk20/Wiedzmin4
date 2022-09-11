@@ -42,12 +42,12 @@
                 <Font name="BellGothicStd-Black" size="24.0" />
             </font>
         </Label>
-        <Label layoutX="1110.0" layoutY="454.0" text="+1 do Siły" textFill="#e48989">
+        <Label layoutX="1108.0" layoutY="454.0" text="+1 do Siły" textFill="#e48989">
             <font>
                 <Font name="BellGothicStd-Black" size="24.0" />
             </font>
         </Label>
-        <Label layoutX="1107.0" layoutY="491.0" text="+10 do HP" textFill="#e48989">
+        <Label layoutX="1107.0" layoutY="492.0" text="+10 do MaxHP" textFill="#e48989">
             <font>
                 <Font name="BellGothicStd-Black" size="24.0" />
             </font>
