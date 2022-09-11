@@ -89,7 +89,7 @@ public class fight {
             geralt.moc += 1;
             geralt.power = (10 + 20) / 2 + geralt.moc;
             geralt.maxHP += 10;
-            FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("leszy/win.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("leszy/win1.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(scene);
@@ -150,7 +150,7 @@ public class fight {
             geralt.moc += 1;
             geralt.power = (10 + 20) / 2 + geralt.moc;
             geralt.maxHP += 10;
-            FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("leszy/win.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("leszy/win1.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(scene);
@@ -178,7 +178,7 @@ public class fight {
             geralt.moc += 1;
             geralt.power = (10 + 20) / 2 + geralt.moc;
             geralt.maxHP += 10;
-            FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("leszy/win.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("leszy/win1.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(scene);

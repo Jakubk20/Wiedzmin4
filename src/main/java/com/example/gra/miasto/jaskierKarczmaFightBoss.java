@@ -1,4 +1,4 @@
-package com.example.gra.bies;
+package com.example.gra.miasto;
 
 import com.example.gra.geralt;
 import com.example.gra.start;
@@ -12,21 +12,20 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.Random;
 
-public class fight {
+public class jaskierKarczmaFightBoss {
     @FXML
     private Label geraltPower;
     @FXML
     private Label geraltHP;
     @FXML
-    private Label biesHP;
+    private Label banditHP;
     @FXML
-    private Label biesPower;
+    private Label banditPower;
     @FXML
     private Label geraltRemainingHP;
     @FXML
-    private Label biesRemainingHP;
+    private Label banditRemainingHP;
     @FXML
     private Label amountOfPotions;
     @FXML
@@ -45,16 +44,16 @@ public class fight {
     private int dealtDMGS = dealtDMGS(new ActionEvent());
 
 
-    public fight() throws IOException {
+    public jaskierKarczmaFightBoss() throws IOException {
     }
 
     @FXML
     protected void initialize() {
-        biesHP.setText(String.valueOf(bies.maxHP));
-        biesPower.setText(String.valueOf(bies.power));
+        banditHP.setText(String.valueOf(banditboss.maxHP));
+        banditPower.setText(String.valueOf(banditboss.power));
         geraltPower.setText(String.valueOf(geralt.power));
         geraltHP.setText(String.valueOf(geralt.maxHP));
-        biesRemainingHP.setText(String.valueOf(bies.currentHP));
+        banditRemainingHP.setText(String.valueOf(banditboss.currentHP));
         geraltRemainingHP.setText(String.valueOf(geralt.currentHP));
         amountOfPotions.setText(String.valueOf(geralt.amountOfPotions));
     }
@@ -66,6 +65,7 @@ public class fight {
 
     }
 
+    @FXML
     public static void potionHeal(Label potki, Label pozoHPGeralt) {
         if (geralt.amountOfPotions > 0) {
             if (geralt.currentHP + 30 > geralt.maxHP) {
@@ -82,17 +82,17 @@ public class fight {
         int dealtDMGn = dealtDMGN(new ActionEvent());
         int receivedDMG1 = receivedDMG1(new ActionEvent());
         if (geralt.currentHP - receivedDMG1 <= 0) {
-            bies.currentHP = bies.maxHP;
+            banditboss.currentHP = banditboss.maxHP;
             geralt.death(actionEvent);
         }
-        if (bies.currentHP - dealtDMGn <= 0) {
+        if (banditboss.currentHP - dealtDMGn <= 0) {
             win(actionEvent);
         }
 
-        if (geralt.currentHP > 0 && bies.currentHP > 0) {
+        if (geralt.currentHP > 0 && banditboss.currentHP > 0) {
             textDealtDamage.setText("Zadane obrażenia:");
             dealtDamage.setText(String.valueOf(dealtDMGn));
-            bies.currentHP -= dealtDMGn;
+            banditboss.currentHP -= dealtDMGn;
             textReceivedDamage1.setText("Otrzymane obrażenia:");
             receivedDamage1.setText(String.valueOf(receivedDMG1));
             geralt.currentHP -= receivedDMG1;
@@ -105,9 +105,9 @@ public class fight {
     }
 
     private void stats() {
-        biesHP.setText(String.valueOf(bies.maxHP));
-        biesPower.setText(String.valueOf(bies.power));
-        biesRemainingHP.setText(String.valueOf(bies.currentHP));
+        banditHP.setText(String.valueOf(banditboss.maxHP));
+        banditPower.setText(String.valueOf(banditboss.power));
+        banditRemainingHP.setText(String.valueOf(banditboss.currentHP));
         geraltPower.setText(String.valueOf(geralt.power));
         geraltHP.setText(String.valueOf(geralt.maxHP));
         geraltRemainingHP.setText(String.valueOf(geralt.currentHP));
@@ -124,7 +124,7 @@ public class fight {
     }
 
     private int receivedDMG1(ActionEvent actionEvent) throws IOException {
-        int receivedDMG1 = (int) bies.onAttack();
+        int receivedDMG1 = (int) banditboss.onAttack(actionEvent);
         return receivedDMG1;
     }
 
@@ -136,11 +136,11 @@ public class fight {
         if (geralt.currentHP - (receivedDMG1 + receivedDMG2) <= 0) {
             geralt.death(actionEvent);
         }
-        if (bies.currentHP - dealtDMGS <= 0) {
+        if (banditboss.currentHP - dealtDMGS <= 0) {
             win(actionEvent);
         }
 
-        if (geralt.currentHP > 0 && bies.currentHP > 0) {
+        if (geralt.currentHP > 0 && banditboss.currentHP > 0) {
             textReceivedDamage1.setText("Otrzymane obrażenia:");
             textReceivedDamage2.setText("Otrzymane obrażenia:");
             textDealtDamage.setText("Zadane obrażenia:");
@@ -148,18 +148,18 @@ public class fight {
             geralt.currentHP -= receivedDMG2;
             receivedDamage1.setText(String.valueOf(receivedDMG1));
             receivedDamage2.setText(String.valueOf(receivedDMG2));
-            bies.currentHP -= dealtDMGS;
+            banditboss.currentHP -= dealtDMGS;
             dealtDamage.setText(String.valueOf(dealtDMGS));
         }
         stats();
     }
 
     private void win(ActionEvent actionEvent) throws IOException {
-        startLocation.isBiesDefeated = true;
+        geralt.money += (500 + jaskierKarczma.banditMoney);
         geralt.moc += 10;
-        geralt.power = ((10 + 20) / 2) + geralt.moc;
         geralt.maxHP += 10;
-        FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("bies/win1.fxml"));
+        geralt.power = ((10 + 20) / 2) + geralt.moc;
+        FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("jaskierKarczma/win4.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);
@@ -170,25 +170,6 @@ public class fight {
 
     @FXML
     protected void onRun(ActionEvent actionEvent) throws IOException {
-        Random random = new Random();
-        int chances = random.nextInt(0, 10);
-        if (geralt.currentHP > 50 && chances < 8) {
-            runSuccessful(actionEvent);
-        } else if (geralt.currentHP > 20 && chances < 4) {
-            runSuccessful(actionEvent);
-        } else if (geralt.currentHP <= 20 && chances < 2) {
-            runSuccessful(actionEvent);
-        } else {
-            geralt.death(actionEvent);
-        }
-    }
-
-    public static void runSuccessful(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("bies/runAway.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.centerOnScreen();
-        stage.show();
+        geralt.death(actionEvent);
     }
 }

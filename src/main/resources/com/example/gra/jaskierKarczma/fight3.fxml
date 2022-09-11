@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.miasto.jaskierKarczmaFight">
+<AnchorPane prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.miasto.jaskierKarczmaFight3">
     <children>
         <ImageView fitHeight="550.0" fitWidth="650.0" layoutY="250.0" pickOnBounds="true" smooth="false">
             <image>
@@ -14,12 +16,12 @@
         </ImageView>
         <ImageView fitHeight="550.0" fitWidth="650.0" layoutX="650.0" layoutY="250.0" pickOnBounds="true" smooth="false">
             <image>
-                <Image url="@../../../../images/ghul_interaction.png" />
+                <Image url="@../../../../images/Bandit3.jpg" />
             </image>
         </ImageView>
-        <Label layoutX="496.0" layoutY="16.0" prefHeight="55.0" prefWidth="310.0" text="Walka z bandytą 1">
+        <Label layoutX="503.0" layoutY="19.0" prefHeight="55.0" prefWidth="295.0" text="Walka z bandytą 3">
             <font>
-                <Font name="BellGothicStd-Black" size="38.0" />
+                <Font name="Candara Bold" size="38.0" />
             </font>
         </Label>
         <Label layoutX="33.0" layoutY="62.0" prefHeight="31.0" prefWidth="47.0" text="Siła:">
@@ -42,21 +44,21 @@
                 <Font size="20.0" />
             </font>
         </Label>
-        <!--        <Button layoutX="-3.0" layoutY="700.0" mnemonicParsing="false" onAction="#onNormalAttack" prefHeight="100.0" prefWidth="208.0" text="Atak zwykły (Szybki)">-->
-        <!--            <font>-->
-        <!--                <Font size="19.0" />-->
-        <!--            </font>-->
-        <!--        </Button>-->
-        <!--        <Button layoutX="1092.0" layoutY="700.0" mnemonicParsing="false" onAction="#onHardAttack" prefHeight="100.0" prefWidth="208.0" text="Atak mocny (Wolny)">-->
-        <!--            <font>-->
-        <!--                <Font size="20.0" />-->
-        <!--            </font>-->
-        <!--        </Button>-->
-        <!--        <Button layoutX="568.0" layoutY="700.0" mnemonicParsing="false" onAction="#onRun" prefHeight="80.0" prefWidth="166.0" text="Ucieczka">-->
-        <!--            <font>-->
-        <!--                <Font size="29.0" />-->
-        <!--            </font>-->
-        <!--        </Button>-->
+        <Button layoutX="-3.0" layoutY="700.0" mnemonicParsing="false" onAction="#onNormalAttack" prefHeight="100.0" prefWidth="208.0" text="Atak zwykły (Szybki)">
+            <font>
+                <Font size="19.0" />
+            </font>
+        </Button>
+        <Button layoutX="1092.0" layoutY="700.0" mnemonicParsing="false" onAction="#onHardAttack" prefHeight="100.0" prefWidth="208.0" text="Atak mocny (Wolny)">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Button>
+        <Button layoutX="568.0" layoutY="700.0" mnemonicParsing="false" onAction="#onRun" prefHeight="80.0" prefWidth="166.0" text="Ucieczka">
+            <font>
+                <Font size="29.0" />
+            </font>
+        </Button>
         <Label layoutX="531.0" layoutY="209.0" prefHeight="41.0" prefWidth="239.0" text="Wybierz swój atak">
             <font>
                 <Font name="BellGothicStd-Black" size="27.0" />
@@ -72,12 +74,12 @@
                 <Font name="BellGothicStd-Black" size="20.0" />
             </font>
         </Label>
-        <Label fx:id="ghulHP" layoutX="1040.0" layoutY="93.0" prefHeight="31.0" prefWidth="166.0">
+        <Label fx:id="banditHP" layoutX="1040.0" layoutY="93.0" prefHeight="31.0" prefWidth="166.0">
             <font>
                 <Font size="20.0" />
             </font>
         </Label>
-        <Label fx:id="ghulPower" layoutX="1010.0" layoutY="62.0" prefHeight="31.0" prefWidth="113.0">
+        <Label fx:id="banditPower" layoutX="1010.0" layoutY="62.0" prefHeight="31.0" prefWidth="113.0">
             <font>
                 <Font size="20.0" />
             </font>
@@ -97,7 +99,7 @@
                 <Font size="32.0" />
             </font>
         </Label>
-        <Label fx:id="ghulRemainingHP" layoutX="1145.0" layoutY="206.0" prefHeight="41.0" prefWidth="123.0">
+        <Label fx:id="banditRemainingHP" layoutX="1145.0" layoutY="206.0" prefHeight="41.0" prefWidth="123.0">
             <font>
                 <Font size="32.0" />
             </font>
@@ -157,6 +159,11 @@
                 <Font name="Candara Bold" size="20.0" />
             </font>
         </Label>
+        <Button layoutX="568.0" layoutY="586.0" mnemonicParsing="false" onAction="#onPotion" prefHeight="80.0" prefWidth="166.0" text="Użyj mikstury HP">
+            <font>
+                <Font size="17.0" />
+            </font>
+        </Button>
     </children>
 
 </AnchorPane>
