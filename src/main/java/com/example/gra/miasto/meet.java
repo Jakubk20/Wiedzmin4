@@ -58,7 +58,7 @@ public class meet {
 
     @FXML
     protected void onTavern(ActionEvent actionEvent) throws IOException {
-        if (banditTookMoney || jaskierQuestTaken) {
+        if (banditTookMoney) {
             FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("jaskierKarczma/banditTookMoney.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();

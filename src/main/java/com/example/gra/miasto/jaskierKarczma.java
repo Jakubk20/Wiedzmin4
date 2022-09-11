@@ -15,7 +15,6 @@ import java.io.IOException;
 public class jaskierKarczma {
     public static int banditMoney = 0;
     public static boolean banditTookMoney = false;
-    public static boolean jaskierQuestTaken = false;
     public static boolean jaskierQuest2Taken = false;
     public static boolean jaskierQuest1Done = false;
     @FXML
@@ -50,7 +49,6 @@ public class jaskierKarczma {
 
     @FXML
     protected void onTryToConvinceThemClick(ActionEvent actionEvent) throws IOException {
-        jaskierQuestTaken = true;
         FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("jaskierKarczma/karczmaFight.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -123,7 +121,6 @@ public class jaskierKarczma {
     protected void onGetQuest2(ActionEvent actionEvent) throws IOException {
         jaskierQuest2Taken = true;
         banditTookMoney = false;
-        jaskierQuestTaken = false;
         jaskierQuest1Done = true;
         FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("novigrad/meet.fxml"));
         Scene scene = new Scene(fxmlLoader.load());

@@ -22,11 +22,11 @@
                 <Font size="18.0" />
             </font>
         </Label>
-      <Label layoutX="535.0" layoutY="45.0" prefHeight="27.0" prefWidth="572.0" text="Syn pana Willeya, Cyprian chciał urządzić tu burdel." textFill="WHITE">
+      <Label layoutX="486.0" layoutY="40.0" prefHeight="27.0" prefWidth="621.0" text="Syn pana Willeya, Cyprian, chciał urządzić tu burdel. Także przypisał go mnie," textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Label layoutX="544.0" layoutY="69.0" prefHeight="27.0" prefWidth="477.0" text="Także przypisał go mnie, jego ulubionemu poecie." textFill="WHITE">
+      <Label layoutX="422.0" layoutY="64.0" prefHeight="27.0" prefWidth="772.0" text="czyli Julianowi Alfredowi Pankratzemu wicehrabii de Lettenhove, jego ulubionemu poecie." textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
