@@ -37,7 +37,8 @@ public class trader1 {
     @FXML
     protected void onSwordSharpeningClick(ActionEvent actionEvent) throws IOException {
         if (geralt.money >= 100) {
-            geralt.power += 10;
+            geralt.moc += 10;
+            geralt.power = ((10 + 20) / 2) + geralt.moc;
             geralt.money -= 100;
             currentHP.setText(String.valueOf(geralt.currentHP));
             maxHP.setText(String.valueOf(geralt.maxHP));
@@ -63,7 +64,8 @@ public class trader1 {
     @FXML
     protected void onSwordRuneClick(ActionEvent actionEvent) throws IOException {
         if (geralt.money >= 180) {
-            geralt.power += 20;
+            geralt.moc += 20;
+            geralt.power = ((10 + 20) / 2) + geralt.moc;
             geralt.money -= 180;
             currentHP.setText(String.valueOf(geralt.currentHP));
             maxHP.setText(String.valueOf(geralt.maxHP));
@@ -101,22 +103,21 @@ public class trader1 {
 
     @FXML
     public void onLeave(ActionEvent actionEvent) throws IOException {
-        if (startLocation.isQuest && startLocation.isBiesDefeated){
+        if (startLocation.isQuest && startLocation.isBiesDefeated) {
             FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("bialySadQuestAvailable.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(scene);
             stage.centerOnScreen();
             stage.show();
-        } else if (startLocation.isQuest){
+        } else if (startLocation.isQuest) {
             FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("bialySadQuestNotDone.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(scene);
             stage.centerOnScreen();
             stage.show();
-        }
-        else {
+        } else {
             FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("bialySad.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
