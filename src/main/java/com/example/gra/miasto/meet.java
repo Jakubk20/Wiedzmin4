@@ -85,12 +85,22 @@ public class meet {
 
     @FXML
     protected void onGoNorthClick(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("novigrad/port.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.centerOnScreen();
-        stage.show();
+        if (jaskierQuest2Taken){
+            FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("port_novigrad/port_oboz_piratow_available.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.centerOnScreen();
+            stage.show();
+        } else {
+            FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("port_novigrad/port.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.centerOnScreen();
+            stage.show();
+        }
+
     }
 
     @FXML
@@ -111,5 +121,15 @@ public class meet {
             stage.show();
         }
 
+    }
+
+    @FXML
+    protected void onPiratesCampClick(ActionEvent actionEvent) throws IOException {
+            FXMLLoader fxmlLoader = new FXMLLoader(start.class.getResource("port_novigrad/pirates_camp.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.centerOnScreen();
+            stage.show();
     }
 }

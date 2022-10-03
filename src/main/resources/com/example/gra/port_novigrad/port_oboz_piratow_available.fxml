@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gra.miasto.meet">
+    <children>
+        <ImageView fitHeight="800.0" fitWidth="1300.0" pickOnBounds="true">
+            <image>
+                <Image url="@../../../../images/portNovigrad.jpg" />
+            </image>
+        </ImageView>
+        <Label layoutX="468.0" layoutY="14.0" prefHeight="52.0" prefWidth="364.0" text="Port w Novigradzie" textFill="#030302">
+            <font>
+                <Font name="Candara Bold" size="44.0" />
+            </font>
+        </Label>
+        <Button layoutX="257.0" layoutY="705.0" mnemonicParsing="false" onAction="#onGoSouthClick" prefHeight="52.0" prefWidth="209.0" text="Idź na południe">
+            <font>
+                <Font size="25.0" />
+            </font>
+        </Button>
+      <Button layoutX="501.0" layoutY="348.0" mnemonicParsing="false" onAction="#onPiratesCampClick" prefHeight="52.0" prefWidth="209.0" text="Obóż piratów">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Button>
+    </children>
+</AnchorPane>
